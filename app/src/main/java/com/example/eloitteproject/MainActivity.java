@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //jasmine is the best person in the world
         //mai was here
+        //tiff loves you all :3
 
     }
 }
