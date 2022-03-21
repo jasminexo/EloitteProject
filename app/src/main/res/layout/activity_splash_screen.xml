@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/yellow_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50sp"
+        android:background="@color/yellow_bg"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/moodzoo"
+            android:textColor="@color/brown_text"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="130dp"
+            android:layout_marginTop="30sp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/dog_logo" />
+
+        <Button
+            android:id="@+id/btnTeacherLogin"
+            android:layout_width="194dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/light_brown"
+            android:onClick="onClick"
+            android:text="Student" />
+
+        <Button
+            android:id="@+id/btnStudentLogin"
+            android:layout_width="194dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/orange"
+            android:text="Teacher" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50sp" />
+
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible" />
+    </LinearLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>
+

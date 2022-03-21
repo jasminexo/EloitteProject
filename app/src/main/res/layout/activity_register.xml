@@ -5,13 +5,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#5F68C3">
+    android:background="@color/yellow_bg">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="50sp"
-        android:background="#5F68C3"
+        android:background="@color/yellow_bg"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         tools:context=".RegisterActivity">
@@ -20,13 +20,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="graduACE"
-            android:textColor="@color/white"
+            android:textColor="@color/brown_text"
             android:textSize="30sp"
             android:textStyle="bold" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="130dp"
+            android:layout_width="390dp"
+            android:layout_height="77dp"
             android:layout_marginTop="30sp"
             android:src="@drawable/dog_logo" />
 
@@ -42,8 +42,8 @@
                 android:layout_marginLeft="30sp"
                 android:layout_marginBottom="20sp"
                 android:background="#00FFFFFF"
-                android:text="Login"
                 android:onClick="goToLogin"
+                android:text="Login"
                 android:textSize="30sp" />
 
             <TextView
@@ -70,67 +70,67 @@
         </LinearLayout>
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_marginLeft="30sp"
-            android:layout_marginRight="30sp"
-            android:backgroundTint="#FFFFFF"
-            android:textColorHint="#FFFFFF"
             android:id="@+id/etName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="20"
-            android:hint="Name"
-            android:textColor="@color/white"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:drawableEnd="@drawable/ic_name"/>
-
-        <com.google.android.material.textfield.TextInputEditText
             android:layout_marginLeft="30sp"
             android:layout_marginRight="30sp"
-            android:backgroundTint="#FFFFFF"
-            android:textColorHint="#FFFFFF"
+            android:backgroundTint="@color/brown_text"
+            android:drawableEnd="@drawable/ic_name"
+            android:ems="20"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/brown_text" />
+
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="30sp"
             android:layout_marginTop="5sp"
-            android:textColor="@color/white"
+            android:layout_marginRight="30sp"
+            android:backgroundTint="@color/brown_text"
+            android:drawableEnd="@drawable/ic_email"
             android:ems="10"
             android:hint="Email"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:drawableEnd="@drawable/ic_email"/>
+            android:textColor="@color/brown_text"
+            android:textColorHint="@color/brown_text" />
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_marginLeft="30sp"
-            android:layout_marginRight="30sp"
-            android:backgroundTint="#FFFFFF"
-            android:textColorHint="#FFFFFF"
             android:id="@+id/etEmailLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="30sp"
             android:layout_marginTop="5sp"
-            android:textColor="@color/white"
+            android:layout_marginRight="30sp"
+            android:backgroundTint="@color/brown_text"
+            android:drawableEnd="@drawable/ic_user"
             android:ems="10"
             android:hint="Username"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:drawableEnd="@drawable/ic_user"/>
+            android:textColor="@color/brown_text"
+            android:textColorHint="@color/brown_text" />
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_marginLeft="30sp"
-            android:layout_marginRight="30sp"
-            android:backgroundTint="#FFFFFF"
-            android:textColorHint="#FFFFFF"
             android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="30sp"
             android:layout_marginTop="5sp"
-            android:textColor="@color/white"
+            android:layout_marginRight="30sp"
+            android:backgroundTint="@color/brown_text"
+            android:drawableEnd="@drawable/ic_password"
             android:ems="10"
             android:hint="Password"
             android:inputType="textPassword"
             android:minHeight="48dp"
-            android:drawableEnd="@drawable/ic_password"/>
+            android:textColor="@color/white"
+            android:textColorHint="@color/brown_text" />
 
         <Button
             android:id="@+id/btnLogin"
@@ -148,5 +148,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="invisible" />
+
     </LinearLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>

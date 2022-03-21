@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">EloitteProject</string>
+    <string name="moodzoo">MoodZoo</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="todo">TODO</string>
 </resources>
