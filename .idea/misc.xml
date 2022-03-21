@@ -4,18 +4,19 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/jasmi/AndroidStudioProjects/EloitteProject/app/src/main/res/drawable/btn_round_corner.xml" value="0.3828125" />
-        <entry key="..\:/Users/jasmi/AndroidStudioProjects/EloitteProject/app/src/main/res/drawable/ic_email.xml" value="0.34375" />
         <entry key="..\:/Users/jasmi/AndroidStudioProjects/EloitteProject/app/src/main/res/drawable/ic_name.xml" value="0.18611111111111112" />
         <entry key="..\:/Users/jasmi/AndroidStudioProjects/EloitteProject/app/src/main/res/drawable/ic_password.xml" value="0.3828125" />
         <entry key="..\:/Users/jasmi/AndroidStudioProjects/EloitteProject/app/src/main/res/drawable/ic_user.xml" value="0.1648148148148148" />
-        <entry key="..\:/Users/jasmi/AndroidStudioProjects/EloitteProject/app/src/main/res/layout/activity_admin.xml" value="0.25" />
-        <entry key="..\:/Users/jasmi/AndroidStudioProjects/EloitteProject/app/src/main/res/layout/activity_home.xml" value="0.22" />
         <entry key="..\:/Users/jasmi/AndroidStudioProjects/EloitteProject/app/src/main/res/layout/activity_login.xml" value="0.1" />
-        <entry key="..\:/Users/jasmi/AndroidStudioProjects/EloitteProject/app/src/main/res/layout/activity_login_test.xml" value="0.25" />
         <entry key="..\:/Users/jasmi/AndroidStudioProjects/EloitteProject/app/src/main/res/layout/activity_main.xml" value="0.28940217391304346" />
-        <entry key="..\:/Users/jasmi/AndroidStudioProjects/EloitteProject/app/src/main/res/layout/activity_register.xml" value="0.25" />
-        <entry key="..\:/Users/jasmi/AndroidStudioProjects/EloitteProject/app/src/main/res/layout/activity_register_test.xml" value="0.33" />
-        <entry key="..\:/Users/jasmi/AndroidStudioProjects/EloitteProject/app/src/main/res/layout/activity_splash_screen.xml" value="0.33" />
+        <entry key="..\:/Users/jasmi/AndroidStudioProjects/EloitteProject/app/src/main/res/layout/activity_register.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.14488348530901723" />
+        <entry key="app/src/main/res/layout/activity_login_test.xml" value="0.14488348530901723" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.24725669225056968" />
+        <entry key="app/src/main/res/layout/activity_register_test.xml" value="0.14488348530901723" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.4728718916040075" />
+        <entry key="app/src/main/res/layout/activity_student_home.xml" value="0.14488348530901723" />
+        <entry key="app/src/main/res/layout/activity_teacher_home.xml" value="0.14488348530901723" />
       </map>
     </option>
   </component>
@@ -24,5 +25,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.4728718916040075" />
+      </ProjectState>
+    </option>
   </component>
 </project>

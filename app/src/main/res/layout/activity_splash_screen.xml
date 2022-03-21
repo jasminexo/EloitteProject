@@ -22,27 +22,60 @@
             android:textSize="30sp"
             android:textStyle="bold" />
 
-        <ImageView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
-            android:layout_height="130dp"
-            android:layout_marginTop="30sp"
-            android:contentDescription="@string/todo"
-            android:src="@drawable/dog_logo" />
+            android:layout_height="wrap_content">
+
+            <ImageView
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_marginTop="30sp"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/fox" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="185dp"
+                android:layout_marginLeft="-10sp"
+                android:layout_marginTop="20sp"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/circle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="17dp"
+                android:layout_marginLeft="171sp"
+                android:layout_marginTop="196sp"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/star"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <Button
             android:id="@+id/btnTeacherLogin"
             android:layout_width="194dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/light_brown"
+            android:layout_marginTop="30sp"
             android:onClick="onClick"
-            android:text="Student" />
+            android:text="Sign Up"
+            android:textColor="@color/white"
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btnStudentLogin"
             android:layout_width="194dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/orange"
-            android:text="Teacher" />
+            android:text="Login"
+            android:textColor="@color/white"
+            android:textAllCaps="false" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -56,6 +89,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="invisible" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>
 
