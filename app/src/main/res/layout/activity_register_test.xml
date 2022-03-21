@@ -22,21 +22,20 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="Register as Teacher"
-        app:layout_constraintEnd_toEndOf="@+id/et_pass"
+        app:layout_constraintEnd_toEndOf="@+id/login_password"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/cb_student"
-        app:layout_constraintTop_toBottomOf="@+id/et_pass" />
+        app:layout_constraintTop_toBottomOf="@+id/login_password" />
 
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/login_btn"
         android:layout_width="364dp"
         android:layout_height="55dp"
         android:layout_marginTop="24dp"
         android:backgroundTint="@color/light_brown"
-        android:onClick="onClick"
         android:text="Login"
-        app:layout_constraintStart_toStartOf="@+id/btn_signup"
-        app:layout_constraintTop_toBottomOf="@+id/btn_signup" />
+        app:layout_constraintStart_toStartOf="@+id/go_to_register"
+        app:layout_constraintTop_toBottomOf="@+id/go_to_register" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/et_fullname"
@@ -56,7 +55,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/et_email"
+        android:id="@+id/login_email"
         android:layout_width="364dp"
         android:layout_height="55dp"
         android:layout_marginTop="8dp"
@@ -74,15 +73,14 @@
         app:layout_constraintTop_toBottomOf="@+id/et_fullname" />
 
     <Button
-        android:id="@+id/btn_signup"
+        android:id="@+id/go_to_register"
         android:layout_width="364dp"
         android:layout_height="55dp"
         android:layout_marginTop="56dp"
         android:backgroundTint="@color/light_brown"
-        android:onClick="onClick"
         android:text="Create Account"
         app:layout_constraintStart_toStartOf="@+id/cb_student"
-        app:layout_constraintTop_toBottomOf="@+id/et_pass" />
+        app:layout_constraintTop_toBottomOf="@+id/login_password" />
 
     <CheckBox
         android:id="@+id/cb_student"
@@ -90,8 +88,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="Register as Student"
-        app:layout_constraintStart_toStartOf="@+id/et_pass"
-        app:layout_constraintTop_toBottomOf="@+id/et_pass" />
+        app:layout_constraintStart_toStartOf="@+id/login_password"
+        app:layout_constraintTop_toBottomOf="@+id/login_password" />
 
     <TextView
         android:id="@+id/register_title"
@@ -107,7 +105,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/et_pass"
+        android:id="@+id/login_password"
         android:layout_width="364dp"
         android:layout_height="55dp"
         android:layout_marginTop="16dp"
@@ -119,7 +117,7 @@
         android:minHeight="48dp"
         android:textColor="@color/brown_text"
         android:textColorHint="@color/brown_text"
-        app:layout_constraintStart_toStartOf="@+id/et_email"
-        app:layout_constraintTop_toBottomOf="@+id/et_email" />
+        app:layout_constraintStart_toStartOf="@+id/login_email"
+        app:layout_constraintTop_toBottomOf="@+id/login_email" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

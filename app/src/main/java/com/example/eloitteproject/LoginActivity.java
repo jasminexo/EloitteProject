@@ -83,7 +83,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                 if (task.isSuccessful()) {
                     //redirects to home activity
-                    startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                    startActivity(new Intent(LoginActivity.this, StudentHomeActivity.class));
                     //creates a toast to provide feedback if login successful or not
                     Toast.makeText(getApplicationContext(), "Successful Login!", Toast.LENGTH_LONG).show();
                     progressBar.setVisibility(View.GONE);

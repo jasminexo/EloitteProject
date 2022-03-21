@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EloitteProject">
         <activity
-            android:name=".HomeActivity"
+            android:name=".TeacherHomeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".StudentHomeActivity"
             android:exported="true" />
         <activity
             android:name=".RegisterActivity"
@@ -19,13 +22,13 @@
             android:name=".LoginActivity"
             android:exported="true" />
         <activity
-            android:name=".LoginTestActivity"
+            android:name=".RegisterTestActivity"
             android:exported="true" />
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true" />
         <activity
-            android:name=".RegisterTestActivity"
+            android:name=".LoginTestActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
