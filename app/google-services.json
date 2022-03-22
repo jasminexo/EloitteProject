@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "204994093001",
+    "firebase_url": "https://eloitte-authorisation-default-rtdb.firebaseio.com",
+    "project_id": "eloitte-authorisation",
+    "storage_bucket": "eloitte-authorisation.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:204994093001:android:8715d36d523a6f22cf5218",
+        "android_client_info": {
+          "package_name": "com.example.eloitteproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "204994093001-dj1k7t4njt5a666uu6n1e7aob9t0qpfc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBep5W-ISB9o80ujG3RVCuUsg_C4zh2ltc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "204994093001-dj1k7t4njt5a666uu6n1e7aob9t0qpfc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
