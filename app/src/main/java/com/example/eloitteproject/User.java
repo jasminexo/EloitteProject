@@ -34,8 +34,6 @@ public class User {
 
 
     //existing user constructor
-
-
     public User(@NonNull String uID, String fullName, String password, String email, int score) {
         this.uID = uID;
         this.fullName = fullName;
