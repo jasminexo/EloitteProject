@@ -44,11 +44,11 @@ public class User {
 
 
     @NonNull
-    public String getuID() {
+    public String getUID() {
         return uID;
     }
 
-    public void setuID(@NonNull String uID) {
+    public void setUID(@NonNull String uID) {
         this.uID = uID;
     }
 
