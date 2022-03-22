@@ -1,121 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/yellow_bg">
+    tools:context=".LoginActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="50sp"
-        android:background="@color/yellow_bg"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        tools:context=".RegisterActivity">
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="177dp"
+        android:layout_height="149dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="92dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/dog_logo" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="graduACE"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/login_email"
+        android:layout_width="364dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/brown_text"
+        android:drawableEnd="@drawable/ic_email"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColor="@color/brown_text"
+        android:textColorHint="@color/brown_text"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="130dp"
-            android:layout_marginTop="30sp"
-            android:src="@drawable/dog_logo" />
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/login_password"
+        android:layout_width="364dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/brown_text"
+        android:drawableEnd="@drawable/ic_password"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:textColor="@color/brown_text"
+        android:textColorHint="@color/brown_text"
+        app:layout_constraintEnd_toEndOf="@+id/login_email"
+        app:layout_constraintStart_toStartOf="@+id/login_email"
+        app:layout_constraintTop_toBottomOf="@+id/login_email" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50sp">
+    <Button
+        android:id="@+id/login_btn"
+        android:layout_width="364dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/light_brown"
+        android:text="Login"
+        app:layout_constraintStart_toStartOf="@+id/login_password"
+        app:layout_constraintTop_toBottomOf="@+id/login_password" />
 
-            <Button
-                android:id="@+id/btnLoginSelect"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30sp"
-                android:layout_marginBottom="20sp"
-                android:background="#00FFFFFF"
-                android:text="Login"
-                android:textColor="#F4CF9C"
-                android:textSize="30sp"
-                android:textStyle="bold" />
+    <Button
+        android:id="@+id/go_to_register"
+        android:layout_width="364dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="@color/light_brown"
+        android:text="Create Account"
+        app:layout_constraintStart_toStartOf="@+id/login_btn"
+        app:layout_constraintTop_toBottomOf="@+id/login_btn" />
 
-            <TextView
-                android:id="@+id/line"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="-10sp"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:text="|"
-                android:textSize="50sp" />
+    <TextView
+        android:id="@+id/register_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="28dp"
+        android:text="MoodZoo"
+        android:textColor="@color/brown_text"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
-                android:id="@+id/btnRegisterSelect"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="-10sp"
-                android:background="#00FFFFFF"
-                android:onClick="goToRegister"
-                android:text="Sign Up"
-                android:textSize="30sp" />
-
-        </LinearLayout>
-
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etEmailLogin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30sp"
-            android:layout_marginRight="30sp"
-            android:backgroundTint="#FFFFFF"
-            android:drawableEnd="@drawable/ic_email"
-            android:ems="10"
-            android:hint="Email"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:textColor="@color/white"
-            android:textColorHint="#FFFFFF" />
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_marginLeft="30sp"
-            android:layout_marginRight="30sp"
-            android:backgroundTint="#FFFFFF"
-            android:textColorHint="#FFFFFF"
-            android:id="@+id/etPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5sp"
-            android:ems="10"
-            android:hint="Password"
-            android:textColor="@color/white"
-            android:inputType="textPassword"
-            android:minHeight="48dp"
-            android:drawableEnd="@drawable/ic_password"/>
-
-        <Button
-            android:id="@+id/btnLogin"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20sp"
-            android:layout_marginTop="135sp"
-            android:layout_marginRight="20sp"
-            android:background="@drawable/btn_round_corner"
-            android:text="Login" />
-
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="invisible" />
-    </LinearLayout>
-</androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.constraintlayout.widget.ConstraintLayout>

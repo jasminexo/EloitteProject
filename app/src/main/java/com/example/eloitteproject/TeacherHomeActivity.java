@@ -18,7 +18,7 @@ public class TeacherHomeActivity extends AppCompatActivity {
 
     public void logoutAdmin(View view) {
         FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(getApplicationContext(), LoginTestActivity.class));
+        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
         finish();
     }
 }
