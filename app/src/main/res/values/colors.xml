@@ -11,4 +11,7 @@
     <color name="brown_text">#645D5D</color>
     <color name="light_brown">#E9C9B0</color>
     <color name="orange">#FFCEA9</color>
+    <color name="orange_text">#FF991F</color>
+    <color name="grey_line">#C7C9D9</color>
+    <color name="grey_text">#9D9FA0</color>
 </resources>
