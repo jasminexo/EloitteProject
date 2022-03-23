@@ -12,10 +12,13 @@
         <entry key="..\:/Users/jasmi/AndroidStudioProjects/EloitteProject/app/src/main/res/layout/activity_register.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/custom_edittext.xml" value="0.21875" />
         <entry key="app/src/main/res/drawable/custom_emailicon.xml" value="0.21875" />
+        <entry key="app/src/main/res/drawable/custom_nameicon.xml" value="0.21875" />
         <entry key="app/src/main/res/drawable/custom_passwordicon.xml" value="0.21875" />
         <entry key="app/src/main/res/drawable/ic_email.xml" value="0.2994791666666667" />
         <entry key="app/src/main/res/drawable/ic_email_focus.xml" value="0.21875" />
         <entry key="app/src/main/res/drawable/ic_eye.xml" value="0.21875" />
+        <entry key="app/src/main/res/drawable/ic_name.xml" value="0.21875" />
+        <entry key="app/src/main/res/drawable/ic_name_focus.xml" value="0.21875" />
         <entry key="app/src/main/res/drawable/ic_password.xml" value="0.2994791666666667" />
         <entry key="app/src/main/res/drawable/ic_password_focus.xml" value="0.21875" />
         <entry key="app/src/main/res/drawable/ic_user.xml" value="0.2994791666666667" />
@@ -23,7 +26,7 @@
         <entry key="app/src/main/res/drawable/ic_visibilityon.xml" value="0.21875" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.45" />
         <entry key="app/src/main/res/layout/activity_login_test.xml" value="0.14488348530901723" />
-        <entry key="app/src/main/res/layout/activity_register.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.18775510204081633" />
         <entry key="app/src/main/res/layout/activity_register_test.xml" value="0.14488348530901723" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_student_home.xml" value="0.14488348530901723" />

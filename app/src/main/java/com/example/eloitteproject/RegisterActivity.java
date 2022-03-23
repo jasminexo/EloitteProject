@@ -31,6 +31,8 @@ public class RegisterActivity extends AppCompatActivity {
     FirebaseFirestore fStore;
     CheckBox isTeacherBox, isStudentBox;
 
+    Button btnAsStudent, btnAsTeacher;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -33,13 +33,13 @@
             android:layout_marginTop="15dp">
 
             <Button
+                android:id="@+id/btnAsStudent"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginRight="40dp"
                 android:background="#00FFFFFF"
                 android:drawableTop="@drawable/student"
                 android:gravity="center|center_vertical"
-                android:onClick="goToPersonalityHome"
                 android:paddingTop="15dp"
                 android:text="As Student"
                 android:textAllCaps="false"
@@ -48,12 +48,12 @@
                 app:backgroundTint="@color/transparent" />
 
             <Button
+                android:id="@+id/btnAsTeacher"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:background="#00FFFFFF"
                 android:drawableTop="@drawable/teacher"
                 android:gravity="center|center_vertical"
-                android:onClick="goToPersonalityHome"
                 android:paddingTop="15dp"
                 android:text="As Teacher"
                 android:textAllCaps="false"
@@ -72,7 +72,7 @@
             android:paddingStart="12dp"
             android:paddingEnd="12dp"
             android:background="@drawable/custom_edittext"
-            android:drawableStart="@drawable/custom_emailicon"
+            android:drawableStart="@drawable/custom_nameicon"
             android:ems="10"
             android:hint="Full Name"
             android:inputType="textPersonName"
