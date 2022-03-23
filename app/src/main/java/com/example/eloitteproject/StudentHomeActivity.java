@@ -25,4 +25,35 @@ public class StudentHomeActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void goToCheckInActivity(View view){
+        Intent intent = new Intent (this, StudentCheckInActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToQuizActivity(View view){
+        Intent intent = new Intent (this, StudentQuizActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToDashboardActivity(View view){
+        Intent intent = new Intent (this, StudentDashboardActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToLeaderboardActivity(View view){
+        Intent intent = new Intent (this, StudentLeaderboardActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToMeditationActivity(View view){
+        Intent intent = new Intent (this, StudentMeditationActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToStudentProfileActivity(View view){
+        Intent intent = new Intent (this, StudentProfileActivity.class);
+        startActivity(intent);
+    }
+
 }

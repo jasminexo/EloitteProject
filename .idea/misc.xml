@@ -31,7 +31,13 @@
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_register_test.xml" value="0.14488348530901723" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/activity_student_home.xml" value="0.11" />
+        <entry key="app/src/main/res/layout/activity_student_checkin.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_student_dashboard.xml" value="0.13802083333333334" />
+        <entry key="app/src/main/res/layout/activity_student_home.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_student_leaderboard.xml" value="0.15208333333333332" />
+        <entry key="app/src/main/res/layout/activity_student_meditation.xml" value="0.13802083333333334" />
+        <entry key="app/src/main/res/layout/activity_student_profile.xml" value="0.13802083333333334" />
+        <entry key="app/src/main/res/layout/activity_student_quiz.xml" value="0.15208333333333332" />
         <entry key="app/src/main/res/layout/activity_teacher_home.xml" value="0.14488348530901723" />
       </map>
     </option>

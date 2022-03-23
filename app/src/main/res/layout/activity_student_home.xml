@@ -34,8 +34,9 @@
                 android:id="@+id/ivProfile"
                 android:layout_width="40sp"
                 android:layout_height="40sp"
-                android:src="@drawable/fox"
-                android:layout_marginLeft="170sp"/>
+                android:layout_marginLeft="170sp"
+                android:onClick="goToStudentProfileActivity"
+                android:src="@drawable/fox" />
         </LinearLayout>
 
         <LinearLayout
@@ -52,6 +53,7 @@
                 android:background="@drawable/btn_round_corner"
                 android:drawableTop="@drawable/checkin"
                 android:gravity="center|center_vertical"
+                android:onClick="goToCheckInActivity"
                 android:paddingTop="15dp"
                 android:text="Daily Check-In"
                 android:textAllCaps="false"
@@ -66,6 +68,7 @@
                 android:background="@drawable/btn_round_corner"
                 android:drawableTop="@drawable/quiz"
                 android:gravity="center|center_vertical"
+                android:onClick="goToQuizActivity"
                 android:paddingTop="15dp"
                 android:text="Quiz"
                 android:textAllCaps="false"
@@ -88,6 +91,7 @@
                 android:background="@drawable/btn_round_corner"
                 android:drawableTop="@drawable/dashboard"
                 android:gravity="center|center_vertical"
+                android:onClick="goToDashboardActivity"
                 android:paddingTop="15dp"
                 android:text="Dashboard"
                 android:textAllCaps="false"
@@ -102,6 +106,7 @@
                 android:background="@drawable/btn_round_corner"
                 android:drawableTop="@drawable/leaderboard"
                 android:gravity="center|center_vertical"
+                android:onClick="goToLeaderboardActivity"
                 android:paddingTop="15dp"
                 android:text="Leaderboard"
                 android:textAllCaps="false"
@@ -124,6 +129,7 @@
                 android:background="@drawable/btn_round_corner"
                 android:drawableTop="@drawable/meditation"
                 android:gravity="center|center_vertical"
+                android:onClick="goToMeditationActivity"
                 android:paddingTop="15dp"
                 android:text="Meditation"
                 android:textAllCaps="false"
@@ -138,6 +144,7 @@
                 android:background="@drawable/btn_round_corner"
                 android:drawableTop="@drawable/profile"
                 android:gravity="center|center_vertical"
+                android:onClick="goToStudentProfileActivity"
                 android:paddingTop="15dp"
                 android:text="Profile"
                 android:textAllCaps="false"
@@ -146,26 +153,17 @@
                 app:backgroundTint="#E7FBFF" />
         </LinearLayout>
 
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="300dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/light_brown"
+            android:text="Log Out"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_logout"
-        android:layout_width="364dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="580dp"
-        android:backgroundTint="@color/light_brown"
-        android:text="Log Out"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="student home page"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 </androidx.appcompat.widget.LinearLayoutCompat>
