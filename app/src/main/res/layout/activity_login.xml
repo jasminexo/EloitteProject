@@ -61,6 +61,8 @@
             android:paddingEnd="12dp"
             android:background="@drawable/custom_edittext"
             android:drawableStart="@drawable/custom_passwordicon"
+            android:drawableEnd="@drawable/ic_visibilityon"
+            android:drawableRight="@drawable/ic_visibilityon"
             android:ems="10"
             android:hint="Password"
             android:inputType="textPassword"

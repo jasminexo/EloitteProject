@@ -15,9 +15,12 @@
         <entry key="app/src/main/res/drawable/custom_passwordicon.xml" value="0.21875" />
         <entry key="app/src/main/res/drawable/ic_email.xml" value="0.2994791666666667" />
         <entry key="app/src/main/res/drawable/ic_email_focus.xml" value="0.21875" />
+        <entry key="app/src/main/res/drawable/ic_eye.xml" value="0.21875" />
         <entry key="app/src/main/res/drawable/ic_password.xml" value="0.2994791666666667" />
         <entry key="app/src/main/res/drawable/ic_password_focus.xml" value="0.21875" />
         <entry key="app/src/main/res/drawable/ic_user.xml" value="0.2994791666666667" />
+        <entry key="app/src/main/res/drawable/ic_visibilityoff.xml" value="0.21875" />
+        <entry key="app/src/main/res/drawable/ic_visibilityon.xml" value="0.21875" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.45" />
         <entry key="app/src/main/res/layout/activity_login_test.xml" value="0.14488348530901723" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.24725669225056968" />
