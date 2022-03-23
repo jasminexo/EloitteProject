@@ -1,9 +1,12 @@
 package com.example.eloitteproject;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -30,8 +33,9 @@ public class RegisterActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseFirestore fStore;
     CheckBox isTeacherBox, isStudentBox;
-
+//////////
     Button btnAsStudent, btnAsTeacher;
+//////////
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +53,32 @@ public class RegisterActivity extends AppCompatActivity {
 
         isTeacherBox = findViewById(R.id.cbTeacher);
         isStudentBox = findViewById(R.id.cb_student);
+
+        //////////
+        btnAsStudent = findViewById(R.id.btnAsStudent);
+        btnAsTeacher = findViewById(R.id.btnAsTeacher);
+
+        btnAsStudent.setOnClickListener(new View.OnClickListener(){
+            @RequiresApi(api = Build.VERSION_CODES.M)
+            @Override
+            public void onClick(View v) {
+                btnAsStudent.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.student, 0,0);
+                btnAsStudent.setTextColor(getColor(R.color.orange_text));
+                btnAsTeacher.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.teacherbnw, 0,0);
+                btnAsTeacher.setTextColor(getColor(R.color.grey_text));
+            }
+        });
+        btnAsTeacher.setOnClickListener(new View.OnClickListener(){
+            @RequiresApi(api = Build.VERSION_CODES.M)
+            @Override
+            public void onClick(View v) {
+                btnAsTeacher.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.teacher, 0,0);
+                btnAsTeacher.setTextColor(getColor(R.color.orange_text));
+                btnAsStudent.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.studentbnw, 0,0);
+                btnAsStudent.setTextColor(getColor(R.color.grey_text));
+            }
+        });
+        ///////////
 
         //check boxes logics
         isStudentBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
