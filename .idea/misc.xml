@@ -26,7 +26,7 @@
         <entry key="app/src/main/res/drawable/ic_visibilityon.xml" value="0.21875" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.45" />
         <entry key="app/src/main/res/layout/activity_login_test.xml" value="0.14488348530901723" />
-        <entry key="app/src/main/res/layout/activity_register.xml" value="0.18775510204081633" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_register_test.xml" value="0.14488348530901723" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_student_home.xml" value="0.14488348530901723" />

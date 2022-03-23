@@ -123,33 +123,59 @@
             android:layout_height="55dp"
             android:layout_marginTop="26dp"
             android:backgroundTint="@color/light_brown"
-            android:text="Create Account" />
+            android:text="Create Account"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="17sp"/>
 
-        <Button
-            android:id="@+id/login_btn"
-            android:layout_width="364dp"
-            android:layout_height="55dp"
-            android:layout_marginTop="24dp"
-            android:backgroundTint="@color/light_brown"
-            android:text="Already have an account? Login" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="90sp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="-16sp"
+                android:text="Already have an account?"
+                android:textSize="14sp"/>
+
+            <Button
+                android:id="@+id/login_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="40sp"
+                android:layout_marginTop="0dp"
+                android:background="#00FFFFFF"
+                android:text="@string/login_underline"
+                android:textColor="@color/orange_text"
+                android:textAllCaps="false"
+                android:textSize="13sp" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-            <CheckBox
-                android:id="@+id/cbTeacher"
-                android:layout_width="182dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="Register as Teacher"/>
 
             <CheckBox
                 android:id="@+id/cb_student"
                 android:layout_width="182dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="Register as Student" />
+                android:text="Register as Student"
+                android:visibility="invisible" />
+
+            <CheckBox
+                android:id="@+id/cbTeacher"
+                android:layout_width="182dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Register as Teacher"
+                android:visibility="invisible" />
+
         </LinearLayout>
 
     </LinearLayout>

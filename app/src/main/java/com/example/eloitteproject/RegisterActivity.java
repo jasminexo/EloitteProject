@@ -64,6 +64,9 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View v) {
                 btnAsStudent.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.student, 0,0);
                 btnAsStudent.setTextColor(getColor(R.color.orange_text));
+                isStudentBox.setChecked(true);
+                isStudentBox.setClickable(false);
+                isStudentBox.setEnabled(false);
                 btnAsTeacher.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.teacherbnw, 0,0);
                 btnAsTeacher.setTextColor(getColor(R.color.grey_text));
             }
@@ -74,6 +77,9 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View v) {
                 btnAsTeacher.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.teacher, 0,0);
                 btnAsTeacher.setTextColor(getColor(R.color.orange_text));
+                isTeacherBox.setChecked(true);
+                isTeacherBox.setClickable(false);
+                isTeacherBox.setEnabled(false);
                 btnAsStudent.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.studentbnw, 0,0);
                 btnAsStudent.setTextColor(getColor(R.color.grey_text));
             }
@@ -136,6 +142,7 @@ public class RegisterActivity extends AppCompatActivity {
                             }
 
                             df.set(userInfo);
+
                             if(isTeacherBox.isChecked()) {
                                 startActivity(new Intent(getApplicationContext(), TeacherHomeActivity.class));
                             }
