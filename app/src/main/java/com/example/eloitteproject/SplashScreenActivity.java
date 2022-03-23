@@ -9,15 +9,15 @@ import android.widget.Button;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
-    Button studentLogin, teacherLogin;
+    Button btnLogin, btnSignUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-        studentLogin = findViewById(R.id.btnStudentLogin);
-        studentLogin.setOnClickListener(new View.OnClickListener() {
+        btnLogin = findViewById(R.id.btnLogin);
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SplashScreenActivity.this, LoginActivity.class);
@@ -25,8 +25,8 @@ public class SplashScreenActivity extends AppCompatActivity {
             }
         });
 
-        teacherLogin = findViewById(R.id.btnTeacherLogin);
-        teacherLogin.setOnClickListener(new View.OnClickListener() {
+        btnSignUp = findViewById(R.id.btnSignUp);
+        btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SplashScreenActivity.this, RegisterActivity.class);
