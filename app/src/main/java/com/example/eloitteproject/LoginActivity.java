@@ -21,7 +21,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class LoginActivity extends AppCompatActivity {
 
-    EditText fullName, email, password;
+    EditText email, password;
     Button loginBtn, goToRegister;
     boolean valid = true;
     FirebaseAuth mAuth;

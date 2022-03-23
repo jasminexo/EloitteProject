@@ -56,20 +56,18 @@
             android:layout_width="364dp"
             android:layout_height="55dp"
             android:layout_marginTop="16dp"
-            android:drawablePadding="12dp"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
             android:background="@drawable/custom_edittext"
             android:drawableStart="@drawable/custom_passwordicon"
-            android:drawableEnd="@drawable/ic_visibilityon"
-            android:drawableRight="@drawable/ic_visibilityon"
+            android:drawablePadding="12dp"
             android:ems="10"
             android:hint="Password"
             android:inputType="textPassword"
             android:minHeight="48dp"
-            android:textSize="15dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
             android:textColor="@color/grey_text"
-            android:textColorHint="@color/grey_text" />
+            android:textColorHint="@color/grey_text"
+            android:textSize="15dp" />
 
         <Button
             android:id="@+id/login_btn"
