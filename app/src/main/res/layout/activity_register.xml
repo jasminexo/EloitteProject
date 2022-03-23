@@ -26,34 +26,40 @@
             android:layout_gravity="left"
             android:layout_marginLeft="20dp"/>
 
-        <ImageView
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_width="match_parent"
-            android:layout_height="190dp"
-            android:layout_marginTop="30sp"
-            android:contentDescription="@string/todo"
-            android:src="@drawable/fox" />
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp">
 
             <Button
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="15dp"
-                android:background="@drawable/btn_round_corner"
-                android:drawableTop="@drawable/innovation"
+                android:layout_marginRight="40dp"
+                android:background="#00FFFFFF"
+                android:drawableTop="@drawable/student"
                 android:gravity="center|center_vertical"
                 android:onClick="goToPersonalityHome"
                 android:paddingTop="15dp"
-                android:text="Personality Quizzes"
+                android:text="As Student"
                 android:textAllCaps="false"
-                android:textColor="@color/brown_text"
-                android:textSize="17sp"
-                app:backgroundTint="@color/white" />
+                android:textColor="@color/orange_text"
+                android:textSize="15sp"
+                app:backgroundTint="@color/transparent" />
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="#00FFFFFF"
+                android:drawableTop="@drawable/teacher"
+                android:gravity="center|center_vertical"
+                android:onClick="goToPersonalityHome"
+                android:paddingTop="15dp"
+                android:text="As Teacher"
+                android:textAllCaps="false"
+                android:textColor="@color/orange_text"
+                android:textSize="15sp"
+                app:backgroundTint="@color/transparent" />
 
         </LinearLayout>
 
@@ -61,59 +67,63 @@
             android:id="@+id/et_fullname"
             android:layout_width="364dp"
             android:layout_height="55dp"
-            android:layout_marginTop="10dp"
-            android:backgroundTint="@color/brown_text"
-            android:drawableEnd="@drawable/ic_name"
-            android:ems="20"
+            android:layout_marginTop="20dp"
+            android:drawablePadding="12dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:background="@drawable/custom_edittext"
+            android:drawableStart="@drawable/custom_emailicon"
+            android:ems="10"
             android:hint="Full Name"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:textColor="@color/brown_text"
-            android:textColorHint="@color/brown_text" />
+            android:textSize="15dp"
+            android:textColor="@color/grey_text"
+            android:textColorHint="@color/grey_text" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/login_email"
             android:layout_width="364dp"
             android:layout_height="55dp"
-            android:layout_marginTop="8dp"
-            android:backgroundTint="@color/brown_text"
-            android:drawableEnd="@drawable/ic_email"
+            android:layout_marginTop="16dp"
+            android:drawablePadding="12dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:background="@drawable/custom_edittext"
+            android:drawableStart="@drawable/custom_emailicon"
             android:ems="10"
             android:hint="Email"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:textColor="@color/brown_text"
-            android:textColorHint="@color/brown_text"
-            app:layout_constraintEnd_toEndOf="@+id/et_fullname"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/et_fullname"
-            app:layout_constraintTop_toBottomOf="@+id/et_fullname" />
+            android:textSize="15dp"
+            android:textColor="@color/grey_text"
+            android:textColorHint="@color/grey_text" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/login_password"
             android:layout_width="364dp"
             android:layout_height="55dp"
             android:layout_marginTop="16dp"
-            android:backgroundTint="@color/brown_text"
-            android:drawableEnd="@drawable/ic_password"
+            android:background="@drawable/custom_edittext"
+            android:drawableStart="@drawable/custom_passwordicon"
+            android:drawablePadding="12dp"
             android:ems="10"
             android:hint="Password"
             android:inputType="textPassword"
             android:minHeight="48dp"
-            android:textColor="@color/brown_text"
-            android:textColorHint="@color/brown_text"
-            app:layout_constraintStart_toStartOf="@+id/login_email"
-            app:layout_constraintTop_toBottomOf="@+id/login_email" />
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textColor="@color/grey_text"
+            android:textColorHint="@color/grey_text"
+            android:textSize="15dp" />
 
         <Button
             android:id="@+id/go_to_register"
             android:layout_width="364dp"
             android:layout_height="55dp"
-            android:layout_marginTop="56dp"
+            android:layout_marginTop="26dp"
             android:backgroundTint="@color/light_brown"
-            android:text="Create Account"
-            app:layout_constraintStart_toStartOf="@+id/cb_student"
-            app:layout_constraintTop_toBottomOf="@+id/login_password" />
+            android:text="Create Account" />
 
         <Button
             android:id="@+id/login_btn"
@@ -121,28 +131,26 @@
             android:layout_height="55dp"
             android:layout_marginTop="24dp"
             android:backgroundTint="@color/light_brown"
-            android:text="Login" />
+            android:text="Already have an account? Login" />
 
-        <CheckBox
-            android:id="@+id/cbTeacher"
-            android:layout_width="182dp"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Register as Teacher"
-            app:layout_constraintEnd_toEndOf="@+id/login_password"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/cb_student"
-            app:layout_constraintTop_toBottomOf="@+id/login_password" />
+            android:orientation="horizontal">
+            <CheckBox
+                android:id="@+id/cbTeacher"
+                android:layout_width="182dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Register as Teacher"/>
 
-        <CheckBox
-            android:id="@+id/cb_student"
-            android:layout_width="182dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Register as Student"
-            app:layout_constraintStart_toStartOf="@+id/login_password"
-            app:layout_constraintTop_toBottomOf="@+id/login_password" />
-
+            <CheckBox
+                android:id="@+id/cb_student"
+                android:layout_width="182dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Register as Student" />
+        </LinearLayout>
 
     </LinearLayout>
 
