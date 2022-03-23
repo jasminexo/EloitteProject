@@ -28,14 +28,11 @@ import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
     EditText fullName, email, password;
-    Button registerBtn, goToLogin;
+    Button registerBtn, goToLogin, btnAsStudent, btnAsTeacher;
     boolean valid = true;
     FirebaseAuth mAuth;
     FirebaseFirestore fStore;
     CheckBox isTeacherBox, isStudentBox;
-//////////
-    Button btnAsStudent, btnAsTeacher;
-//////////
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,10 +51,10 @@ public class RegisterActivity extends AppCompatActivity {
         isTeacherBox = findViewById(R.id.cbTeacher);
         isStudentBox = findViewById(R.id.cb_student);
 
-        //////////
         btnAsStudent = findViewById(R.id.btnAsStudent);
         btnAsTeacher = findViewById(R.id.btnAsTeacher);
 
+        //when student button clicked, set teacher button as grey, check student checkbox
         btnAsStudent.setOnClickListener(new View.OnClickListener(){
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
@@ -67,10 +64,13 @@ public class RegisterActivity extends AppCompatActivity {
                 isStudentBox.setChecked(true);
                 isStudentBox.setClickable(false);
                 isStudentBox.setEnabled(false);
+
                 btnAsTeacher.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.teacherbnw, 0,0);
                 btnAsTeacher.setTextColor(getColor(R.color.grey_text));
             }
         });
+
+        //when teacher button clicked, set student button as grey, check teacher checkbox
         btnAsTeacher.setOnClickListener(new View.OnClickListener(){
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
@@ -84,7 +84,6 @@ public class RegisterActivity extends AppCompatActivity {
                 btnAsStudent.setTextColor(getColor(R.color.grey_text));
             }
         });
-        ///////////
 
         //check boxes logics
         isStudentBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

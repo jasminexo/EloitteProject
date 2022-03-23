@@ -22,7 +22,6 @@
             android:text="Sign Up"
             android:textColor="@color/brown_text"
             android:textSize="30sp"
-            android:textStyle="bold"
             android:layout_gravity="left"
             android:layout_marginLeft="20dp"/>
 
