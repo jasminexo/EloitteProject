@@ -41,12 +41,13 @@
             android:drawablePadding="12dp"
             android:paddingStart="12dp"
             android:paddingEnd="12dp"
-            android:backgroundTint="@color/brown_text"
-            android:drawableStart="@drawable/ic_email"
+            android:background="@drawable/custom_edittext"
+            android:drawableStart="@drawable/custom_emailicon"
             android:ems="10"
             android:hint="Email"
             android:inputType="textPersonName"
             android:minHeight="48dp"
+            android:textSize="15dp"
             android:textColor="@color/grey_text"
             android:textColorHint="@color/grey_text" />
 
@@ -58,12 +59,13 @@
             android:drawablePadding="12dp"
             android:paddingStart="12dp"
             android:paddingEnd="12dp"
-            android:backgroundTint="@color/brown_text"
-            android:drawableStart="@drawable/ic_password"
+            android:background="@drawable/custom_edittext"
+            android:drawableStart="@drawable/custom_passwordicon"
             android:ems="10"
             android:hint="Password"
             android:inputType="textPassword"
             android:minHeight="48dp"
+            android:textSize="15dp"
             android:textColor="@color/grey_text"
             android:textColorHint="@color/grey_text" />
 
