@@ -28,5 +28,15 @@
             android:onClick="goToStudentHomeActivity"
             android:text="STUDENT HOME" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvLeaderboard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="-30dp"
+            android:layout_marginRight="-30dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
     </LinearLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>

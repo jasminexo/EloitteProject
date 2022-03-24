@@ -16,4 +16,7 @@
     <color name="grey_text">#9D9FA0</color>
     <color name="darker_grey">#AAAAAA</color>
     <color name="transparent">#00FFFFFF</color>
+    <color name="gold">#e1b841</color>
+    <color name="silver">#c7c7c9</color>
+    <color name="bronze">#de9e7a</color>
 </resources>
