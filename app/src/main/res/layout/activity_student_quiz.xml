@@ -76,19 +76,51 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvQuestion"
+                android:id="@+id/tvQTitle"
                 android:layout_width="match_parent"
-                android:layout_height="390dp"
+                android:layout_height="420dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:background="@drawable/btn_round_corner"
                 android:backgroundTint="@color/white"
                 android:textColor="@color/brown_text"
                 android:elevation="10dp"
-                android:gravity="center"
-                android:padding="10dp"
-                android:text="\n\n\n\n\n\n\n\nThis quiz has 9 questions which each address a specific topic that contributes to your personality. "
+                android:padding="20dp"
+                android:text="\nMemory and Learning"
+                android:textStyle="bold"
                 android:textSize="18sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:src="@drawable/quiz_memory"
+                android:elevation="10dp"
+                android:layout_marginTop="-350dp"/>
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:elevation="20dp">
+
+                <RadioGroup>
+                    <RadioButton
+                        android:id="@+id/rbOptionA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="option A"/>
+                    <RadioButton
+                        android:id="@+id/rbOptionB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="option B"/>
+                    <RadioButton
+                        android:id="@+id/rbOptionC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="option C"/>
+                </RadioGroup>
+
+            </GridLayout>
 
             <Button
                 android:id="@+id/btnStartQuiz"
