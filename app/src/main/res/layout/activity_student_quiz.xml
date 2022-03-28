@@ -97,41 +97,61 @@
                 android:elevation="10dp"
                 android:layout_marginTop="-350dp"/>
 
-            <GridLayout
+            <RadioGroup
                 android:layout_width="wrap_content"
                 android:layout_height="200dp"
-                android:elevation="20dp">
+                android:elevation="20dp"
+                android:layout_gravity="left"
+                android:layout_marginLeft="30dp">
+                <RadioButton
+                    android:id="@+id/rbOptionA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="option A"
+                    android:textColor="@color/brown_text"
+                    android:textSize="18sp"
+                    android:layout_margin="10dp"/>
+                <RadioButton
+                    android:id="@+id/rbOptionB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="option B"
+                    android:textColor="@color/brown_text"
+                    android:textSize="18sp"
+                    android:layout_margin="10dp"/>
+                <RadioButton
+                    android:id="@+id/rbOptionC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="option C"
+                    android:textColor="@color/brown_text"
+                    android:textSize="18sp"
+                    android:layout_margin="10dp"/>
+            </RadioGroup>
 
-                <RadioGroup>
-                    <RadioButton
-                        android:id="@+id/rbOptionA"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="option A"/>
-                    <RadioButton
-                        android:id="@+id/rbOptionB"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="option B"/>
-                    <RadioButton
-                        android:id="@+id/rbOptionC"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="option C"/>
-                </RadioGroup>
 
-            </GridLayout>
-
-            <Button
-                android:id="@+id/btnStartQuiz"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:backgroundTint="@color/light_brown"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:layout_marginTop="105dp"
-                android:onClick="goToStudentHomeActivity"
-                android:text="Start Quiz" />
+                android:layout_height="70dp"
+                android:elevation="10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnStartQuiz"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="15dp"
+                    android:backgroundTint="@color/light_brown"
+                    android:elevation="12dp"
+                    android:onClick="goToStudentHomeActivity"
+                    android:text="Next"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
 
             <Button
                 android:id="@+id/btnStudentHome"
