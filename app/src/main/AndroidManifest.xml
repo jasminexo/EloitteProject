@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EloitteProject">
         <activity
+            android:name=".StudentQuizActivity"
+            android:exported="true" />
+        <activity
             android:name=".StudentProfileActivity"
             android:exported="true" />
         <activity

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StudentQuizHomeActivity"
+    tools:context=".StudentQuizActivity"
     android:background="@color/yellow_bg">
 
     <LinearLayout
@@ -68,49 +68,31 @@
                 android:textColor="@color/brown_text"
                 android:gravity="center"
                 android:padding="10dp"
-                android:elevation="10dp"
                 android:text="\n\n\n\n\n\n\n\nThis quiz has 9 questions which each address a specific topic that contributes to your personality. "
                 android:textSize="18sp" />
 
-            <ImageView
-                android:id="@+id/ivQuiz"
+            <Button
+                android:id="@+id/btnStartQuiz"
                 android:layout_width="wrap_content"
-                android:layout_height="190dp"
-                android:layout_marginTop="-360dp"
-                android:elevation="10dp"
-                android:src="@drawable/quiz_two"/>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="wrap_content"
-                android:layout_height="160dp"
-                android:elevation="10dp"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/btnStartQuiz"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="105dp"
-                    android:backgroundTint="@color/light_brown"
-                    android:elevation="12dp"
-                    android:onClick="goToStudentHomeActivity"
-                    android:text="Start Quiz"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                android:layout_height="50dp"
+                android:backgroundTint="@color/light_brown"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:layout_marginTop="105dp"
+                android:onClick="goToStudentHomeActivity"
+                android:text="Start Quiz" />
 
             <Button
                 android:id="@+id/btnStudentHome"
                 android:layout_width="wrap_content"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:backgroundTint="@color/orange"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
                 android:onClick="goToStudentHomeActivity"
                 android:text="STUDENT HOME" />
 
         </LinearLayout>
     </LinearLayout>
+
 </androidx.appcompat.widget.LinearLayoutCompat>
+

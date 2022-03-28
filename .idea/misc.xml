@@ -38,7 +38,7 @@
         <entry key="app/src/main/res/layout/activity_student_meditation.xml" value="0.13802083333333334" />
         <entry key="app/src/main/res/layout/activity_student_profile.xml" value="0.13802083333333334" />
         <entry key="app/src/main/res/layout/activity_student_quiz.xml" value="0.15208333333333332" />
-        <entry key="app/src/main/res/layout/activity_student_quiz_home.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_student_quiz_home.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_teacher_home.xml" value="0.14488348530901723" />
         <entry key="app/src/main/res/layout/leaderboard_item_row.xml" value="0.28863636363636364" />
       </map>
