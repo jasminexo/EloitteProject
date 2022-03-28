@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StudentQuizHomeActivity"
+    android:background="@color/yellow_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/yellow_bg"
+        android:layout_marginTop="50sp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginEnd="0dp">
+
+        <TextView
+            android:id="@+id/PersonalityQuizTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="Personality Quiz"
+            android:textColor="@color/brown_text"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/ivProfile"
+            android:layout_width="40sp"
+            android:layout_height="40sp"
+            android:layout_marginLeft="190sp"
+            android:onClick="goToStudentProfileActivity"
+            android:src="@drawable/fox" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/yellow_bg"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:textSize="17sp"
+            android:text="Determine your personality type to understand the best ways you can de-stres and improve your mental health and well-being."/>
+
+        <TextView
+            android:id="@+id/tvQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="390dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/btn_round_corner"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/brown_text"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="\n\n\n\n\n\n\n\nThis quiz has 9 questions which each address a specific topic that contributes to your personality. "
+            android:textSize="18sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="190dp"
+            android:layout_marginTop="-360dp"
+            android:src="@drawable/quiz_two"/>
+
+        <Button
+            android:id="@+id/btnStartQuiz"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/light_brown"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:layout_marginTop="105dp"
+            android:onClick="goToStudentHomeActivity"
+            android:text="Start Quiz" />
+
+        <Button
+            android:id="@+id/btnStudentHome"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/orange"
+            android:layout_marginTop="20dp"
+            android:onClick="goToStudentHomeActivity"
+            android:text="STUDENT HOME" />
+
+    </LinearLayout>
+    </LinearLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

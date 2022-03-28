@@ -22,7 +22,7 @@
             android:name=".StudentDashboardActivity"
             android:exported="true" />
         <activity
-            android:name=".StudentQuizActivity"
+            android:name=".StudentQuizHomeActivity"
             android:exported="true" />
         <activity
             android:name=".StudentCheckInActivity"
