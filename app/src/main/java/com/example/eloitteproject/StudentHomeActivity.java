@@ -55,5 +55,5 @@ public class StudentHomeActivity extends AppCompatActivity {
         Intent intent = new Intent (this, StudentProfileActivity.class);
         startActivity(intent);
     }
-
+    //testing
 }
