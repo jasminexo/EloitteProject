@@ -42,7 +42,7 @@ public class StudentHomeActivity extends AppCompatActivity {
     }
 
     public void goToLeaderboardActivity(View view){
-        Intent intent = new Intent (this, StudentLeaderboardActivity.class);
+        Intent intent = new Intent (this, ScoreFragment.class);
         startActivity(intent);
     }
 

@@ -10,37 +10,12 @@
         <entry key="..\:/Users/jasmi/AndroidStudioProjects/EloitteProject/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/jasmi/AndroidStudioProjects/EloitteProject/app/src/main/res/layout/activity_main.xml" value="0.28940217391304346" />
         <entry key="..\:/Users/jasmi/AndroidStudioProjects/EloitteProject/app/src/main/res/layout/activity_register.xml" value="0.1" />
-        <entry key="app/src/main/res/drawable/btn_circle.xml" value="0.21875" />
-        <entry key="app/src/main/res/drawable/btn_round_corner.xml" value="0.21875" />
-        <entry key="app/src/main/res/drawable/custom_edittext.xml" value="0.21875" />
-        <entry key="app/src/main/res/drawable/custom_emailicon.xml" value="0.21875" />
-        <entry key="app/src/main/res/drawable/custom_nameicon.xml" value="0.21875" />
-        <entry key="app/src/main/res/drawable/custom_passwordicon.xml" value="0.21875" />
-        <entry key="app/src/main/res/drawable/ic_email.xml" value="0.2994791666666667" />
-        <entry key="app/src/main/res/drawable/ic_email_focus.xml" value="0.21875" />
-        <entry key="app/src/main/res/drawable/ic_eye.xml" value="0.21875" />
-        <entry key="app/src/main/res/drawable/ic_name.xml" value="0.21875" />
-        <entry key="app/src/main/res/drawable/ic_name_focus.xml" value="0.21875" />
-        <entry key="app/src/main/res/drawable/ic_password.xml" value="0.2994791666666667" />
-        <entry key="app/src/main/res/drawable/ic_password_focus.xml" value="0.21875" />
-        <entry key="app/src/main/res/drawable/ic_user.xml" value="0.2994791666666667" />
-        <entry key="app/src/main/res/drawable/ic_visibilityoff.xml" value="0.21875" />
-        <entry key="app/src/main/res/drawable/ic_visibilityon.xml" value="0.21875" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.45" />
-        <entry key="app/src/main/res/layout/activity_login_test.xml" value="0.14488348530901723" />
-        <entry key="app/src/main/res/layout/activity_register.xml" value="0.375" />
-        <entry key="app/src/main/res/layout/activity_register_test.xml" value="0.14488348530901723" />
-        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/activity_student_checkin.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/activity_student_dashboard.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_student_home.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/activity_student_leaderboard.xml" value="0.15208333333333332" />
-        <entry key="app/src/main/res/layout/activity_student_meditation.xml" value="0.13802083333333334" />
-        <entry key="app/src/main/res/layout/activity_student_profile.xml" value="0.13802083333333334" />
-        <entry key="app/src/main/res/layout/activity_student_quiz.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_student_quiz_home.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_teacher_home.xml" value="0.14488348530901723" />
-        <entry key="app/src/main/res/layout/leaderboard_item_row.xml" value="0.28863636363636364" />
+        <entry key="app/src/main/res/layout/activity_student_home.xml" value="0.1515625" />
+        <entry key="app/src/main/res/layout/activity_student_leaderboard.xml" value="0.2346014492753623" />
+        <entry key="app/src/main/res/layout/activity_student_meditation.xml" value="0.2346014492753623" />
+        <entry key="app/src/main/res/layout/fragment_score.xml" value="0.49619237985438047" />
+        <entry key="app/src/main/res/layout/leaderboard_item_row.xml" value="0.577354119405383" />
+        <entry key="app/src/main/res/menu/menu_score.xml" value="0.2953125" />
       </map>
     </option>
   </component>
@@ -49,12 +24,5 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
-  </component>
-  <component name="VisualizationToolProject">
-    <option name="state">
-      <ProjectState>
-        <option name="scale" value="0.1" />
-      </ProjectState>
-    </option>
   </component>
 </project>

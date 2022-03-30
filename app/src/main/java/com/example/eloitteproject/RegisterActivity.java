@@ -3,6 +3,7 @@ package com.example.eloitteproject;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -15,8 +16,10 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -25,6 +28,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.Executors;
 
 public class RegisterActivity extends AppCompatActivity {
     EditText fullName, email, password;
@@ -142,6 +146,26 @@ public class RegisterActivity extends AppCompatActivity {
 
                             df.set(userInfo);
 
+                            String inputName = fullName.getText().toString();
+                            String inputEmail = email.getText().toString();
+                            String inputPassword = password.getText().toString();
+
+                            Toast.makeText(RegisterActivity.this, "Login Success!", Toast.LENGTH_SHORT);
+
+                            //User database
+                            UserDatabase uDB = Room.databaseBuilder(getApplicationContext(), UserDatabase.class, "user-database").build();
+                            //Get the new users uID from Firebase authentication
+                            FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+                            String currentUID = firebaseUser.getUid();
+
+                            //Insert new user into the user database
+                            Executors.newSingleThreadExecutor().execute(new Runnable() {
+                                @Override
+                                public void run() {
+                                    uDB.userDao().insertOneUser(new User(currentUID, inputName, inputPassword, inputEmail, 0));
+                                }
+                            });
+
                             if(isTeacherBox.isChecked()) {
                                 startActivity(new Intent(getApplicationContext(), TeacherHomeActivity.class));
                             }
@@ -168,6 +192,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
     }
+
     public boolean checkField(EditText textField) {
         if (textField.getText().toString().isEmpty()) {
             textField.setError("Error");
