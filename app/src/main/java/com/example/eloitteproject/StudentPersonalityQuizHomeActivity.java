@@ -11,7 +11,7 @@ public class StudentPersonalityQuizHomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student_quiz_home);
+        setContentView(R.layout.activity_student_personality_quiz_home);
     }
 
     public void goToStudentHomeActivity(View view){
