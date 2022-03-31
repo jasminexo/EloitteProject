@@ -6,12 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class StudentQuizHomeActivity extends AppCompatActivity {
+public class StudentPersonalityQuizActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student_quiz_home);
+        setContentView(R.layout.activity_student_quiz);
     }
 
     public void goToStudentHomeActivity(View view){

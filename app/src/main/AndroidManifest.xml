@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EloitteProject">
         <activity
-            android:name=".StudentQuizActivity"
+            android:name=".StudentPersonalityQuizActivity"
             android:exported="true" />
         <activity
             android:name=".StudentProfileActivity"
@@ -25,7 +25,7 @@
             android:name=".StudentDashboardActivity"
             android:exported="true" />
         <activity
-            android:name=".StudentQuizHomeActivity"
+            android:name=".StudentPersonalityQuizHomeActivity"
             android:exported="true" />
         <activity
             android:name=".StudentCheckInActivity"

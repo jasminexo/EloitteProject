@@ -32,7 +32,7 @@ public class StudentHomeActivity extends AppCompatActivity {
     }
 
     public void goToQuizActivity(View view){
-        Intent intent = new Intent (this, StudentQuizHomeActivity.class);
+        Intent intent = new Intent (this, StudentPersonalityQuizHomeActivity.class);
         startActivity(intent);
     }
 
