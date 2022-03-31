@@ -15,10 +15,30 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="STUDENT LEADERBOARD ACTIVITY"/>
+            android:orientation="horizontal"
+            android:layout_marginEnd="0dp">
+
+            <TextView
+                android:id="@+id/CheckInTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="Leaderboard"
+                android:textColor="@color/brown_text"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/ivProfile"
+                android:layout_width="40sp"
+                android:layout_height="40sp"
+                android:layout_marginLeft="210sp"
+                android:onClick="goToStudentProfileActivity"
+                android:src="@drawable/fox" />
+
+        </LinearLayout>
 
         <Button
             android:id="@+id/btnStudentHome"

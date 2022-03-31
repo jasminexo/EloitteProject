@@ -13,10 +13,14 @@
         <entry key="app/src/main/res/layout/activity_student_checkin.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_student_dashboard.xml" value="0.175" />
         <entry key="app/src/main/res/layout/activity_student_home.xml" value="0.1515625" />
-        <entry key="app/src/main/res/layout/activity_student_leaderboard.xml" value="0.2346014492753623" />
+        <entry key="app/src/main/res/layout/activity_student_leaderboard.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_student_meditation.xml" value="0.2346014492753623" />
+        <entry key="app/src/main/res/layout/activity_student_meditation_detail.xml" value="0.13072916666666667" />
+        <entry key="app/src/main/res/layout/activity_student_meditation_home.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_student_personality_quiz_detail.xml" value="0.13072916666666667" />
         <entry key="app/src/main/res/layout/activity_student_personality_quiz_home.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/layout/activity_student_quiz.xml" value="0.175" />
+        <entry key="app/src/main/res/layout/boarditem.xml" value="0.13072916666666667" />
         <entry key="app/src/main/res/layout/fragment_score.xml" value="0.49619237985438047" />
         <entry key="app/src/main/res/layout/leaderboard_item_row.xml" value="0.577354119405383" />
         <entry key="app/src/main/res/menu/menu_score.xml" value="0.2953125" />

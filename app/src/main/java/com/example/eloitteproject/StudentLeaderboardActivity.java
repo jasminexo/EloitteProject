@@ -18,4 +18,9 @@ public class StudentLeaderboardActivity extends AppCompatActivity {
         Intent intent = new Intent (this, StudentHomeActivity.class);
         startActivity(intent);
     }
+
+    public void goToStudentProfileActivity(View view){
+        Intent intent = new Intent (this, StudentProfileActivity.class);
+        startActivity(intent);
+    }
 }
