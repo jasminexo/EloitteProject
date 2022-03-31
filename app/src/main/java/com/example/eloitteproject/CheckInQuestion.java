@@ -47,11 +47,11 @@ public class CheckInQuestion {
 
     public static ArrayList<CheckInQuestion> getCheckInQuestionList(){
         ArrayList <CheckInQuestion> CheckInQuestionList = new ArrayList<>();
-        CheckInQuestionList.add(new CheckInQuestion("q1", "How are you feeling today?", "Happy", "Neutral", "Tired", "Sad", "Frustrated"));
-        CheckInQuestionList.add(new CheckInQuestion("q2", "I felt little interest in doing things.", "Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"));
-        CheckInQuestionList.add(new CheckInQuestion("q3", "I felt tired or had very little energy.", "Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"));
-        CheckInQuestionList.add(new CheckInQuestion("q4", "I felt bad for myself or let someone down.", "Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"));
-        CheckInQuestionList.add(new CheckInQuestion("q5", "I had trouble concentrating on things.", "Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"));
+        CheckInQuestionList.add(new CheckInQuestion("q1", "\n\nI had a good day today.", "Happy", "Neutral", "Tired", "Sad", "Frustrated"));
+        CheckInQuestionList.add(new CheckInQuestion("q2", "\n\nI felt little interest in doing things.", "Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"));
+        CheckInQuestionList.add(new CheckInQuestion("q3", "\n\nI felt tired or had very little energy.", "Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"));
+        CheckInQuestionList.add(new CheckInQuestion("q4", "\n\nI felt bad for myself or let someone down.", "Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"));
+        CheckInQuestionList.add(new CheckInQuestion("q5", "\n\nI had trouble concentrating on things.", "Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"));
 
         return CheckInQuestionList;
     }

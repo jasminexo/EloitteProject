@@ -70,63 +70,77 @@
             <TextView
                 android:id="@+id/tvQTitle"
                 android:layout_width="match_parent"
-                android:layout_height="420dp"
+                android:layout_height="280dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:background="@drawable/btn_round_corner"
                 android:backgroundTint="@color/white"
-                android:textColor="@color/brown_text"
                 android:elevation="10dp"
+                android:gravity="center_horizontal"
                 android:padding="20dp"
-                android:text="\nHow are you feeling today?"
-                android:textStyle="bold"
-                android:textSize="18sp" />
+                android:text="\n\nI had a good day today."
+                android:textColor="@color/brown_text"
+                android:textSize="21sp"
+                android:textStyle="bold" />
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="80dp"
-                android:src="@drawable/quiz_memory"
+                android:layout_height="100dp"
+                android:src="@drawable/q_one"
                 android:elevation="10dp"
-                android:layout_marginTop="-350dp"/>
+                android:layout_marginTop="-140dp"/>
 
-            <RadioGroup
-                android:layout_width="350dp"
-                android:layout_height="200dp"
-                android:elevation="20dp"
-                android:layout_gravity="left"
-                android:layout_marginLeft="30dp"
-                android:orientation="horizontal">
-                <RadioButton
-                    android:id="@+id/rbOptionA"
-                    android:layout_width="wrap_content"
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="90dp"
+                android:layout_marginRight="10dp"
+                android:max="5"
+                android:min="1"
+                android:progress="3"
+                android:progressDrawable="@drawable/seek_bar"
+                android:thumb="@drawable/seek_bar_thumb" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+
+                <TextView
+                    android:layout_width="60dp"
                     android:layout_height="wrap_content"
-                    android:text="option A"
+                    android:layout_gravity="start"
+                    android:gravity="center_horizontal"
+                    android:text="Strongly Disagree"
                     android:textColor="@color/brown_text"
-                    android:textSize="18sp"
-                    android:layout_margin="10dp"
-                    android:drawableTop="@drawable/quiz"
-                    android:button="@color/transparent"
-                    android:backgroundTint="@color/orange"/>
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
-                <RadioButton
-                    android:id="@+id/rbOptionB"
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="60dp"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:text="option B"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="105dp"
+                    android:gravity="center_horizontal"
+                    android:text="Neutral"
                     android:textColor="@color/brown_text"
-                    android:textSize="18sp" />
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
-                <RadioButton
-                    android:id="@+id/rbOptionC"
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="60dp"
                     android:layout_height="wrap_content"
-                    android:text="option C"
+                    android:layout_marginLeft="95dp"
+                    android:gravity="center_horizontal"
+                    android:text="Strongly Agree"
                     android:textColor="@color/brown_text"
-                    android:textSize="18sp"
-                    android:layout_margin="10dp"/>
-            </RadioGroup>
-
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
