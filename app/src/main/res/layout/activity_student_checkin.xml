@@ -103,7 +103,10 @@
                     android:text="option A"
                     android:textColor="@color/brown_text"
                     android:textSize="18sp"
-                    android:layout_margin="10dp"/>
+                    android:layout_margin="10dp"
+                    android:drawableTop="@drawable/quiz"
+                    android:button="@color/transparent"
+                    android:backgroundTint="@color/orange"/>
 
                 <RadioButton
                     android:id="@+id/rbOptionB"
