@@ -19,6 +19,9 @@ public class CheckInQuestion {
     @SerializedName("Question")
     @Expose
     private String question;
+    @SerializedName("Image")
+    @Expose
+    private Integer image;
     @SerializedName("Option1")
     @Expose
     private String option1;
@@ -35,9 +38,10 @@ public class CheckInQuestion {
     @Expose
     private String option5;
 
-    public CheckInQuestion(String qID, String question, String option1, String option2, String option3, String option4, String option5) {
+    public CheckInQuestion(String qID, String question, Integer image, String option1, String option2, String option3, String option4, String option5) {
         this.qID = qID;
         this.question = question;
+        this.image = image;
         this.option1 = option1;
         this.option2 = option2;
         this.option3 = option3;
@@ -47,11 +51,11 @@ public class CheckInQuestion {
 
     public static ArrayList<CheckInQuestion> getCheckInQuestionList(){
         ArrayList <CheckInQuestion> CheckInQuestionList = new ArrayList<>();
-        CheckInQuestionList.add(new CheckInQuestion("q1", "\n\nI had a good day today.", "Happy", "Neutral", "Tired", "Sad", "Frustrated"));
-        CheckInQuestionList.add(new CheckInQuestion("q2", "\n\nI felt little interest in doing things.", "Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"));
-        CheckInQuestionList.add(new CheckInQuestion("q3", "\n\nI felt tired or had very little energy.", "Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"));
-        CheckInQuestionList.add(new CheckInQuestion("q4", "\n\nI felt bad for myself or let someone down.", "Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"));
-        CheckInQuestionList.add(new CheckInQuestion("q5", "\n\nI had trouble concentrating on things.", "Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"));
+        CheckInQuestionList.add(new CheckInQuestion("q1", "\n\nI had a good day today.", R.drawable.q_one, "Strongly Disagree","Disagree", "Neutral", "Agree", "Strongly Agree"));
+        CheckInQuestionList.add(new CheckInQuestion("q2", "\n\nI felt little interest in doing things.", R.drawable.q_two, "Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"));
+        CheckInQuestionList.add(new CheckInQuestion("q3", "\n\nI felt tired or had very little energy.", R.drawable.q_three,"Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"));
+        CheckInQuestionList.add(new CheckInQuestion("q4", "\n\nI felt bad for myself or let someone down.", R.drawable.q_four,"Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"));
+        CheckInQuestionList.add(new CheckInQuestion("q5", "\n\nI had trouble concentrating on things.", R.drawable.q_five,"Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"));
 
         return CheckInQuestionList;
     }
@@ -71,6 +75,14 @@ public class CheckInQuestion {
 
     public void setQuestion(String question) {
         this.question = question;
+    }
+
+    public Integer getImage() {
+        return image;
+    }
+
+    public void setImage(Integer image) {
+        this.image = image;
     }
 
     public String getOption1() {

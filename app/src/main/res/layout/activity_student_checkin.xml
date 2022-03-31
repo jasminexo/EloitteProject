@@ -68,7 +68,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvQTitle"
+                android:id="@+id/tvQuestion"
                 android:layout_width="match_parent"
                 android:layout_height="280dp"
                 android:layout_marginLeft="16dp"
@@ -84,6 +84,7 @@
                 android:textStyle="bold" />
 
             <ImageView
+                android:id="@+id/ivImage"
                 android:layout_width="wrap_content"
                 android:layout_height="100dp"
                 android:src="@drawable/q_one"
@@ -124,7 +125,7 @@
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="105dp"
+                    android:layout_marginLeft="100dp"
                     android:gravity="center_horizontal"
                     android:text="Neutral"
                     android:textColor="@color/brown_text"
@@ -134,7 +135,7 @@
                 <TextView
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="95dp"
+                    android:layout_marginLeft="90dp"
                     android:gravity="center_horizontal"
                     android:text="Strongly Agree"
                     android:textColor="@color/brown_text"
