@@ -15,18 +15,149 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="STUDENT CHECK IN ACTIVITY"/>
+            android:orientation="horizontal"
+            android:layout_marginEnd="0dp">
 
-        <Button
-            android:id="@+id/btnStudentHome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/orange"
-            android:onClick="goToStudentHomeActivity"
-            android:text="STUDENT HOME" />
+            <TextView
+                android:id="@+id/CheckInTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="Daily Check-In"
+                android:textColor="@color/brown_text"
+                android:textSize="20sp" />
 
+            <ImageView
+                android:id="@+id/ivProfile"
+                android:layout_width="40sp"
+                android:layout_height="40sp"
+                android:layout_marginLeft="190sp"
+                android:onClick="goToStudentProfileActivity"
+                android:src="@drawable/fox" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/yellow_bg"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvQuestionNumber"
+                android:layout_width="88dp"
+                android:layout_height="54dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="-27dp"
+                android:background="@drawable/btn_round_corner"
+                android:backgroundTint="@color/orange"
+                android:elevation="20dp"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="1/5"
+                android:textColor="@color/brown_text"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvQTitle"
+                android:layout_width="match_parent"
+                android:layout_height="420dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/btn_round_corner"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/brown_text"
+                android:elevation="10dp"
+                android:padding="20dp"
+                android:text="\nHow are you feeling today?"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:src="@drawable/quiz_memory"
+                android:elevation="10dp"
+                android:layout_marginTop="-350dp"/>
+
+            <RadioGroup
+                android:layout_width="350dp"
+                android:layout_height="200dp"
+                android:elevation="20dp"
+                android:layout_gravity="left"
+                android:layout_marginLeft="30dp"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/rbOptionA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="option A"
+                    android:textColor="@color/brown_text"
+                    android:textSize="18sp"
+                    android:layout_margin="10dp"/>
+
+                <RadioButton
+                    android:id="@+id/rbOptionB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="option B"
+                    android:textColor="@color/brown_text"
+                    android:textSize="18sp" />
+
+                <RadioButton
+                    android:id="@+id/rbOptionC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="option C"
+                    android:textColor="@color/brown_text"
+                    android:textSize="18sp"
+                    android:layout_margin="10dp"/>
+            </RadioGroup>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:elevation="10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnNext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="15dp"
+                    android:backgroundTint="@color/light_brown"
+                    android:elevation="12dp"
+                    android:text="Next"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <Button
+                android:id="@+id/btnStudentHome"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:backgroundTint="@color/orange"
+                android:layout_marginTop="20dp"
+                android:onClick="goToStudentHomeActivity"
+                android:text="STUDENT HOME" />
+
+        </LinearLayout>
     </LinearLayout>
+
 </androidx.appcompat.widget.LinearLayoutCompat>
+

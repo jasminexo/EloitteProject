@@ -47,7 +47,7 @@ public class StudentHomeActivity extends AppCompatActivity {
     }
 
     public void goToMeditationActivity(View view){
-        Intent intent = new Intent (this, StudentMeditationActivity.class);
+        Intent intent = new Intent (this, StudentMeditationHomeActivity.class);
         startActivity(intent);
     }
 

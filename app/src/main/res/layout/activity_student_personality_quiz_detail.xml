@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StudentPersonalityQuizActivity"
+    tools:context=".StudentPersonalityQuizDetailActivity"
     android:background="@color/yellow_bg">
 
     <LinearLayout
@@ -137,13 +137,12 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/btnStartQuiz"
+                    android:id="@+id/btnNext"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:layout_marginTop="15dp"
                     android:backgroundTint="@color/light_brown"
                     android:elevation="12dp"
-                    android:onClick="goToStudentHomeActivity"
                     android:text="Next"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
