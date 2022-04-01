@@ -80,6 +80,9 @@ public class StudentCheckInActivity extends AppCompatActivity {
     }
 
     private void displayCheckInQuestion() {
+        tvHours.setVisibility(View.GONE);
+        tvMinutes.setVisibility(View.GONE);
+        tvSeconds.setVisibility(View.GONE);
         //Assign a question from the bank
         Executors.newSingleThreadExecutor().execute(new Runnable() {
             @Override
@@ -150,43 +153,47 @@ public class StudentCheckInActivity extends AppCompatActivity {
 
                                     final String[] hourMinSec = time.split(":");
 
+                                    tvHours.setText(hourMinSec[0]);
+                                    tvMinutes.setText(hourMinSec[1]);
+                                    tvSeconds.setText(hourMinSec[2]);
                                 }
                             });
                         }
 
                         @Override
                         public void onFinish() {
-
+                            currentQuestionPosition = 1;
+                            //Assign a question from the bank
+                            Executors.newSingleThreadExecutor().execute(new Runnable() {
+                                @Override
+                                public void run() {
+                                    for(CheckInQuestion q : CheckInQuestion.getCheckInQuestionList()){
+                                        qDB.checkInQuestionDao().insert(q);
+                                    }
+                                    qID = "q"+ currentQuestionPosition;
+                                    CheckInQuestion desiredQuestion = qDB.checkInQuestionDao().getCheckInQuestion(qID);
+                                    String checkInQuestion = desiredQuestion.getQuestion();
+                                    Integer checkInImage = desiredQuestion.getImage();
+                                    runOnUiThread(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            tvQuestionNumber.setText(currentQuestionPosition+"/5");
+                                            tvQuestion.setText(checkInQuestion);
+                                            ivImage.setImageResource(checkInImage);
+                                        }
+                                    });
+                                }
+                            });
                         }
                     }.start();
 
-
                     tvQuestionNumber.setText("5/5");
-                    tvQuestion.setText("\n\nCheck-In Complete! Come back in\ntime");
+                    tvQuestion.setText("\n\nCheck-In Complete! Come back in:");
                     ivImage.setImageResource(R.drawable.clock);
                 } else {
                     currentQuestionPosition++;
                     //Assign a question from the bank
-                    Executors.newSingleThreadExecutor().execute(new Runnable() {
-                        @Override
-                        public void run() {
-                            for(CheckInQuestion q : CheckInQuestion.getCheckInQuestionList()){
-                                qDB.checkInQuestionDao().insert(q);
-                            }
-                            qID = "q"+ currentQuestionPosition;
-                            CheckInQuestion desiredQuestion = qDB.checkInQuestionDao().getCheckInQuestion(qID);
-                            String checkInQuestion = desiredQuestion.getQuestion();
-                            Integer checkInImage = desiredQuestion.getImage();
-                            runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    tvQuestionNumber.setText(currentQuestionPosition+"/5");
-                                    tvQuestion.setText(checkInQuestion);
-                                    ivImage.setImageResource(checkInImage);
-                                }
-                            });
-                        }
-                    });
+                    displayCheckInQuestion();
                 }
             }
         });
