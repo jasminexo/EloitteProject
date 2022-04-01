@@ -17,7 +17,7 @@ public class StudentCheckInActivity extends AppCompatActivity {
 
     private TextView tvQuestionNumber, tvQuestion;
     private ImageView ivImage;
-    private Button btnNext;
+    private Button btnNext, btnReturnHome;
     private SeekBar seekBar;
     private String qID;
     CheckInQuestionDatabase qDB;
@@ -107,6 +107,10 @@ public class StudentCheckInActivity extends AppCompatActivity {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (currentQuestionPosition == 5){
+                    btnNext.setVisibility(View.GONE);
+                    btnReturnHome.setVisibility(View.VISIBLE);
+                }
                 currentQuestionPosition++;
                 //Assign a question from the bank
                 Executors.newSingleThreadExecutor().execute(new Runnable() {

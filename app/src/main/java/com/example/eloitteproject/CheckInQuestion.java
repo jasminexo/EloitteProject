@@ -51,7 +51,7 @@ public class CheckInQuestion {
 
     public static ArrayList<CheckInQuestion> getCheckInQuestionList(){
         ArrayList <CheckInQuestion> CheckInQuestionList = new ArrayList<>();
-        CheckInQuestionList.add(new CheckInQuestion("q1", "\n\nI had a good day today.", R.drawable.q_one, "Strongly Disagree","Disagree", "Neutral", "Agree", "Strongly Agree"));
+        CheckInQuestionList.add(new CheckInQuestion("q1", "\n\nI had a rough day today.", R.drawable.q_one, "Strongly Disagree","Disagree", "Neutral", "Agree", "Strongly Agree"));
         CheckInQuestionList.add(new CheckInQuestion("q2", "\n\nI felt little interest in doing things.", R.drawable.q_two, "Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"));
         CheckInQuestionList.add(new CheckInQuestion("q3", "\n\nI felt tired or had very little energy.", R.drawable.q_three,"Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"));
         CheckInQuestionList.add(new CheckInQuestion("q4", "\n\nI felt bad for myself or let someone down.", R.drawable.q_four,"Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"));

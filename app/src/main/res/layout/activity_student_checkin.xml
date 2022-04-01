@@ -78,7 +78,7 @@
                 android:elevation="10dp"
                 android:gravity="center_horizontal"
                 android:padding="20dp"
-                android:text="\n\nI had a good day today."
+                android:text="\n\nI had a rough day today."
                 android:textColor="@color/brown_text"
                 android:textSize="21sp"
                 android:textStyle="bold" />
@@ -159,8 +159,24 @@
                     android:text="Next"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
+                    android:visibility="visible"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/btnReturnHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="15dp"
+                    android:backgroundTint="@color/light_brown"
+                    android:elevation="12dp"
+                    android:text="Return Home"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:visibility="gone"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:onClick="goToStudentHomeActivity"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
