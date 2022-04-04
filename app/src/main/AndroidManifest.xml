@@ -15,6 +15,7 @@
         <activity
             android:name=".StudentPersonalityQuizDetailActivity"
             android:exported="true" />
+
         <activity
             android:name=".StudentProfileActivity"
             android:exported="true" />
@@ -23,6 +24,9 @@
             android:exported="true" />
         <activity
             android:name=".StudentLeaderboardActivity"
+            android:exported="true" />
+        <activity
+            android:name=".LeaderboardActivity"
             android:exported="true" />
         <activity
             android:name=".StudentDashboardActivity"

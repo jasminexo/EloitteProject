@@ -49,4 +49,15 @@ public class Click {
         return clickList;
     }
 
+    //Getting an individual click
+    public static int getClick(int clickId){
+        int selectedClick = 0;
+        for(Click c : Click.getClickList()){
+            if (c.getId() == clickId){
+                selectedClick = clickId;
+            }
+        }
+        return selectedClick;
+    }
+
 }
