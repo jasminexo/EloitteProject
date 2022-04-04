@@ -31,7 +31,7 @@ public class StudentCheckInActivity extends AppCompatActivity {
     private String qID, countDownTime;
     CheckInQuestionDatabase checkinDB;
     boolean quizCompleted;
-    int currentScore = 0, currentQuestionPosition = 1, seekBarProgress = 3, currentArrayPosition = 0;
+    int currentScore = 0, currentQuestionPosition = 1, seekBarProgress = 3;
     int q1Score, q2Score, q3Score, q4Score, q5Score;
     long duration;
 

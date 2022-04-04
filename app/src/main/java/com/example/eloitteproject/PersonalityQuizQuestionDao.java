@@ -11,11 +11,11 @@ public interface PersonalityQuizQuestionDao {
     void insert (PersonalityQuizQuestion...personalityQuizQuestion);
 
     @Query("SELECT * FROM personalityQuizQuestion WHERE qID =:qID")
-    PersonalityQuizQuestion getPersonalityQuizQuestionList(String qID);
+    PersonalityQuizQuestion getPersonalityQuizQuestion(String qID);
 
     //Count number of questions in the database
     @Query("SELECT COUNT(qID) FROM personalityquizquestion")
-    int getPersonalityQuizQuestionList();
+    int getPersonalityQuizQuestionCount();
 
     @Query("SELECT * FROM personalityquizquestion")
     PersonalityQuizQuestion  getAllQuestions();
