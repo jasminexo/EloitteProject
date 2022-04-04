@@ -99,6 +99,7 @@
                 android:layout_marginTop="-350dp"/>
 
             <RadioGroup
+                android:id="@+id/rgOptions"
                 android:layout_width="350dp"
                 android:layout_height="200dp"
                 android:elevation="20dp"
