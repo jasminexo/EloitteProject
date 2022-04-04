@@ -42,6 +42,8 @@ public class CheckInQuestion {
         this.qID = qID;
         this.question = question;
         this.image = image;
+
+        //not required
         this.option1 = option1;
         this.option2 = option2;
         this.option3 = option3;

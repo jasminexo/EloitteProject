@@ -23,4 +23,9 @@ public class StudentPersonalityQuizHomeActivity extends AppCompatActivity {
         Intent intent = new Intent (this, StudentProfileActivity.class);
         startActivity(intent);
     }
+
+    public void goToPersonalityQuizDetailActivity(View view){
+        Intent intent = new Intent (this, StudentPersonalityQuizDetailActivity.class);
+        startActivity(intent);
+    }
 }

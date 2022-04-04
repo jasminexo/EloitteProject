@@ -29,7 +29,7 @@ public class StudentCheckInActivity extends AppCompatActivity {
     private Button btnNext, btnReturnHome;
     private SeekBar seekBar;
     private String qID, countDownTime;
-    CheckInQuestionDatabase qDB;
+    CheckInQuestionDatabase checkinDB;
     boolean quizCompleted;
     int currentScore = 0, currentQuestionPosition = 1, seekBarProgress = 3, currentArrayPosition = 0;
     int q1Score, q2Score, q3Score, q4Score, q5Score;
@@ -53,7 +53,7 @@ public class StudentCheckInActivity extends AppCompatActivity {
         seekBar = findViewById(R.id.seekBar);
 
         //Database
-        qDB = Room.databaseBuilder(getApplicationContext(), CheckInQuestionDatabase.class ,
+        checkinDB = Room.databaseBuilder(getApplicationContext(), CheckInQuestionDatabase.class ,
                 "check-in-question-database")
                 .build();
 
@@ -103,10 +103,10 @@ public class StudentCheckInActivity extends AppCompatActivity {
                 @Override
                 public void run() {
                     for(CheckInQuestion q : CheckInQuestion.getCheckInQuestionList()){
-                        qDB.checkInQuestionDao().insert(q);
+                        checkinDB.checkInQuestionDao().insert(q);
                     }
                     qID = "q"+ currentQuestionPosition;
-                    CheckInQuestion desiredQuestion = qDB.checkInQuestionDao().getCheckInQuestion(qID);
+                    CheckInQuestion desiredQuestion = checkinDB.checkInQuestionDao().getCheckInQuestion(qID);
                     String checkInQuestion = desiredQuestion.getQuestion();
                     Integer checkInImage = desiredQuestion.getImage();
                     runOnUiThread(new Runnable() {

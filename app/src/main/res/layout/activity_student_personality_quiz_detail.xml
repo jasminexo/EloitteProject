@@ -34,7 +34,7 @@
                 android:id="@+id/ivProfile"
                 android:layout_width="40sp"
                 android:layout_height="40sp"
-                android:layout_marginLeft="190sp"
+                android:layout_marginLeft="170sp"
                 android:onClick="goToStudentProfileActivity"
                 android:src="@drawable/fox" />
 

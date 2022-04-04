@@ -93,7 +93,7 @@
                     android:layout_marginTop="105dp"
                     android:backgroundTint="@color/light_brown"
                     android:elevation="12dp"
-                    android:onClick="goToStudentHomeActivity"
+                    android:onClick="goToPersonalityQuizDetailActivity"
                     android:text="Start Quiz"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
