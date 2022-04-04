@@ -1,19 +1,22 @@
 package com.example.eloitteproject;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
 import android.content.Intent;
-import android.os.Build;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.util.concurrent.Executors;
 
@@ -124,7 +127,8 @@ public class StudentPersonalityQuizDetailActivity extends AppCompatActivity {
                                 "\n - Take time doing slow exercises and away from learning will help significantly (idleness is very helpful)";
                         readMoreLink = "https://medium.com/borealism/connecting-the-dots-why-an-idle-mind-is-more-important-than-ever-14c5f7c99460";
                     }
-                    //show bottom bar popup view thing
+                    //show results in bottom bar popup
+                    showResultBottomScreen();
                 } else {
                     //saving the score for each question - need to find a way to upload into database with date and time
                     if (currentQuestionPosition == 1){
@@ -255,13 +259,47 @@ public class StudentPersonalityQuizDetailActivity extends AppCompatActivity {
                             Toast.makeText(StudentPersonalityQuizDetailActivity.this, "Please select an option", Toast.LENGTH_SHORT).show();
                         }
                     }
-//                    currentQuestionPosition++;
-                    //Assign a question from the bank
-//                    displayCheckInQuestion();
                     rgOptions.clearCheck();
                 }
             }
         });
+    }
+
+    //shows the results in bottom screen
+    private void showResultBottomScreen(){
+        //Instantiate new bottom sheet dialog
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(StudentPersonalityQuizDetailActivity.this);
+        //Inflate the view so that users are able to view it
+        View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.personality_result, (LinearLayout)findViewById(R.id.llResult));
+        TextView tvPersonalityType = bottomSheetView.findViewById(R.id.tvPersonalityType);
+        tvPersonalityType.setText(personalityType);
+        TextView tvPersonalityDesc = bottomSheetView.findViewById(R.id.tvPersonalityDesc);
+        tvPersonalityDesc.setText(personalityDesc);
+
+        Button btnSuggestions = bottomSheetView.findViewById(R.id.btnSuggestions);
+        //when read more button clicked, open browser
+        btnSuggestions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(readMoreLink));
+                startActivity(intent);
+            }
+        });
+
+        //returns to student home screen
+        Button btnReturnToHome = bottomSheetView.findViewById(R.id.btnReturntoHome);
+        btnReturnToHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(StudentPersonalityQuizDetailActivity.this, StudentHomeActivity.class);
+                startActivity(intent);
+                bottomSheetDialog.dismiss();
+            }
+        });
+        //Cancels bottom sheet dialog when user clicks another part of the screen
+        bottomSheetDialog.setCancelable(false);
+        bottomSheetDialog.setContentView(bottomSheetView);
+        bottomSheetDialog.show();
     }
 
     public void goToStudentHomeActivity(View view){
