@@ -101,7 +101,7 @@ public class StudentPersonalityQuizDetailActivity extends AppCompatActivity {
                     } else if (rbOptionC.isChecked()){
                         q9Score = 3;
                     } else {
-                        Toast.makeText(StudentPersonalityQuizDetailActivity.this, "Please select an option", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Please select an option", Toast.LENGTH_SHORT).show();
                     }
                     totalScore = q1Score+q2Score+q3Score+q4Score+q5Score+q6Score+q7Score+q8Score+q9Score;
                     if (totalScore <= 9) {
@@ -141,7 +141,7 @@ public class StudentPersonalityQuizDetailActivity extends AppCompatActivity {
                             currentQuestionPosition++;
                             displayCheckInQuestion();
                         } else {
-                            Toast.makeText(StudentPersonalityQuizDetailActivity.this, "Please select an option", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Please select an option", Toast.LENGTH_SHORT).show();
                         }
                     } else if (currentQuestionPosition == 2){
                         if (rbOptionA.isChecked()){
