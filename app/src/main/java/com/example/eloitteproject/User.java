@@ -86,8 +86,9 @@ public class User {
 
     public static ArrayList <User> getUserList(){
         ArrayList <User> userList = new ArrayList<>();
-        userList.add(new User("9jAOtjCTl6ex3SB0o9R7IZubomc2", "Justin", "asdasd1", "3200" , 6969));
-        userList.add(new User("IJHt21Woi8VyjhAnDkVqaMlvPM52", "Tiffany", "asdasd1", "2000"  , 420420));
+        userList.add(new User("V5fbEq1O65TJnoPVnd4VjnrOBtK2", "Rikki Dinh", "111111", "rikki@student.edu.au" , 69));
+        userList.add(new User("6xLDbp1JOFgsBXtuXnjJxo3U5WG3", "Mickle Pickles", "123456", "micklepickles@student.edu.au"  , 420));
+        userList.add(new User("yxsL0jMN4scp8ytEMQwOJdoGtxs2", "Milo Lim", "123456", "milo@student.edu.au"  , 420));
         return userList;
     }
 
