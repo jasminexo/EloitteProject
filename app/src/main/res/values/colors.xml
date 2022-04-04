@@ -20,4 +20,6 @@
     <color name="silver">#c7c7c9</color>
     <color name="bronze">#de9e7a</color>
     <color name="light_green">#c0ffde</color>
+    <color name="dark_grey_goals">#212529</color>
+    <color name="light_grey_goals">#6C757D</color>
 </resources>

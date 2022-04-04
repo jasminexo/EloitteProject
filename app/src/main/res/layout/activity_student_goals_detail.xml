@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FBF6F4"
+        tools:context=".StudentGoalsDetailActivity">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="@color/yellow_bg"
+        android:layout_height="198dp" >
+        <TextView
+            android:id="@+id/titlePage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Create New Goals"
+            android:textAlignment="center"
+            android:textColor="#645D5D"
+            android:layout_marginBottom="28dp"
+            android:textSize="22sp" />
+        <View
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:background="@color/yellow_bg"
+            android:layout_height="1dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="-40dp"
+        android:orientation="vertical"
+        android:background="@drawable/bg_item_goals"
+        android:paddingTop="22dp"
+        android:paddingBottom="22dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <LinearLayout
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            
+            <TextView
+                android:id="@+id/addTitle"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:text="Title"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/etTitle"
+                android:inputType="text"
+                android:background="@drawable/bg_input_goal"
+                android:hint="What is your goal?"
+                android:paddingLeft="12dp"
+                android:textColor="@color/black"
+                android:textColorHint="#B5B5B5"
+                android:layout_width="match_parent"
+                android:layout_height="55dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/addDesc"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:text="Description"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/etDesc"
+                android:inputType="text"
+                android:background="@drawable/bg_input_goal"
+                android:hint="Describe your goal."
+                android:paddingLeft="12dp"
+                android:textColor="@color/black"
+                android:textColorHint="#B5B5B5"
+                android:maxLength="50"
+                android:layout_width="match_parent"
+                android:layout_height="55dp" />
+        </LinearLayout>
+
+        <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/addDeadline"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:text="Deadline"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/etDeadline"
+            android:inputType="text"
+            android:background="@drawable/bg_input_goal"
+            android:hint="When do you want to finish this goal?"
+            android:paddingLeft="12dp"
+            android:textColor="@color/black"
+            android:textColorHint="#B5B5B5"
+            android:layout_width="match_parent"
+            android:layout_height="55dp" />
+    </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnCreateGoal"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"
+        android:text="Create Now"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:background="@drawable/btn_circle"
+        android:textSize="22sp"
+        android:layout_width="match_parent"
+        android:layout_height="55dp" />
+
+    <Button
+        android:id="@+id/btnCancelGoal"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="14dp"
+        android:text="Cancel"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:background="@drawable/btn_circle"
+        android:textSize="22sp"
+        android:layout_width="match_parent"
+        android:layout_height="55dp" />
+
+
+    </LinearLayout>
