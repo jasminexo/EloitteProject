@@ -20,38 +20,44 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.Locale;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 
 public class StudentCheckInActivity extends AppCompatActivity {
 
-    private TextView tvQuestionNumber, tvQuestion, tvHours, tvMinutes, tvSeconds;
+    private TextView tvQuestionNumber, tvQuestion, tvTime, tvLabels1, tvLabels2, tvLabels3;
     private ImageView ivImage;
     private Button btnNext, btnReturnHome;
     private SeekBar seekBar;
-    private String qID;
+    private String qID, countDownTime;
     CheckInQuestionDatabase qDB;
+    boolean quizCompleted;
     int currentScore = 0, currentQuestionPosition = 1, seekBarProgress = 3, currentArrayPosition = 0;
     int q1Score, q2Score, q3Score, q4Score, q5Score;
+    long duration;
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_checkin);
 
+        tvLabels1 = findViewById(R.id.tvLabels1);
+        tvLabels2 = findViewById(R.id.tvLabels2);
+        tvLabels3 = findViewById(R.id.tvLabels3);
         tvQuestion = findViewById(R.id.tvQuestion);
         tvQuestionNumber = findViewById(R.id.tvQuestionNumber);
-        tvHours = findViewById(R.id.tvHours);
-        tvMinutes = findViewById(R.id.tvMinutes);
-        tvSeconds = findViewById(R.id.tvSeconds);
+        tvTime = findViewById(R.id.tvTime);
         ivImage = findViewById(R.id.ivImage);
         btnNext = findViewById(R.id.btnNext);
+        btnReturnHome = findViewById(R.id.btnReturnHome);
         seekBar = findViewById(R.id.seekBar);
 
         //Database
         qDB = Room.databaseBuilder(getApplicationContext(), CheckInQuestionDatabase.class ,
                 "check-in-question-database")
                 .build();
+
+        quizCompleted = false;
 
         seekBarChanged();
         displayCheckInQuestion();
@@ -79,31 +85,43 @@ public class StudentCheckInActivity extends AppCompatActivity {
         });
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     private void displayCheckInQuestion() {
-        tvHours.setVisibility(View.GONE);
-        tvMinutes.setVisibility(View.GONE);
-        tvSeconds.setVisibility(View.GONE);
-        //Assign a question from the bank
-        Executors.newSingleThreadExecutor().execute(new Runnable() {
-            @Override
-            public void run() {
-                for(CheckInQuestion q : CheckInQuestion.getCheckInQuestionList()){
-                        qDB.checkInQuestionDao().insert(q);
-                }
-                qID = "q"+ currentQuestionPosition;
-                CheckInQuestion desiredQuestion = qDB.checkInQuestionDao().getCheckInQuestion(qID);
-                String checkInQuestion = desiredQuestion.getQuestion();
-                Integer checkInImage = desiredQuestion.getImage();
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        tvQuestionNumber.setText(currentQuestionPosition+"/5");
-                        tvQuestion.setText(checkInQuestion);
-                        ivImage.setImageResource(checkInImage);
-                    }
-                });
+        if (quizCompleted = false) {
+            tvTime.setVisibility(View.GONE);
+            btnNext.setVisibility(View.VISIBLE);
+            seekBar.setVisibility(View.VISIBLE);
+            tvLabels1.setVisibility(View.VISIBLE);
+            tvLabels2.setVisibility(View.VISIBLE);
+            tvLabels3.setVisibility(View.VISIBLE);
+
+            if (currentQuestionPosition == 1) {
+                btnReturnHome.setVisibility(View.GONE);
             }
-        });
+            //Assign a question from the bank
+            Executors.newSingleThreadExecutor().execute(new Runnable() {
+                @Override
+                public void run() {
+                    for(CheckInQuestion q : CheckInQuestion.getCheckInQuestionList()){
+                        qDB.checkInQuestionDao().insert(q);
+                    }
+                    qID = "q"+ currentQuestionPosition;
+                    CheckInQuestion desiredQuestion = qDB.checkInQuestionDao().getCheckInQuestion(qID);
+                    String checkInQuestion = desiredQuestion.getQuestion();
+                    Integer checkInImage = desiredQuestion.getImage();
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            tvQuestionNumber.setText(currentQuestionPosition+"/5");
+                            tvQuestion.setText(checkInQuestion);
+                            ivImage.setImageResource(checkInImage);
+                        }
+                    });
+                }
+            });
+        } else {
+            finishedQuiz();
+        }
     }
 
     private void nextButtonClicked() {
@@ -125,71 +143,7 @@ public class StudentCheckInActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (currentQuestionPosition == 5){
-                    btnNext.setVisibility(View.GONE);
-                    btnReturnHome.setVisibility(View.VISIBLE);
-                    tvHours.setVisibility(View.VISIBLE);
-                    tvMinutes.setVisibility(View.VISIBLE);
-                    tvSeconds.setVisibility(View.VISIBLE);
-
-                    //work out duration
-                    ZoneId z = ZoneId.of("Australia/Sydney");
-                    ZonedDateTime now = ZonedDateTime.now(z);
-                    LocalDate tomorrow = now.toLocalDate().plusDays(1);
-                    ZonedDateTime tomorrowStart = tomorrow.atStartOfDay(z);
-                    long duration = Duration.between(now,tomorrowStart ).toMillis();
-
-                    //countdown timer
-                    new CountDownTimer(duration * 1000, 1000) {
-                        @Override
-                        public void onTick(long millisUntilFinished) {
-                            runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    String time = String.format(Locale.getDefault(),"%02d:%02d:%02d", TimeUnit.MILLISECONDS.toHours(millisUntilFinished),
-                                            TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished) -
-                                            TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millisUntilFinished)),
-                                            TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) -
-                                            TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished)));
-
-                                    final String[] hourMinSec = time.split(":");
-
-                                    tvHours.setText(hourMinSec[0]);
-                                    tvMinutes.setText(hourMinSec[1]);
-                                    tvSeconds.setText(hourMinSec[2]);
-                                }
-                            });
-                        }
-
-                        @Override
-                        public void onFinish() {
-                            currentQuestionPosition = 1;
-                            //Assign a question from the bank
-                            Executors.newSingleThreadExecutor().execute(new Runnable() {
-                                @Override
-                                public void run() {
-                                    for(CheckInQuestion q : CheckInQuestion.getCheckInQuestionList()){
-                                        qDB.checkInQuestionDao().insert(q);
-                                    }
-                                    qID = "q"+ currentQuestionPosition;
-                                    CheckInQuestion desiredQuestion = qDB.checkInQuestionDao().getCheckInQuestion(qID);
-                                    String checkInQuestion = desiredQuestion.getQuestion();
-                                    Integer checkInImage = desiredQuestion.getImage();
-                                    runOnUiThread(new Runnable() {
-                                        @Override
-                                        public void run() {
-                                            tvQuestionNumber.setText(currentQuestionPosition+"/5");
-                                            tvQuestion.setText(checkInQuestion);
-                                            ivImage.setImageResource(checkInImage);
-                                        }
-                                    });
-                                }
-                            });
-                        }
-                    }.start();
-
-                    tvQuestionNumber.setText("5/5");
-                    tvQuestion.setText("\n\nCheck-In Complete! Come back in:");
-                    ivImage.setImageResource(R.drawable.clock);
+                    finishedQuiz();
                 } else {
                     currentQuestionPosition++;
                     //Assign a question from the bank
@@ -197,6 +151,54 @@ public class StudentCheckInActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private void finishedQuiz() {
+        btnNext.setVisibility(View.GONE);
+        btnReturnHome.setVisibility(View.VISIBLE);
+        tvTime.setVisibility(View.VISIBLE);
+        seekBar.setVisibility(View.INVISIBLE);
+        tvLabels1.setVisibility(View.INVISIBLE);
+        tvLabels2.setVisibility(View.INVISIBLE);
+        tvLabels3.setVisibility(View.INVISIBLE);
+
+        quizCompleted = true;
+
+        //work out duration
+        ZoneId zoneID = ZoneId.of("Australia/Sydney");
+        ZonedDateTime timeNow = ZonedDateTime.now(zoneID);
+        LocalDate tomorrow = timeNow.toLocalDate().plusDays(1);
+        ZonedDateTime tomorrowStart = tomorrow.atStartOfDay(zoneID);
+        duration = Duration.between(timeNow,tomorrowStart).toMillis();
+
+        //countdown timer
+        new CountDownTimer(duration, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                //when tick, convert millisecond to hours, min, sec
+                countDownTime = String.format(Locale.ENGLISH,"%02d:%02d:%02d"
+                        , TimeUnit.MILLISECONDS.toHours(millisUntilFinished),
+                        TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished) -
+                                TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millisUntilFinished)),
+                        TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) -
+                                TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished)));
+
+                tvTime.setText(countDownTime);
+            };
+
+            @Override
+            public void onFinish() {
+                currentQuestionPosition = 1;
+                //Assign a question from the bank
+                displayCheckInQuestion();
+                quizCompleted = false;
+            }
+        }.start();
+
+        tvQuestionNumber.setText("5/5");
+        tvQuestion.setText("\n\nCheck-In Complete!\nCome back in:");
+        ivImage.setImageResource(R.drawable.clock);
     }
 
     public void goToStudentHomeActivity(View view){
