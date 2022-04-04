@@ -93,8 +93,16 @@ public class StudentPersonalityQuizDetailActivity extends AppCompatActivity {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                rgOptions.clearCheck();
                 if (currentQuestionPosition == 9){
+                    if (rbOptionA.isChecked()){
+                        q9Score = 1;
+                    } else if (rbOptionB.isChecked()){
+                        q9Score = 2;
+                    } else if (rbOptionC.isChecked()){
+                        q9Score = 3;
+                    } else {
+                        Toast.makeText(StudentPersonalityQuizDetailActivity.this, "Please select an option", Toast.LENGTH_SHORT).show();
+                    }
                     totalScore = q1Score+q2Score+q3Score+q4Score+q5Score+q6Score+q7Score+q8Score+q9Score;
                     if (totalScore <= 9) {
                         personalityType = "You got: The HYPERKINETIC Type";
@@ -119,101 +127,138 @@ public class StudentPersonalityQuizDetailActivity extends AppCompatActivity {
                     //show bottom bar popup view thing
                 } else {
                     //saving the score for each question - need to find a way to upload into database with date and time
-                    if (qID == "q1"){
+                    if (currentQuestionPosition == 1){
                         if (rbOptionA.isChecked()){
                             q1Score = 1;
+                            currentQuestionPosition++;
                             displayCheckInQuestion();
                         } else if (rbOptionB.isChecked()){
                             q1Score = 2;
+                            currentQuestionPosition++;
+                            displayCheckInQuestion();
                         } else if (rbOptionC.isChecked()){
                             q1Score = 3;
+                            currentQuestionPosition++;
+                            displayCheckInQuestion();
                         } else {
-                            Toast.makeText(getApplicationContext(), "Please select an option", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(StudentPersonalityQuizDetailActivity.this, "Please select an option", Toast.LENGTH_SHORT).show();
                         }
-                    } else if (qID == "q2"){
+                    } else if (currentQuestionPosition == 2){
                         if (rbOptionA.isChecked()){
                             q2Score = 1;
+                            currentQuestionPosition++;
+                            displayCheckInQuestion();
                         } else if (rbOptionB.isChecked()){
                             q2Score = 2;
+                            currentQuestionPosition++;
+                            displayCheckInQuestion();
                         } else if (rbOptionC.isChecked()){
                             q2Score = 3;
+                            currentQuestionPosition++;
+                            displayCheckInQuestion();
                         } else {
-                            Toast.makeText(getApplicationContext(), "Please select an option", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(StudentPersonalityQuizDetailActivity.this, "Please select an option", Toast.LENGTH_SHORT).show();
                         }
-                    } else if (qID == "q3"){
+                    } else if (currentQuestionPosition == 3){
                         if (rbOptionA.isChecked()){
                             q3Score = 1;
+                            currentQuestionPosition++;
+                            displayCheckInQuestion();
                         } else if (rbOptionB.isChecked()){
                             q3Score = 2;
+                            currentQuestionPosition++;
+                            displayCheckInQuestion();
                         } else if (rbOptionC.isChecked()){
                             q3Score = 3;
+                            currentQuestionPosition++;
+                            displayCheckInQuestion();
                         } else {
-                            Toast.makeText(getApplicationContext(), "Please select an option", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(StudentPersonalityQuizDetailActivity.this, "Please select an option", Toast.LENGTH_SHORT).show();
                         }
-                    } else if (qID == "q4"){
+                    } else if (currentQuestionPosition == 4){
                         if (rbOptionA.isChecked()){
                             q4Score = 1;
+                            currentQuestionPosition++;
+                            displayCheckInQuestion();
                         } else if (rbOptionB.isChecked()){
                             q4Score = 2;
+                            currentQuestionPosition++;
+                            displayCheckInQuestion();
                         } else if (rbOptionC.isChecked()){
                             q4Score = 3;
+                            currentQuestionPosition++;
+                            displayCheckInQuestion();
                         } else {
-                            Toast.makeText(getApplicationContext(), "Please select an option", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(StudentPersonalityQuizDetailActivity.this, "Please select an option", Toast.LENGTH_SHORT).show();
                         }
-                    } else if (qID == "q5"){
+                    } else if (currentQuestionPosition == 5){
                         if (rbOptionA.isChecked()){
                             q5Score = 1;
+                            currentQuestionPosition++;
+                            displayCheckInQuestion();
                         } else if (rbOptionB.isChecked()){
                             q5Score = 2;
+                            currentQuestionPosition++;
+                            displayCheckInQuestion();
                         } else if (rbOptionC.isChecked()){
                             q5Score = 3;
+                            currentQuestionPosition++;
+                            displayCheckInQuestion();
                         } else {
-                            Toast.makeText(getApplicationContext(), "Please select an option", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(StudentPersonalityQuizDetailActivity.this, "Please select an option", Toast.LENGTH_SHORT).show();
                         }
-                    } else if (qID == "q6"){
+                    } else if (currentQuestionPosition == 6){
                         if (rbOptionA.isChecked()){
                             q6Score = 1;
+                            currentQuestionPosition++;
+                            displayCheckInQuestion();
                         } else if (rbOptionB.isChecked()){
                             q6Score = 2;
+                            currentQuestionPosition++;
+                            displayCheckInQuestion();
                         } else if (rbOptionC.isChecked()){
-                            q6Score = 3;
+                            q6Score = 3;currentQuestionPosition++;
+                            displayCheckInQuestion();
                         } else {
-                            Toast.makeText(getApplicationContext(), "Please select an option", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(StudentPersonalityQuizDetailActivity.this, "Please select an option", Toast.LENGTH_SHORT).show();
                         }
-                    } else if (qID == "q7"){
+                    } else if (currentQuestionPosition == 7){
                         if (rbOptionA.isChecked()){
                             q7Score = 1;
+                            currentQuestionPosition++;
+                            displayCheckInQuestion();
                         } else if (rbOptionB.isChecked()){
                             q7Score = 2;
+                            currentQuestionPosition++;
+                            displayCheckInQuestion();
                         } else if (rbOptionC.isChecked()){
                             q7Score = 3;
+                            currentQuestionPosition++;
+                            displayCheckInQuestion();
                         } else {
-                            Toast.makeText(getApplicationContext(), "Please select an option", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(StudentPersonalityQuizDetailActivity.this, "Please select an option", Toast.LENGTH_SHORT).show();
                         }
-                    } else if (qID == "q8"){
+                    } else if (currentQuestionPosition == 8){
                         if (rbOptionA.isChecked()){
                             q8Score = 1;
+                            currentQuestionPosition++;
+                            displayCheckInQuestion();
                         } else if (rbOptionB.isChecked()){
                             q8Score = 2;
+                            currentQuestionPosition++;
+                            displayCheckInQuestion();
                         } else if (rbOptionC.isChecked()){
                             q8Score = 3;
+                            currentQuestionPosition++;
+                            displayCheckInQuestion();
                         } else {
-                            Toast.makeText(getApplicationContext(), "Please select an option", Toast.LENGTH_SHORT).show();
-                        }
-                    } else if (qID == "q9"){
-                        if (rbOptionA.isChecked()){
-                            q9Score = 1;
-                        } else if (rbOptionB.isChecked()){
-                            q9Score = 2;
-                        } else if (rbOptionC.isChecked()){
-                            q9Score = 3;
-                        } else {
-                            Toast.makeText(getApplicationContext(), "Please select an option", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(StudentPersonalityQuizDetailActivity.this, "Please select an option", Toast.LENGTH_SHORT).show();
                         }
                     }
-                    currentQuestionPosition++;
+//                    currentQuestionPosition++;
                     //Assign a question from the bank
-                    displayCheckInQuestion();
+//                    displayCheckInQuestion();
+                    rgOptions.clearCheck();
                 }
             }
         });
