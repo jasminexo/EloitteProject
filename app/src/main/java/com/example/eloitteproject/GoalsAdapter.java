@@ -1,6 +1,7 @@
 package com.example.eloitteproject;
 
 import android.content.Context;
+import android.content.Intent;
 import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,6 +36,24 @@ public class GoalsAdapter extends RecyclerView.Adapter<GoalsAdapter.MyViewHolder
         myViewHolder.titlegoals.setText(goals.get(i).getTitlegoals());
         myViewHolder.descgoals.setText(goals.get(i).getDescgoals());
         myViewHolder.dategoals.setText(goals.get(i).getDategoals());
+//        myViewHolder.keygoals.setText(goals.get(i).getKeygoals());
+
+        final String getTitleGoals = goals.get(i).getTitlegoals();
+        final String getDescGoals = goals.get(i).getDescgoals();
+        final String getDateGoals = goals.get(i).getDategoals();
+        final String getKeyGoals = goals.get(i).getKeygoals();
+
+        myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, StudentGoalsEditActivity.class);
+                intent.putExtra("titlegoals", getTitleGoals);
+                intent.putExtra("descgoals", getDescGoals);
+                intent.putExtra("dategoals", getDateGoals);
+                intent.putExtra("keygoals", getKeyGoals);
+                context.startActivity(intent);
+            }
+        });
 
     }
 
@@ -45,7 +64,7 @@ public class GoalsAdapter extends RecyclerView.Adapter<GoalsAdapter.MyViewHolder
 
     class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView titlegoals, descgoals, dategoals;
+        TextView titlegoals, descgoals, dategoals, keygoals;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);

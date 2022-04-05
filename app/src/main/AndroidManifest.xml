@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EloitteProject">
         <activity
-            android:name=".StudentGoalsDetailActivity"
+            android:name=".StudentGoalsEditActivity"
+            android:exported="true" />
+        <activity
+            android:name=".StudentGoalsAddActivity"
             android:exported="true" />
         <activity
             android:name=".StudentGoalsActivity"
