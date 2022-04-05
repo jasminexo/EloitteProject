@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FBF6F4"
+    tools:context=".StudentGoalsActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="@color/yellow_bg"
+        android:layout_height="198dp" >
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_marginLeft="16dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/titlePage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Goals"
+                    android:textColor="#645D5D"
+                    android:textSize="32sp" />
+
+                <TextView
+                    android:id="@+id/subtitlePage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_marginTop="8dp"
+                    android:text="Set Lifestyle and Health Goals" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnAddGoals"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="35dp"
+                android:background="@drawable/btn_circle"
+                android:backgroundTint="#FFFFFF"
+                android:text="+"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                app:iconTint="@color/transparent" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:background="@color/yellow_bg"
+            android:layout_height="1dp" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvGoals"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="-60dp"
+        android:layout_marginRight="16dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/endPage"
+        android:textSize="16sp"
+        android:textColor="#645D5D"
+        android:layout_marginTop="20dp"
+        android:text="No more goals"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
