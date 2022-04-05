@@ -84,7 +84,7 @@ public class StudentHomeActivity extends AppCompatActivity {
     }
 
     public void goToStudentProfileActivity(View view){
-        Intent intent = new Intent (this, StudentProfileActivity.class);
+        Intent intent = new Intent (this, StudentGoalsActivity.class);
         startActivity(intent);
 
         clickID = 6;
