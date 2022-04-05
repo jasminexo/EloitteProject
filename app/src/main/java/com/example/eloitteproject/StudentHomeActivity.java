@@ -1,5 +1,6 @@
 package com.example.eloitteproject;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.room.Room;
@@ -9,18 +10,45 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
 import java.util.concurrent.Executors;
 
 public class StudentHomeActivity extends AppCompatActivity {
+    TextView studentName;
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
+    String userId;
     int clickID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_home);
+
+        studentName = findViewById(R.id.tvStudentName);
+
+        fAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
+
+        userId = fAuth.getCurrentUser().getUid();
+
+        DocumentReference documentReference = fStore.collection("Users").document(userId);
+        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
+                studentName.setText("Hello " + (documentSnapshot.getString( "FullName") + "!"));
+            }
+        });
+
+
         Button logout = findViewById(R.id.btn_logout);
         //Button leaderboard = findViewById(R.id.btnLeaderboard);
 
@@ -84,7 +112,7 @@ public class StudentHomeActivity extends AppCompatActivity {
     }
 
     public void goToStudentProfileActivity(View view){
-        Intent intent = new Intent (this, StudentGoalsActivity.class);
+        Intent intent = new Intent (this, StudentProfileActivity.class);
         startActivity(intent);
 
         clickID = 6;
