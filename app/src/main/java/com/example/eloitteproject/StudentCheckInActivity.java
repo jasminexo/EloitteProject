@@ -87,17 +87,17 @@ public class StudentCheckInActivity extends AppCompatActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void displayCheckInQuestion() {
-        if (quizCompleted = false) {
+        if (currentQuestionPosition >= 1 && currentQuestionPosition <= 5) {
+            quizCompleted = false;
+
             tvTime.setVisibility(View.GONE);
             btnNext.setVisibility(View.VISIBLE);
+            btnReturnHome.setVisibility(View.GONE);
             seekBar.setVisibility(View.VISIBLE);
             tvLabels1.setVisibility(View.VISIBLE);
             tvLabels2.setVisibility(View.VISIBLE);
             tvLabels3.setVisibility(View.VISIBLE);
 
-            if (currentQuestionPosition == 1) {
-                btnReturnHome.setVisibility(View.GONE);
-            }
             //Assign a question from the bank
             Executors.newSingleThreadExecutor().execute(new Runnable() {
                 @Override
@@ -115,11 +115,13 @@ public class StudentCheckInActivity extends AppCompatActivity {
                             tvQuestionNumber.setText(currentQuestionPosition+"/5");
                             tvQuestion.setText(checkInQuestion);
                             ivImage.setImageResource(checkInImage);
+                            nextButtonClicked();
                         }
                     });
                 }
             });
-        } else {
+        } else if (currentQuestionPosition == 6){
+            quizCompleted = true;
             finishedQuiz();
         }
     }
@@ -142,13 +144,8 @@ public class StudentCheckInActivity extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View view) {
-                if (currentQuestionPosition == 5){
-                    finishedQuiz();
-                } else {
-                    currentQuestionPosition++;
-                    //Assign a question from the bank
-                    displayCheckInQuestion();
-                }
+                currentQuestionPosition++;
+                displayCheckInQuestion();
             }
         });
     }
@@ -162,8 +159,6 @@ public class StudentCheckInActivity extends AppCompatActivity {
         tvLabels1.setVisibility(View.INVISIBLE);
         tvLabels2.setVisibility(View.INVISIBLE);
         tvLabels3.setVisibility(View.INVISIBLE);
-
-        quizCompleted = true;
 
         //work out duration
         ZoneId zoneID = ZoneId.of("Australia/Sydney");
@@ -185,20 +180,20 @@ public class StudentCheckInActivity extends AppCompatActivity {
                                 TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished)));
 
                 tvTime.setText(countDownTime);
+
+                tvQuestionNumber.setText("5/5");
+                tvQuestion.setText("\n\nCheck-In Complete!\nCome back tomorrow:");
+                ivImage.setImageResource(R.drawable.clock);
             };
 
             @Override
             public void onFinish() {
+                quizCompleted = false;
                 currentQuestionPosition = 1;
                 //Assign a question from the bank
                 displayCheckInQuestion();
-                quizCompleted = false;
             }
         }.start();
-
-        tvQuestionNumber.setText("5/5");
-        tvQuestion.setText("\n\nCheck-In Complete!\nCome back in:");
-        ivImage.setImageResource(R.drawable.clock);
     }
 
     public void goToStudentHomeActivity(View view){
