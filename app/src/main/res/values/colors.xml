@@ -22,4 +22,10 @@
     <color name="light_green">#c0ffde</color>
     <color name="dark_grey_goals">#212529</color>
     <color name="light_grey_goals">#6C757D</color>
+    <color name="circle_brown">#E9C9B0</color>
+    <color name="circle_beige">#F3E9E2</color>
+    <color name="circle_yellow">#FEEEC5</color>
+    <color name="circle_orange">#FFCEA9</color>
+    <color name="circle_purple">#DEC2D7</color>
+    <color name="circle_blue">#E7FBFF</color>
 </resources>

@@ -6,21 +6,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class StudentProfileActivity extends AppCompatActivity {
+public class ProfilePicSelectionActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student_profile);
+        setContentView(R.layout.activity_profile_pic_selection);
     }
 
     public void goToStudentHomeActivity(View view){
         Intent intent = new Intent (this, StudentHomeActivity.class);
-        startActivity(intent);
-    }
-
-    public void goToProfilePicSelection(View view){
-        Intent intent = new Intent (this, ProfilePicSelectionActivity.class);
         startActivity(intent);
     }
 }

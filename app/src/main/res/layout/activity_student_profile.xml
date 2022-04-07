@@ -24,7 +24,7 @@
             android:textColor="@color/brown_text"/>
 
         <TextView
-            android:id="@+id/profileName"
+            android:id="@+id/tvProfileName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -70,11 +70,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="-5dp"
-            android:text="Change Profile Picture"
-            android:textSize="13sp"
-            android:textAllCaps="false"
             android:background="@color/transparent"
-            android:textColor="@color/brown_text"/>
+            android:onClick="goToProfilePicSelection"
+            android:text="Change Profile Picture"
+            android:textAllCaps="false"
+            android:textColor="@color/brown_text"
+            android:textSize="13sp" />
 
         <TextView
             android:layout_width="wrap_content"
