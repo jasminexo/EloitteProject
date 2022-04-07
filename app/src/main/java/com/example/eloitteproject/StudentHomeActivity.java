@@ -19,14 +19,18 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
+import java.util.Calendar;
 import java.util.concurrent.Executors;
 
 public class StudentHomeActivity extends AppCompatActivity {
     TextView studentName;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
-    String userId;
+    String userId, previousActivity;
     int clickID;
+    int dayClicked=0;
+    int incompleteCurrentQPosition = 1;
+    int completeCurrentQPosition = 6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +65,26 @@ public class StudentHomeActivity extends AppCompatActivity {
             }
         });
 
+
+        //getting the last day student completed check-in quiz
+        Bundle extras = getIntent().getExtras();
+        if (extras != null){
+            dayClicked = extras.getInt("receiveLastClickDay", 0);
+            previousActivity = extras.getString("from_activity", "");
+        } else {
+            previousActivity = "studentHOMEActivity";
+        }
+
+        if (previousActivity.equals("studentCheckInActivity")){
+            completeCurrentQPosition = 6;
+        } else if (previousActivity.equals("studentHOMEActivity")){
+            incompleteCurrentQPosition = 1;
+            dayClicked = 0;
+        }
+        int x;
+        x=dayClicked;
+
+
 //        leaderboard.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -72,8 +96,25 @@ public class StudentHomeActivity extends AppCompatActivity {
     }
 
     public void goToCheckInActivity(View view){
-        Intent intent = new Intent (this, StudentCheckInActivity.class);
-        startActivity(intent);
+        Calendar calendar = Calendar.getInstance();
+        int today = calendar.get(Calendar.DAY_OF_YEAR);
+
+//        int incompleteCurrentQPosition = 1;
+//        int completeCurrentQPosition = 6;
+
+        if (dayClicked != 0 && dayClicked != today){
+            Intent intent = new Intent (this, StudentCheckInActivity.class);
+            intent.putExtra("receiveCurrentQPosition", incompleteCurrentQPosition);
+            startActivity(intent);
+        } else if (dayClicked != 0 && dayClicked == today){
+            Intent intent = new Intent (this, StudentCheckInActivity.class);
+            intent.putExtra("receiveCurrentQPosition", completeCurrentQPosition);
+            startActivity(intent);
+        } if (dayClicked == 0){
+            Intent intent = new Intent (this, StudentCheckInActivity.class);
+            intent.putExtra("receiveCurrentQPosition", incompleteCurrentQPosition);
+            startActivity(intent);
+        }
 
         clickID = 1;
         update();

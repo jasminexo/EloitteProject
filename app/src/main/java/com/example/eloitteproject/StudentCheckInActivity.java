@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.SystemClock;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -18,6 +21,7 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.util.Calendar;
 import java.util.Locale;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -31,9 +35,11 @@ public class StudentCheckInActivity extends AppCompatActivity {
     private String qID, countDownTime;
     CheckInQuestionDatabase checkinDB;
     boolean quizCompleted;
-    int currentScore = 0, currentQuestionPosition = 1, seekBarProgress = 3;
-    int q1Score, q2Score, q3Score, q4Score, q5Score;
+    int currentScore = 0, currentQuestionPosition, seekBarProgress = 3;
+    int q1Score, q2Score, q3Score, q4Score, q5Score, dayClicked = 1;
     long duration;
+    ZonedDateTime timeNow;
+    LocalDate tomorrow;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -51,6 +57,16 @@ public class StudentCheckInActivity extends AppCompatActivity {
         btnNext = findViewById(R.id.btnNext);
         btnReturnHome = findViewById(R.id.btnReturnHome);
         seekBar = findViewById(R.id.seekBar);
+
+        Intent intent = getIntent();
+        String StrCurrentQuestionPosition = intent.getStringExtra("receiveCurrentQPosition");
+        try {
+            currentQuestionPosition = Integer.parseInt(StrCurrentQuestionPosition);
+        }
+        catch (NumberFormatException e) {
+            currentQuestionPosition = 1;
+        }
+
 
         //Database
         checkinDB = Room.databaseBuilder(getApplicationContext(), CheckInQuestionDatabase.class ,
@@ -162,8 +178,8 @@ public class StudentCheckInActivity extends AppCompatActivity {
 
         //work out duration
         ZoneId zoneID = ZoneId.of("Australia/Sydney");
-        ZonedDateTime timeNow = ZonedDateTime.now(zoneID);
-        LocalDate tomorrow = timeNow.toLocalDate().plusDays(1);
+        timeNow = ZonedDateTime.now(zoneID);
+        tomorrow = timeNow.toLocalDate().plusDays(1);
         ZonedDateTime tomorrowStart = tomorrow.atStartOfDay(zoneID);
         duration = Duration.between(timeNow,tomorrowStart).toMillis();
 
@@ -190,6 +206,7 @@ public class StudentCheckInActivity extends AppCompatActivity {
             public void onFinish() {
                 quizCompleted = false;
                 currentQuestionPosition = 1;
+                countDownTime = "00:00:00";
                 //Assign a question from the bank
                 displayCheckInQuestion();
             }
@@ -197,8 +214,27 @@ public class StudentCheckInActivity extends AppCompatActivity {
     }
 
     public void goToStudentHomeActivity(View view){
+//        lastClickTime = SystemClock.elapsedRealtime(); //returns in millisecond
+//        lastClickTime = timeNow;
+//        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
+//        int lastClickTime = settings.getInt("last_click_time", -1);
+        Calendar calendar = Calendar.getInstance();
+        dayClicked = calendar.get(Calendar.DAY_OF_YEAR);
+
         Intent intent = new Intent (this, StudentHomeActivity.class);
+//        intent.putExtra("receiveLastClickDay", lastClickTime);
+        Bundle extras = new Bundle();
+        extras.putInt("receiveLastClickDay", dayClicked);
+        extras.putString("from_activity", "studentCheckInActivity");
+        intent.putExtras(extras);
         startActivity(intent);
+////
+//        SharedPreferences.Editor editor = settings.edit();
+//        editor.putInt("last_click_time", dayClicked);
+//        editor.commit();
+
+//        long x;
+//        x = dayClicked;
     }
 
     public void goToStudentProfileActivity(View view){
