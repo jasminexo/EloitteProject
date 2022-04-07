@@ -52,7 +52,6 @@ public class StudentHomeActivity extends AppCompatActivity {
             }
         });
 
-
         Button logout = findViewById(R.id.btn_logout);
         //Button leaderboard = findViewById(R.id.btnLeaderboard);
 
@@ -65,12 +64,11 @@ public class StudentHomeActivity extends AppCompatActivity {
             }
         });
 
-
         //getting the last day student completed check-in quiz
         Bundle extras = getIntent().getExtras();
         if (extras != null){
             dayClicked = extras.getInt("receiveLastClickDay", 0);
-            previousActivity = extras.getString("from_activity", "");
+            previousActivity = extras.getString("from_activity");
         } else {
             previousActivity = "studentHOMEActivity";
         }
@@ -81,8 +79,6 @@ public class StudentHomeActivity extends AppCompatActivity {
             incompleteCurrentQPosition = 1;
             dayClicked = 0;
         }
-        int x;
-        x=dayClicked;
 
 
 //        leaderboard.setOnClickListener(new View.OnClickListener() {
@@ -98,9 +94,6 @@ public class StudentHomeActivity extends AppCompatActivity {
     public void goToCheckInActivity(View view){
         Calendar calendar = Calendar.getInstance();
         int today = calendar.get(Calendar.DAY_OF_YEAR);
-
-//        int incompleteCurrentQPosition = 1;
-//        int completeCurrentQPosition = 6;
 
         if (dayClicked != 0 && dayClicked != today){
             Intent intent = new Intent (this, StudentCheckInActivity.class);
@@ -179,7 +172,4 @@ public class StudentHomeActivity extends AppCompatActivity {
             }
         });
     }
-
-
-
 }

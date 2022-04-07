@@ -34,9 +34,8 @@ public class StudentCheckInActivity extends AppCompatActivity {
     private SeekBar seekBar;
     private String qID, countDownTime;
     CheckInQuestionDatabase checkinDB;
-    boolean quizCompleted;
     int currentScore = 0, currentQuestionPosition, seekBarProgress = 3;
-    int q1Score, q2Score, q3Score, q4Score, q5Score, dayClicked = 1;
+    int q1Score, q2Score, q3Score, q4Score, q5Score, dayClicked;
     long duration;
     ZonedDateTime timeNow;
     LocalDate tomorrow;
@@ -59,21 +58,18 @@ public class StudentCheckInActivity extends AppCompatActivity {
         seekBar = findViewById(R.id.seekBar);
 
         Intent intent = getIntent();
-        String StrCurrentQuestionPosition = intent.getStringExtra("receiveCurrentQPosition");
+        int qPosition = intent.getIntExtra("receiveCurrentQPosition",0);
         try {
-            currentQuestionPosition = Integer.parseInt(StrCurrentQuestionPosition);
+            currentQuestionPosition = qPosition;
         }
         catch (NumberFormatException e) {
             currentQuestionPosition = 1;
         }
 
-
         //Database
         checkinDB = Room.databaseBuilder(getApplicationContext(), CheckInQuestionDatabase.class ,
                 "check-in-question-database")
                 .build();
-
-        quizCompleted = false;
 
         seekBarChanged();
         displayCheckInQuestion();
@@ -90,11 +86,9 @@ public class StudentCheckInActivity extends AppCompatActivity {
                 //set int value as corresponding progress
                 seekBarProgress = progress;
             }
-
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
             }
-
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
             }
@@ -104,7 +98,6 @@ public class StudentCheckInActivity extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void displayCheckInQuestion() {
         if (currentQuestionPosition >= 1 && currentQuestionPosition <= 5) {
-            quizCompleted = false;
 
             tvTime.setVisibility(View.GONE);
             btnNext.setVisibility(View.VISIBLE);
@@ -137,7 +130,6 @@ public class StudentCheckInActivity extends AppCompatActivity {
                 }
             });
         } else if (currentQuestionPosition == 6){
-            quizCompleted = true;
             finishedQuiz();
         }
     }
@@ -204,7 +196,6 @@ public class StudentCheckInActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                quizCompleted = false;
                 currentQuestionPosition = 1;
                 countDownTime = "00:00:00";
                 //Assign a question from the bank
@@ -214,27 +205,15 @@ public class StudentCheckInActivity extends AppCompatActivity {
     }
 
     public void goToStudentHomeActivity(View view){
-//        lastClickTime = SystemClock.elapsedRealtime(); //returns in millisecond
-//        lastClickTime = timeNow;
-//        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
-//        int lastClickTime = settings.getInt("last_click_time", -1);
         Calendar calendar = Calendar.getInstance();
         dayClicked = calendar.get(Calendar.DAY_OF_YEAR);
 
         Intent intent = new Intent (this, StudentHomeActivity.class);
-//        intent.putExtra("receiveLastClickDay", lastClickTime);
         Bundle extras = new Bundle();
         extras.putInt("receiveLastClickDay", dayClicked);
         extras.putString("from_activity", "studentCheckInActivity");
         intent.putExtras(extras);
         startActivity(intent);
-////
-//        SharedPreferences.Editor editor = settings.edit();
-//        editor.putInt("last_click_time", dayClicked);
-//        editor.commit();
-
-//        long x;
-//        x = dayClicked;
     }
 
     public void goToStudentProfileActivity(View view){
