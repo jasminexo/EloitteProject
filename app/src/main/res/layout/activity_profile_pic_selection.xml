@@ -31,10 +31,9 @@
 
             <ImageView
                 android:id="@+id/ivProfilePic"
-                android:layout_width="250dp"
-                android:layout_height="250dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="50dp"
+                android:layout_width="190dp"
+                android:layout_height="190dp"
+                android:layout_marginTop="67dp"
                 android:elevation="10dp"
                 android:src="@drawable/fox"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -44,11 +43,11 @@
 
             <TextView
                 android:id="@+id/tvProfilePicBackground"
-                android:layout_width="250dp"
-                android:layout_height="250dp"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
                 android:layout_marginTop="50dp"
                 android:background="@drawable/btn_circle_large"
-                android:backgroundTint="#B5DEC2D7"
+                android:backgroundTint="@color/circle_purple"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
@@ -67,7 +66,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="9dp"
-                android:layout_marginTop="6dp"
+                android:layout_marginTop="10dp"
                 android:text="Skin"
                 android:textSize="11sp"
                 android:textStyle="bold"
@@ -75,13 +74,14 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tvBrown"
+                android:id="@+id/tvBear"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginLeft="2.5dp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/btn_circle_large"
                 android:backgroundTint="@color/circle_brown"
+                android:onClick="ivBearSelected"
                 app:layout_constraintStart_toStartOf="@+id/textView2"
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -91,8 +91,9 @@
                 android:layout_height="35dp"
                 android:layout_marginTop="3dp"
                 android:src="@drawable/bear"
-                app:layout_constraintStart_toStartOf="@+id/tvBrown"
-                app:layout_constraintTop_toTopOf="@+id/tvBrown" />
+                android:onClick="ivBearSelected"
+                app:layout_constraintStart_toStartOf="@+id/tvBear"
+                app:layout_constraintTop_toTopOf="@+id/tvBear" />
 
             <TextView
                 android:id="@+id/tvPenguin"
@@ -102,6 +103,7 @@
                 android:layout_marginTop="12dp"
                 android:background="@drawable/btn_circle_large"
                 android:backgroundTint="@color/circle_beige"
+                android:onClick="ivPenguinSelected"
                 app:layout_constraintStart_toStartOf="@+id/textView2"
                 app:layout_constraintTop_toBottomOf="@+id/ivBear" />
 
@@ -110,6 +112,7 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginTop="3dp"
+                android:onClick="ivPenguinSelected"
                 android:src="@drawable/penguin"
                 app:layout_constraintStart_toStartOf="@+id/tvPenguin"
                 app:layout_constraintTop_toTopOf="@+id/tvPenguin" />
@@ -122,6 +125,7 @@
                 android:layout_marginTop="12dp"
                 android:background="@drawable/btn_circle_large"
                 android:backgroundTint="@color/circle_yellow"
+                android:onClick="ivFoxSelected"
                 app:layout_constraintStart_toStartOf="@+id/textView2"
                 app:layout_constraintTop_toBottomOf="@+id/ivPenguin" />
 
@@ -129,7 +133,8 @@
                 android:id="@+id/ivFox"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:layout_marginTop="3dp"
+                android:layout_marginTop="1dp"
+                android:onClick="ivFoxSelected"
                 android:src="@drawable/fox"
                 app:layout_constraintStart_toStartOf="@+id/tvFox"
                 app:layout_constraintTop_toTopOf="@+id/tvFox" />
@@ -142,6 +147,7 @@
                 android:layout_marginTop="12dp"
                 android:background="@drawable/btn_circle_large"
                 android:backgroundTint="@color/circle_orange"
+                android:onClick="ivBunnySelected"
                 app:layout_constraintStart_toStartOf="@+id/textView2"
                 app:layout_constraintTop_toBottomOf="@+id/ivFox" />
 
@@ -149,7 +155,8 @@
                 android:id="@+id/ivBunny"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:layout_marginTop="3dp"
+                android:layout_marginTop="2dp"
+                android:onClick="ivBunnySelected"
                 android:src="@drawable/bunny"
                 app:layout_constraintStart_toStartOf="@+id/tvBunny"
                 app:layout_constraintTop_toTopOf="@+id/tvBunny" />
@@ -158,10 +165,11 @@
                 android:id="@+id/tvHedgehog"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:layout_marginLeft="2.5dp"
+                android:layout_marginLeft="3dp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/btn_circle_large"
                 android:backgroundTint="@color/circle_purple"
+                android:onClick="ivHedgehogSelected"
                 app:layout_constraintStart_toStartOf="@+id/textView2"
                 app:layout_constraintTop_toBottomOf="@+id/ivBunny" />
 
@@ -169,7 +177,8 @@
                 android:id="@+id/ivHedgehog"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:layout_marginTop="3dp"
+                android:layout_marginTop="1dp"
+                android:onClick="ivHedgehogSelected"
                 android:src="@drawable/hedgehog"
                 app:layout_constraintStart_toStartOf="@+id/tvHedgehog"
                 app:layout_constraintTop_toTopOf="@+id/tvHedgehog" />
@@ -182,6 +191,7 @@
                 android:layout_marginTop="12dp"
                 android:background="@drawable/btn_circle_large"
                 android:backgroundTint="@color/circle_blue"
+                android:onClick="ivOwlSelected"
                 app:layout_constraintStart_toStartOf="@+id/textView2"
                 app:layout_constraintTop_toBottomOf="@+id/ivHedgehog" />
 
@@ -190,6 +200,7 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginTop="3dp"
+                android:onClick="ivOwlSelected"
                 android:src="@drawable/owl"
                 app:layout_constraintStart_toStartOf="@+id/tvOwl"
                 app:layout_constraintTop_toTopOf="@+id/tvOwl" />
@@ -207,7 +218,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="4dp"
-                android:layout_marginTop="6dp"
+                android:layout_marginTop="10dp"
                 android:text="Colour"
                 android:textSize="11sp"
                 android:textStyle="bold"
@@ -220,6 +231,7 @@
                 android:layout_height="35dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="3dp"
+                android:onClick="tvBrownSelected"
                 android:background="@drawable/btn_circle_large"
                 android:backgroundTint="@color/circle_brown"
                 app:layout_constraintEnd_toEndOf="@+id/textView4"
@@ -232,6 +244,7 @@
                 android:layout_height="35dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="3dp"
+                android:onClick="tvBeigeSelected"
                 android:background="@drawable/btn_circle_large"
                 android:backgroundTint="@color/circle_beige"
                 app:layout_constraintEnd_toEndOf="@+id/textView4"
@@ -243,6 +256,7 @@
                 android:layout_height="35dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="3dp"
+                android:onClick="tvYellowSelected"
                 android:background="@drawable/btn_circle_large"
                 android:backgroundTint="@color/circle_yellow"
                 app:layout_constraintEnd_toEndOf="@+id/textView4"
@@ -254,6 +268,7 @@
                 android:layout_height="35dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="3dp"
+                android:onClick="tvOrangeSelected"
                 android:background="@drawable/btn_circle_large"
                 android:backgroundTint="@color/circle_orange"
                 app:layout_constraintEnd_toEndOf="@+id/textView4"
@@ -265,6 +280,7 @@
                 android:layout_height="35dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="3dp"
+                android:onClick="tvPurpleSelected"
                 android:background="@drawable/btn_circle_large"
                 android:backgroundTint="@color/circle_purple"
                 app:layout_constraintEnd_toEndOf="@+id/textView4"
@@ -276,6 +292,7 @@
                 android:layout_height="35dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="3dp"
+                android:onClick="tvBlueSelected"
                 android:background="@drawable/btn_circle_large"
                 android:backgroundTint="@color/circle_blue"
                 app:layout_constraintEnd_toEndOf="@+id/textView4"
