@@ -11,14 +11,88 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/yellow_bg"
-        android:layout_marginTop="50sp"
+        android:layout_marginTop="20sp"
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="STUDENT PROFILE ACTIVITY"/>
+            android:text="My Profile"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/brown_text"/>
+
+        <TextView
+            android:id="@+id/profileName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Rikki Dinh"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/brown_text"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="30dp">
+
+            <ImageView
+                android:id="@+id/ivProfilePic"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_marginStart="7dp"
+                android:elevation="10dp"
+                android:src="@drawable/fox"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvProfilePicBackground"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@drawable/btn_circle"
+                android:backgroundTint="#B5DEC2D7"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/btnChangeProfilePic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-5dp"
+            android:text="Change Profile Picture"
+            android:textSize="13sp"
+            android:textAllCaps="false"
+            android:background="@color/transparent"
+            android:textColor="@color/brown_text"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="20dp"
+            android:text="Full Name"
+            android:textAllCaps="true"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:text="Rikki Dinh"
+            android:textSize="15sp"/>
 
         <Button
             android:id="@+id/btnStudentHome"
@@ -26,7 +100,8 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/orange"
             android:onClick="goToStudentHomeActivity"
-            android:text="STUDENT HOME" />
+            android:text="Return Home"
+            android:textColor="@color/white"/>
 
     </LinearLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>
