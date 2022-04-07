@@ -88,8 +88,8 @@
             android:textAllCaps="true"
             android:textStyle="bold"/>
 
-        <TextView
-            android:id="@+id/tvUserFullName"
+        <EditText
+            android:id="@+id/etUserFullName"
             android:layout_width="match_parent"
             android:layout_height="42dp"
             android:gravity="center_vertical"
@@ -100,6 +100,7 @@
             android:layout_marginLeft="27dp"
             android:layout_marginRight="30dp"
             android:text="Rikki Dinh"
+            android:textColor="@color/brown_text"
             android:textSize="17sp"/>
 
         <TextView
@@ -114,8 +115,8 @@
             android:textAllCaps="true"
             android:textStyle="bold"/>
 
-        <TextView
-            android:id="@+id/tvUserEmail"
+        <EditText
+            android:id="@+id/etUserEmail"
             android:layout_width="match_parent"
             android:layout_height="42dp"
             android:gravity="center_vertical"
@@ -126,6 +127,7 @@
             android:layout_marginLeft="27dp"
             android:layout_marginRight="30dp"
             android:text="rikki@student.edu.au"
+            android:textColor="@color/brown_text"
             android:textSize="17sp"/>
 
         <TextView
@@ -140,8 +142,8 @@
             android:textAllCaps="true"
             android:textStyle="bold"/>
 
-        <TextView
-            android:id="@+id/tvUserDOB"
+        <EditText
+            android:id="@+id/etUserDOB"
             android:layout_width="match_parent"
             android:layout_height="42dp"
             android:gravity="center_vertical"
@@ -152,6 +154,7 @@
             android:layout_marginLeft="27dp"
             android:layout_marginRight="30dp"
             android:text="19/11/19"
+            android:textColor="@color/brown_text"
             android:textSize="17sp"/>
 
         <TextView
@@ -166,8 +169,8 @@
             android:textAllCaps="true"
             android:textStyle="bold"/>
 
-        <TextView
-            android:id="@+id/tvUserParentContactEmail"
+        <EditText
+            android:id="@+id/etUserParentContactEmail"
             android:layout_width="match_parent"
             android:layout_height="42dp"
             android:gravity="center_vertical"
@@ -178,7 +181,17 @@
             android:layout_marginLeft="27dp"
             android:layout_marginRight="30dp"
             android:text="mailinh.dinhh@gmail.com"
+            android:textColor="@color/brown_text"
             android:textSize="17sp"/>
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/orange"
+            android:layout_marginTop="30dp"
+            android:text="Save"
+            android:textColor="@color/white"/>
 
         <Button
             android:id="@+id/btnStudentHome"
