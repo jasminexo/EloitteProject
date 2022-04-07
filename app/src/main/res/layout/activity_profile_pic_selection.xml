@@ -11,7 +11,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="20sp"
+        android:layout_marginTop="40sp"
         android:background="@color/yellow_bg"
         android:gravity="center_horizontal"
         android:orientation="vertical">
@@ -289,7 +289,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/orange"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="30dp"
             android:text="Save"
             android:textColor="@color/white"/>
 
@@ -298,7 +298,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/orange"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="30dp"
             android:onClick="goToStudentHomeActivity"
             android:text="STUDENT HOME"
             android:textColor="@color/white"/>
