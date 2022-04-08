@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="Rikki Dinh"
+            android:text="Full Name"
             android:textSize="25sp"
             android:textStyle="bold"
             android:textColor="@color/brown_text"/>
@@ -100,7 +100,7 @@
             android:backgroundTint="#2AE6B59D"
             android:layout_marginLeft="27dp"
             android:layout_marginRight="30dp"
-            android:text="Rikki Dinh"
+            android:text="Full Name"
             android:textColor="@color/brown_text"
             android:textSize="17sp"/>
 
@@ -127,7 +127,7 @@
             android:backgroundTint="#2AE6B59D"
             android:layout_marginLeft="27dp"
             android:layout_marginRight="30dp"
-            android:text="rikki@student.edu.au"
+            android:text="email@email.edu.au"
             android:textColor="@color/brown_text"
             android:textSize="17sp"/>
 
@@ -154,7 +154,7 @@
             android:backgroundTint="#2AE6B59D"
             android:layout_marginLeft="27dp"
             android:layout_marginRight="30dp"
-            android:text="19/11/19"
+            android:text="DD/MM/YY"
             android:textColor="@color/brown_text"
             android:textSize="17sp"/>
 
@@ -181,7 +181,7 @@
             android:backgroundTint="#2AE6B59D"
             android:layout_marginLeft="27dp"
             android:layout_marginRight="30dp"
-            android:text="mailinh.dinhh@gmail.com"
+            android:text="parent@email.com"
             android:textColor="@color/brown_text"
             android:textSize="17sp"/>
 
