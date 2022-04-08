@@ -42,9 +42,9 @@ public class Click {
         ArrayList <Click> clickList = new ArrayList<>();
         clickList.add(new Click(1, "Daily Check-In", 50));
         clickList.add(new Click(2, "Quiz", 20));
-        clickList.add(new Click(3, "Dashboard", 20));
+        clickList.add(new Click(3, "Goals", 20));
         clickList.add(new Click(4, "Leaderboard", 20));
-        clickList.add(new Click(5, "Meditation", 20));
+        clickList.add(new Click(5, "Appointment", 20));
 
         return clickList;
     }

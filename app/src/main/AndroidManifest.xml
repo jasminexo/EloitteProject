@@ -40,7 +40,7 @@
             android:name=".LeaderboardActivity"
             android:exported="true" />
         <activity
-            android:name=".StudentDashboardActivity"
+            android:name=".StudentAppointmentActivity"
             android:exported="true" />
         <activity
             android:name=".StudentPersonalityQuizHomeActivity"

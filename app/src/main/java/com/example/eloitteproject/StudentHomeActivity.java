@@ -121,8 +121,8 @@ public class StudentHomeActivity extends AppCompatActivity {
         update();
     }
 
-    public void goToDashboardActivity(View view){
-        Intent intent = new Intent (this, StudentDashboardActivity.class);
+    public void goToStudentGoalsActivity(View view){
+        Intent intent = new Intent (this, StudentGoalsActivity.class);
         startActivity(intent);
 
         clickID = 3;
@@ -149,6 +149,17 @@ public class StudentHomeActivity extends AppCompatActivity {
         Intent intent = new Intent (this, StudentProfileActivity.class);
         startActivity(intent);
 
+        //TODO: TIFF PLS CHECK THIS CLICK ID
+        clickID = 6;
+        update();
+
+    }
+
+    public void goToStudentAppointmentActivity(View view){
+        Intent intent = new Intent (this, StudentAppointmentActivity.class);
+        startActivity(intent);
+
+        //TODO: TIFF PLS CHECK THIS CLICK ID
         clickID = 6;
         update();
 
