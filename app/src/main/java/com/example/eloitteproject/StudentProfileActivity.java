@@ -1,8 +1,11 @@
 package com.example.eloitteproject;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.drawable.DrawableCompat;
+import androidx.room.Room;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,7 +13,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.util.List;
+import java.util.concurrent.Executors;
 
 public class StudentProfileActivity extends AppCompatActivity {
 
@@ -34,7 +40,44 @@ public class StudentProfileActivity extends AppCompatActivity {
         etUserParentContactEmail = findViewById(R.id.etUserParentContactEmail);
         btnSave = findViewById(R.id.btnSave);
 
-//        tvProfileName.setText(currentUser.getFullName());
+        //User database
+        UserDatabase uDB = Room.databaseBuilder(getApplicationContext(), UserDatabase.class,
+                "user-database")
+                .build();
+
+        String userID = FirebaseAuth.getInstance().getUid();
+
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+            Executors.newSingleThreadExecutor().execute(new Runnable() {
+                @Override
+                public void run() {
+                    String fullName = uDB.userDao().getName(userID);
+                    String email = uDB.userDao().getEmail(userID);
+//                    String DOB = uDB.userDao().getDOB(userID);
+//                    String parentEmail = uDB.userDao().getParentEmail(userID);
+//                    int profilePic = uDB.userDao().getProfilePic(userID);
+//                    String profileBG = uDB.userDao().getProfileBG(userID);
+//                    String bgColour = "R.color."+profileBG;
+
+                    tvProfileName.setText(fullName);
+                    etUserFullName.setText(fullName);
+                    etUserEmail.setText(email);
+//                    add dob, parent email, profile pic, profile BG
+//                    etUserDOB.setText(DOB);
+//                    etUserParentContactEmail.setText(parentEmail);
+//                    ivProfilePic.setImageDrawable(profilePic);
+
+//                    Drawable unwrappedDrawable = tvProfilePicBackground.getBackground();
+//                    Drawable wrappedDrawable = DrawableCompat.wrap(unwrappedDrawable);
+//                    DrawableCompat.setTint(wrappedDrawable, (getResources().getColor(bgColour)));
+                }
+            });
+            }
+        });
+
+
     }
 
     public void goToStudentHomeActivity(View view){

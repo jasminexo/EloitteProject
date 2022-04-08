@@ -154,6 +154,7 @@ public class StudentCheckInActivity extends AppCompatActivity {
             public void onClick(View view) {
                 currentQuestionPosition++;
                 displayCheckInQuestion();
+                seekBarProgress = 3;
             }
         });
     }

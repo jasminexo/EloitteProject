@@ -22,6 +22,9 @@ public interface UserDao {
     @Query("UPDATE User SET score = score + :addNum WHERE uID = :uID")
     void updateScore (int addNum, String uID);
 
+    //Update profile details
+
+
     //Get score
     @Query("SELECT score FROM User WHERE uID =:uID")
     int getScore(String uID);
@@ -29,6 +32,10 @@ public interface UserDao {
     //Get Name
     @Query("SELECT fullName FROM User WHERE uID =:uID")
     String getName(String uID);
+
+    //Get Email
+    @Query("SELECT email FROM User WHERE uID =:uID")
+    String getEmail(String uID);
 
     //Get all user data
     @Query("SELECT * FROM User")
