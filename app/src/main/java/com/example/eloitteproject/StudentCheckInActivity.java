@@ -31,7 +31,7 @@ public class StudentCheckInActivity extends AppCompatActivity {
     private TextView tvQuestionNumber, tvQuestion, tvTime, tvLabels1, tvLabels2, tvLabels3;
     private ImageView ivImage;
     private Button btnNext, btnReturnHome;
-    private SeekBar seekBar;
+     SeekBar seekBar;
     private String qID, countDownTime;
     CheckInQuestionDatabase checkinDB;
     int currentScore = 0, currentQuestionPosition, seekBarProgress = 3;
@@ -74,7 +74,6 @@ public class StudentCheckInActivity extends AppCompatActivity {
         seekBarChanged();
         displayCheckInQuestion();
         nextButtonClicked();
-
     }
 
     //when user changes the seekbar
@@ -154,7 +153,7 @@ public class StudentCheckInActivity extends AppCompatActivity {
             public void onClick(View view) {
                 currentQuestionPosition++;
                 displayCheckInQuestion();
-                seekBarProgress = 3;
+                seekBar.setProgress(3);
             }
         });
     }

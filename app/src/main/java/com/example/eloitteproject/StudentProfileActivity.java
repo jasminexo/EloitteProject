@@ -62,7 +62,7 @@ public class StudentProfileActivity extends AppCompatActivity {
 //                    String bgColour = "R.color."+profileBG;
 
                     tvProfileName.setText(fullName);
-                    etUserFullName.setText(fullName);
+                    etUserFullName.setText(fullName, TextView.BufferType.EDITABLE);
                     etUserEmail.setText(email);
 //                    add dob, parent email, profile pic, profile BG
 //                    etUserDOB.setText(DOB);
@@ -72,12 +72,13 @@ public class StudentProfileActivity extends AppCompatActivity {
 //                    Drawable unwrappedDrawable = tvProfilePicBackground.getBackground();
 //                    Drawable wrappedDrawable = DrawableCompat.wrap(unwrappedDrawable);
 //                    DrawableCompat.setTint(wrappedDrawable, (getResources().getColor(bgColour)));
+
+                    //get text of all edittexts, get profile pic background
+                    //update this info onto respective uid
                 }
             });
             }
         });
-
-
     }
 
     public void goToStudentHomeActivity(View view){

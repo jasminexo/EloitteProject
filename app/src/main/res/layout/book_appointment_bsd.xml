@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llResult"
+    android:layout_width="match_parent"
+    android:layout_height="275dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvPersonalityType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:gravity="center"
+        android:text="You got: The HYPERKINETIC Type"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/brown_text"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPersonalityDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="left"
+        android:text="To control your stress and regain your focus, you as the Hyperkinetic Type, need to find ways to calm your mind and relax your body. This can be achieved by:
+            \n - Making sure you get enough sleep
+            \n - Take breaks, and practice breathing exercises or meditation regularly
+            \n - Exercise frequently"
+        android:textAllCaps="false"
+        android:textColor="@color/brown_text"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/tvPersonalityType"
+        app:layout_constraintTop_toBottomOf="@+id/tvPersonalityType" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPersonalityDesc"
+        app:layout_constraintVertical_bias="0.0">
+
+        <Button
+            android:id="@+id/btnReturntoHome"
+            android:layout_width="144dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/light_brown"
+            android:text="Return Home"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnSuggestions"
+            android:layout_width="144dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="70dp"
+            android:backgroundTint="@color/light_brown"
+            android:text="De-stress Tips"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.constraintlayout.widget.ConstraintLayout>
