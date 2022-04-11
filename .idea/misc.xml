@@ -24,7 +24,7 @@
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.15" />
         <entry key="app/src/main/res/layout/activity_profile_pic_selection.xml" value="0.45" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.182518115942029" />
-        <entry key="app/src/main/res/layout/activity_student_appointment.xml" value="0.4428904428904429" />
+        <entry key="app/src/main/res/layout/activity_student_appointment.xml" value="0.3025830258302583" />
         <entry key="app/src/main/res/layout/activity_student_checkin.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_student_dashboard.xml" value="0.175" />
         <entry key="app/src/main/res/layout/activity_student_goals.xml" value="0.2833333333333333" />
@@ -38,7 +38,8 @@
         <entry key="app/src/main/res/layout/activity_student_profile.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_student_quiz.xml" value="0.175" />
         <entry key="app/src/main/res/layout/boarditem.xml" value="0.13072916666666667" />
-        <entry key="app/src/main/res/layout/book_appointment_bsd.xml" value="0.39094650205761317" />
+        <entry key="app/src/main/res/layout/book_appointment_bsd.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/calendar_cell.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/layout/fragment_score.xml" value="0.49619237985438047" />
         <entry key="app/src/main/res/layout/goals_item_row.xml" value="0.2833333333333333" />
         <entry key="app/src/main/res/layout/leaderboard_item_row.xml" value="0.577354119405383" />

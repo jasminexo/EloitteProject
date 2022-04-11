@@ -89,6 +89,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
+
                 <ImageButton
                     android:id="@+id/ibPreviousMonth"
                     android:layout_width="30dp"
@@ -96,6 +97,7 @@
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="5dp"
                     android:background="@color/transparent"
+                    android:onClick="previousMonthClicked"
                     android:src="@drawable/ic_left"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -111,13 +113,15 @@
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/ibPreviousMonth" />
+
                 <ImageButton
                     android:id="@+id/ibNextMonth"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginRight="8dp"
                     android:layout_marginTop="5dp"
+                    android:layout_marginRight="8dp"
                     android:background="@color/transparent"
+                    android:onClick="nextMonthClicked"
                     android:src="@drawable/ic_right"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -131,8 +135,7 @@
                     android:layout_marginRight="16dp"
                     android:orientation="horizontal"
                     app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/ibPreviousMonth"
-                    app:layout_constraintTop_toTopOf="">
+                    app:layout_constraintTop_toBottomOf="@+id/ibPreviousMonth">
 
                     <TextView
                         android:layout_width="0dp"
@@ -310,12 +313,12 @@
             android:id="@+id/btnBookNewAppointment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/orange"
-            android:onClick="goToStudentHomeActivity"
-            android:text="Book New Appointment"
-            android:textColor="@color/white"
             android:background="@color/light_brown"
-            android:textAllCaps="false"/>
+            android:backgroundTint="@color/orange"
+            android:onClick="goToNewBookingBottomSheet"
+            android:text="Book New Appointment"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/btnStudentHome"

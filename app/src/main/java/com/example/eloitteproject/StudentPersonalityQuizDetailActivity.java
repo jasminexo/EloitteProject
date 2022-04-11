@@ -270,7 +270,7 @@ public class StudentPersonalityQuizDetailActivity extends AppCompatActivity {
         //Instantiate new bottom sheet dialog
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(StudentPersonalityQuizDetailActivity.this);
         //Inflate the view so that users are able to view it
-        View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.personality_result, (LinearLayout)findViewById(R.id.llResult));
+        View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.personality_result, (LinearLayout)findViewById(R.id.llBook));
         TextView tvPersonalityType = bottomSheetView.findViewById(R.id.tvPersonalityType);
         tvPersonalityType.setText(personalityType);
         TextView tvPersonalityDesc = bottomSheetView.findViewById(R.id.tvPersonalityDesc);
