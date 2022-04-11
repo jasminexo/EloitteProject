@@ -63,7 +63,7 @@ public class StudentProfileActivity extends AppCompatActivity {
 
                     tvProfileName.setText(fullName);
                     etUserFullName.setText(fullName, TextView.BufferType.EDITABLE);
-                    etUserEmail.setText(email);
+                    etUserEmail.setText(email, TextView.BufferType.EDITABLE);
 //                    add dob, parent email, profile pic, profile BG
 //                    etUserDOB.setText(DOB);
 //                    etUserParentContactEmail.setText(parentEmail);

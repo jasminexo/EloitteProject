@@ -27,13 +27,13 @@ import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
+@RequiresApi(api = Build.VERSION_CODES.O)
 public class StudentAppointmentActivity extends AppCompatActivity implements CalendarAdapter.OnItemListener{
 
     private TextView tvMonth, bsTVMonth;
     private RecyclerView calendarRecyclerView, bsCalendarRecyclerView;
     private LocalDate selectedDate;
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,9 +48,8 @@ public class StudentAppointmentActivity extends AppCompatActivity implements Cal
         tvMonth = findViewById(R.id.tvMonth);
     }
 
-    //Set month view from adapter
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    private void setMonthView() {
+    //Set month view from adapter for main activity
+    public void setMonthView() {
         tvMonth.setText(monthFromDate(selectedDate));
         ArrayList<String> daysInMonth = daysInMonthArray(selectedDate);
 
@@ -58,11 +57,20 @@ public class StudentAppointmentActivity extends AppCompatActivity implements Cal
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 7);
         calendarRecyclerView.setLayoutManager(layoutManager);
         calendarRecyclerView.setAdapter(calendarAdapter);
-
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    private ArrayList<String> daysInMonthArray(LocalDate date) {
+    //Set month view from adapter for bottom sheet
+    public void setBSMonthView() {
+        bsTVMonth.setText(monthFromDate(selectedDate));
+        ArrayList<String> daysInMonth = daysInMonthArray(selectedDate);
+
+        CalendarAdapter calendarAdapter = new CalendarAdapter(daysInMonth, this);
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 7);
+        bsCalendarRecyclerView.setLayoutManager(layoutManager);
+        bsCalendarRecyclerView.setAdapter(calendarAdapter);
+    }
+
+    public ArrayList<String> daysInMonthArray(LocalDate date) {
         ArrayList<String> daysInMonthArray = new ArrayList<>();
         YearMonth yearMonth = YearMonth.from(date);
 
@@ -82,19 +90,16 @@ public class StudentAppointmentActivity extends AppCompatActivity implements Cal
         return daysInMonthArray;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    private String monthFromDate(LocalDate date){
+    public String monthFromDate(LocalDate date){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM");
         return date.format(formatter);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     public void previousMonthClicked(View view){
         selectedDate = selectedDate.minusMonths(1);
         setMonthView();
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     public void nextMonthClicked(View view){
         selectedDate = selectedDate.plusMonths(1);
         setMonthView();
@@ -110,12 +115,10 @@ public class StudentAppointmentActivity extends AppCompatActivity implements Cal
         startActivity(intent);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     public void goToNewBookingBottomSheet(View view){
         showBookingBottomScreen();
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onItemClick(int position, String dayText) {
         if(dayText.equals("")){
@@ -125,7 +128,6 @@ public class StudentAppointmentActivity extends AppCompatActivity implements Cal
     }
 
     //shows the results in bottom screen
-    @RequiresApi(api = Build.VERSION_CODES.O)
     private void showBookingBottomScreen(){
 
         //Instantiate new bottom sheet dialog
@@ -133,6 +135,7 @@ public class StudentAppointmentActivity extends AppCompatActivity implements Cal
         //Inflate the view so that users are able to view it
         View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.book_appointment_bsd, (LinearLayout)findViewById(R.id.llBook));
 
+        //Hide Bottom sheet view when back button clicked
         ImageButton ibBack = bottomSheetView.findViewById(R.id.ibBack);
         ibBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -144,15 +147,28 @@ public class StudentAppointmentActivity extends AppCompatActivity implements Cal
         bsCalendarRecyclerView = bottomSheetView.findViewById(R.id.calendarRecyclerView);
         bsTVMonth = bottomSheetView.findViewById(R.id.tvMonth);
 
-        bsTVMonth.setText(monthFromDate(selectedDate));
-        ArrayList<String> daysInMonth = daysInMonthArray(selectedDate);
+        setBSMonthView();
 
-        //Set month view
-        CalendarAdapter calendarAdapter = new CalendarAdapter(daysInMonth, this);
-        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 7);
-        //THIS IS NOT WORKING
-        bsCalendarRecyclerView.setLayoutManager(layoutManager);
-        bsCalendarRecyclerView.setAdapter(calendarAdapter);
+//        public void setBSMonthView() {
+//            bsTVMonth.setText(monthFromDate(selectedDate));
+//            ArrayList<String> daysInMonth = daysInMonthArray(selectedDate);
+//
+//            CalendarAdapter calendarAdapter = new CalendarAdapter(daysInMonth, this);
+//            RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 7);
+//            bsCalendarRecyclerView.setLayoutManager(layoutManager);
+//            bsCalendarRecyclerView.setAdapter(calendarAdapter);
+//        }
+
+
+//        bsTVMonth.setText(monthFromDate(selectedDate));
+//        ArrayList<String> daysInMonth = daysInMonthArray(selectedDate);
+//
+//        //Set month view
+//        CalendarAdapter cCalendarAdapter = new CalendarAdapter(daysInMonth, this);
+//        RecyclerView.LayoutManager cLayoutManager = new GridLayoutManager(getApplicationContext(), 7);
+//        //THIS IS NOT WORKING
+//        bsCalendarRecyclerView.setLayoutManager(cLayoutManager);
+//        bsCalendarRecyclerView.setAdapter(cCalendarAdapter);
 
         ImageButton ibPreviousMonth = bottomSheetView.findViewById(R.id.ibPreviousMonth);
         ibPreviousMonth.setOnClickListener(new View.OnClickListener() {
@@ -160,7 +176,7 @@ public class StudentAppointmentActivity extends AppCompatActivity implements Cal
             public void onClick(View view) {
                 selectedDate = selectedDate.minusMonths(1);
                 bsTVMonth.setText(monthFromDate(selectedDate));
-                ArrayList<String> daysInMonth = daysInMonthArray(selectedDate);
+                setBSMonthView();
             }
         });
 
@@ -170,7 +186,7 @@ public class StudentAppointmentActivity extends AppCompatActivity implements Cal
             public void onClick(View view) {
                 selectedDate = selectedDate.plusMonths(1);
                 bsTVMonth.setText(monthFromDate(selectedDate));
-                ArrayList<String> daysInMonth = daysInMonthArray(selectedDate);
+                setBSMonthView();
             }
         });
 
