@@ -19,6 +19,11 @@ public class CalendarUtils {
         return date.format(formatter);
     }
 
+    public static String dayFromDate(LocalDate date){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy");
+        return date.format(formatter);
+    }
+
     public static ArrayList<LocalDate> daysInMonthArray(LocalDate date) {
         ArrayList<LocalDate> daysInMonthArray = new ArrayList<>();
         YearMonth yearMonth = YearMonth.from(date);

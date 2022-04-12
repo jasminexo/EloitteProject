@@ -48,44 +48,42 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/tvDDMonthYYYY"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="19dp"
+            android:layout_marginTop="16dp"
             android:gravity="center"
-            android:text="Available time"
+            android:text="13 April 2022"
             android:textAlignment="center"
             android:textAllCaps="false"
-            android:textColor="@color/brown_text"
-            android:textSize="15sp"
-            android:textStyle="bold"
+            android:textColor="#8E8D8D"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginTop="5dp"
-            android:text="Adjust to your schedule"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:textColor="@color/brown_text"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="@+id/textView6"
-            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        <ImageButton
+            android:id="@+id/ibPreviousDay"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="8dp"
+            android:background="@color/transparent"
+            android:src="@drawable/ic_left"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDDMonthYYYY"
+            app:layout_constraintEnd_toStartOf="@+id/tvDDMonthYYYY"
+            app:layout_constraintTop_toTopOf="@+id/tvDDMonthYYYY" />
 
         <ImageButton
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/ic_calendar"
-            android:background="@drawable/btn_semiround_corner"
-            android:layout_marginTop="19dp"
-            android:layout_marginRight="24dp"
-            android:backgroundTint="#9D9FA0"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:id="@+id/ibNextDay"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="8dp"
+            android:background="@color/transparent"
+            android:src="@drawable/ic_right"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDDMonthYYYY"
+
+            app:layout_constraintStart_toEndOf="@+id/tvDDMonthYYYY"
+            app:layout_constraintTop_toTopOf="@+id/tvDDMonthYYYY" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.cardview.widget.CardView
@@ -102,16 +100,6 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="10dp">
-            <ImageButton
-                android:id="@+id/ibPreviousMonth"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="5dp"
-                android:background="@color/transparent"
-                android:src="@drawable/ic_left"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tvMonth"
@@ -120,19 +108,9 @@
                 android:text="Month"
                 android:textSize="20dp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/ibPreviousMonth"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/ibPreviousMonth" />
-            <ImageButton
-                android:id="@+id/ibNextMonth"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginTop="5dp"
-                android:background="@color/transparent"
-                android:src="@drawable/ic_right"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
@@ -144,7 +122,7 @@
                 android:layout_marginRight="16dp"
                 android:orientation="horizontal"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ibPreviousMonth">
+                app:layout_constraintTop_toBottomOf="@+id/tvMonth">
 
                 <TextView
                     android:layout_width="0dp"
@@ -219,41 +197,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="14dp"
-        android:layout_marginBottom="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvPersonalityDesc"
-        app:layout_constraintVertical_bias="0.0">
+        <CheckBox
+            android:id="@+id/cbDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#7C7C7C"
+            android:layout_marginLeft="24dp"
+            android:text="Date at Time"
+            android:buttonTint="@color/light_brown" />
 
         <Button
-            android:id="@+id/btnReturntoHome"
-            android:layout_width="144dp"
-            android:layout_height="50dp"
-            android:backgroundTint="@color/light_brown"
-            android:text="Return Home"
+            android:id="@+id/btnBookAppointment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="23dp"
+            android:background="@color/light_brown"
+            android:backgroundTint="@color/orange"
+            android:text="Book Appointment"
             android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textStyle="bold" />
+            android:textColor="@color/white" />
 
-        <Button
-            android:id="@+id/btnSuggestions"
-            android:layout_width="144dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="70dp"
-            android:backgroundTint="@color/light_brown"
-            android:text="De-stress Tips"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textStyle="bold" />
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.appcompat.widget.LinearLayoutCompat>

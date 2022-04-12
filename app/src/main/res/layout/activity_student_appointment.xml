@@ -92,7 +92,7 @@
                 android:layout_marginBottom="15dp">
 
                 <ImageButton
-                    android:id="@+id/ibPreviousMonth"
+                    android:id="@+id/ibPreviousDay"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginLeft="8dp"
@@ -110,13 +110,13 @@
                     android:text="March"
                     android:textSize="20dp"
                     android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="@+id/ibPreviousMonth"
+                    app:layout_constraintBottom_toBottomOf="@+id/ibPreviousDay"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/ibPreviousMonth" />
+                    app:layout_constraintTop_toTopOf="@+id/ibPreviousDay" />
 
                 <ImageButton
-                    android:id="@+id/ibNextMonth"
+                    android:id="@+id/ibNextDay"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginTop="5dp"
@@ -138,7 +138,7 @@
                     android:orientation="horizontal"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintBottom_toTopOf="@id/calendarRecyclerView"
-                    app:layout_constraintTop_toBottomOf="@+id/ibPreviousMonth">
+                    app:layout_constraintTop_toBottomOf="@+id/ibPreviousDay">
 
                     <TextView
                         android:layout_width="0dp"
@@ -316,22 +316,17 @@
 
         <Button
             android:id="@+id/btnBookNewAppointment"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="23dp"
             android:background="@color/light_brown"
             android:backgroundTint="@color/orange"
             android:onClick="goToNewBookingBottomSheet"
             android:text="Book New Appointment"
             android:textAllCaps="false"
             android:textColor="@color/white" />
-
-        <Button
-            android:id="@+id/btnStudentHome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/orange"
-            android:onClick="goToStudentHomeActivity"
-            android:text="STUDENT HOME" />
 
     </LinearLayout>
 

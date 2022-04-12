@@ -1,5 +1,6 @@
 package com.example.eloitteproject;
 
+import static com.example.eloitteproject.CalendarUtils.dayFromDate;
 import static com.example.eloitteproject.CalendarUtils.daysInMonthArray;
 import static com.example.eloitteproject.CalendarUtils.daysInWeekArray;
 import static com.example.eloitteproject.CalendarUtils.monthFromDate;
@@ -15,6 +16,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -27,9 +29,9 @@ import java.util.ArrayList;
 @RequiresApi(api = Build.VERSION_CODES.O)
 public class StudentAppointmentActivity extends AppCompatActivity implements CalendarAdapter.OnItemListener{
 
-    private TextView tvMonth, bsTVMonth;
+    private TextView tvMonth, bsTVMonth, bsTVDate;
+    private CheckBox cbDate;
     private RecyclerView calendarRecyclerView, bsCalendarRecyclerView;
-//    private LocalDate selectedDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,7 +104,7 @@ public class StudentAppointmentActivity extends AppCompatActivity implements Cal
     }
 
     //shows the results in bottom screen
-    private void showBookingBottomScreen(){
+    public void showBookingBottomScreen(){
 
         //Instantiate new bottom sheet dialog
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(StudentAppointmentActivity.this);
@@ -115,49 +117,47 @@ public class StudentAppointmentActivity extends AppCompatActivity implements Cal
             @Override
             public void onClick(View view) {
                 bottomSheetDialog.dismiss();
+                setWeekView();
             }
         });
 
         bsCalendarRecyclerView = bottomSheetView.findViewById(R.id.calendarRecyclerView);
         bsTVMonth = bottomSheetView.findViewById(R.id.tvMonth);
+        bsTVDate = bottomSheetView.findViewById(R.id.tvDDMonthYYYY);
+        cbDate = bottomSheetView.findViewById(R.id.cbDate);
 
         setMonthView();
+        bsTVDate.setText(dayFromDate(CalendarUtils.selectedDate));
 
-        ImageButton ibPreviousMonth = bottomSheetView.findViewById(R.id.ibPreviousMonth);
-        ibPreviousMonth.setOnClickListener(new View.OnClickListener() {
+        ImageButton ibPreviousDay = bottomSheetView.findViewById(R.id.ibPreviousDay);
+        ibPreviousDay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                CalendarUtils.selectedDate = CalendarUtils.selectedDate.minusMonths(1);
+                CalendarUtils.selectedDate = CalendarUtils.selectedDate.minusDays(1);
                 bsTVMonth.setText(monthFromDate(CalendarUtils.selectedDate));
+                bsTVDate.setText(dayFromDate(CalendarUtils.selectedDate));
                 setMonthView();
             }
         });
 
-        ImageButton ibNextMonth = bottomSheetView.findViewById(R.id.ibNextMonth);
-        ibNextMonth.setOnClickListener(new View.OnClickListener() {
+        ImageButton ibNextDay = bottomSheetView.findViewById(R.id.ibNextDay);
+        ibNextDay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                CalendarUtils.selectedDate = CalendarUtils.selectedDate.plusMonths(1);
+                CalendarUtils.selectedDate = CalendarUtils.selectedDate.plusDays(1);
                 bsTVMonth.setText(monthFromDate(CalendarUtils.selectedDate));
+                bsTVDate.setText(dayFromDate(CalendarUtils.selectedDate));
                 setMonthView();
             }
         });
 
-        //DELETE THIS LATER
-        //returns to student home screen
-        Button btnReturnToHome = bottomSheetView.findViewById(R.id.btnReturntoHome);
-        btnReturnToHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(StudentAppointmentActivity.this, StudentHomeActivity.class);
-                startActivity(intent);
-                bottomSheetDialog.dismiss();
-            }
-        });
+        //Set check box text to confirm appt time
+        cbDate.setText(dayFromDate(CalendarUtils.selectedDate)+"at timesdflshjd");
 
         //Cancels bottom sheet dialog when user clicks another part of the screen
         bottomSheetDialog.setContentView(bottomSheetView);
         bottomSheetDialog.setCanceledOnTouchOutside(true);
         bottomSheetDialog.show();
+        setWeekView();
     }
 }

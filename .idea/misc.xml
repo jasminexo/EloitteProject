@@ -38,7 +38,7 @@
         <entry key="app/src/main/res/layout/activity_student_profile.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_student_quiz.xml" value="0.175" />
         <entry key="app/src/main/res/layout/boarditem.xml" value="0.13072916666666667" />
-        <entry key="app/src/main/res/layout/book_appointment_bsd.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/book_appointment_bsd.xml" value="0.375" />
         <entry key="app/src/main/res/layout/calendar_cell.xml" value="0.375" />
         <entry key="app/src/main/res/layout/fragment_score.xml" value="0.49619237985438047" />
         <entry key="app/src/main/res/layout/goals_item_row.xml" value="0.2833333333333333" />
@@ -59,7 +59,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.375" />
+        <option name="scale" value="0.335" />
       </ProjectState>
     </option>
   </component>
