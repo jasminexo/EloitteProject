@@ -117,7 +117,7 @@ public class ScoreFragment extends Fragment {
                         return true;
                     //By default sort by points
                     default:
-                        mAdapter.sort(1);
+                        mAdapter.sort(2);
                         return true;
                 }
             }
