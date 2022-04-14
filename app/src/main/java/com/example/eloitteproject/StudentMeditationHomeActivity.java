@@ -28,7 +28,6 @@ public class StudentMeditationHomeActivity extends AppCompatActivity implements 
     public ArrayList<Video> mVideo = Video.getVideo();
     public RecyclerView mRecyclerView;
     public VideoAdapter mAdapter;
-    Button ibMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

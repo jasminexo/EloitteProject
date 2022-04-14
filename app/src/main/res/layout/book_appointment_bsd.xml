@@ -193,30 +193,75 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
-    <GridView
+    <GridLayout
+        android:id="@+id/glTime"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginRight="38dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-        <CheckBox
-            android:id="@+id/cbDate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#7C7C7C"
-            android:layout_marginLeft="24dp"
-            android:text="Date at Time"
-            android:buttonTint="@color/light_brown" />
+        android:layout_height="120dp"
+        android:columnCount="3"
+        android:layout_gravity="center">
 
         <Button
-            android:id="@+id/btnBookAppointment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp"
-            android:layout_marginTop="23dp"
-            android:background="@color/light_brown"
-            android:backgroundTint="@color/orange"
-            android:text="Book Appointment"
+            android:id="@+id/btn830"
+            android:text="8:30am"
             android:textAllCaps="false"
-            android:textColor="@color/white" />
+            android:backgroundTint="@color/button_light"/>
+        <Button
+            android:id="@+id/btn845"
+            android:text="8:45am"
+            android:textAllCaps="false"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:backgroundTint="@color/button_light"/>
+        <Button
+            android:id="@+id/btn900"
+            android:text="9:00am"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/button_light"/>
+        <Button
+            android:id="@+id/btn300"
+            android:text="3:00pm"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/button_light"/>
+        <Button
+            android:id="@+id/btn315"
+            android:text="3:15pm"
+            android:textAllCaps="false"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:backgroundTint="@color/button_light"/>
+        <Button
+            android:id="@+id/btn330"
+            android:text="3:30pm"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/button_light"/>
+
+    </GridLayout>
+
+    <CheckBox
+        android:id="@+id/cbDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#7C7C7C"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:text="Date at Time"
+        android:buttonTint="@color/light_brown" />
+
+    <Button
+        android:id="@+id/btnBookAppointment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/light_brown"
+        android:backgroundTint="@color/orange"
+        android:text="Book Appointment"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

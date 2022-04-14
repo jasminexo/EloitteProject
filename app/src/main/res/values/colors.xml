@@ -28,4 +28,7 @@
     <color name="circle_orange">#FFCEA9</color>
     <color name="circle_purple">#DEC2D7</color>
     <color name="circle_blue">#E7FBFF</color>
+    <color name="button_grey">#DAD8D8</color>
+    <color name="button_light">#FAE6D6</color>
+    <color name="red">#B0EE938C</color>
 </resources>

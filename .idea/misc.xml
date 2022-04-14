@@ -38,10 +38,11 @@
         <entry key="app/src/main/res/layout/activity_student_profile.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_student_quiz.xml" value="0.175" />
         <entry key="app/src/main/res/layout/boarditem.xml" value="0.13072916666666667" />
-        <entry key="app/src/main/res/layout/book_appointment_bsd.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/book_appointment_bsd.xml" value="0.2297872340425532" />
         <entry key="app/src/main/res/layout/calendar_cell.xml" value="0.375" />
         <entry key="app/src/main/res/layout/fragment_score.xml" value="0.49619237985438047" />
         <entry key="app/src/main/res/layout/goals_item_row.xml" value="0.2833333333333333" />
+        <entry key="app/src/main/res/layout/layout_time_slot.xml" value="0.2833333333333333" />
         <entry key="app/src/main/res/layout/leaderboard_item_row.xml" value="0.577354119405383" />
         <entry key="app/src/main/res/layout/meditation_item_row.xml" value="0.4409090909090909" />
         <entry key="app/src/main/res/layout/personality_result.xml" value="0.2833333333333333" />
