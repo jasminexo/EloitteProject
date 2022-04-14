@@ -108,10 +108,10 @@
 
             <ImageButton
                 android:id="@+id/filterBtn"
-                android:layout_width="31dp"
+                android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_gravity="right"
-                android:layout_margin="1dp"
+                android:layout_margin="2dp"
                 android:scaleType="center"
                 app:srcCompat="@android:drawable/ic_menu_sort_by_size" />
 

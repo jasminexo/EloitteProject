@@ -41,7 +41,7 @@ public class ScoreFragment extends Fragment {
     private String mParam2;
 
 
-    //Declaring variables
+    //Declare our variables
     TextView scoreUsername, scoreNumber;
     ImageButton filterButton;
     ImageView default_profile_pic;
@@ -88,7 +88,7 @@ public class ScoreFragment extends Fragment {
     //NON AUTO STUFF BEGINS HERE
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
 
-        //Initializing widgets
+        //Initialising widgets
         scoreUsername = getView().findViewById(R.id.score_username);
         scoreNumber = getView().findViewById(R.id.score_number);
         filterButton = getView().findViewById(R.id.filterBtn);
@@ -109,15 +109,15 @@ public class ScoreFragment extends Fragment {
                 switch (menuItem.getItemId()) {
                     //Sort by Points
                     case 0:
-                        mAdapter.sort(1);
+                        mAdapter.sort(2);
                         return true;
                     //Sort by Name
                     case 1:
-                        mAdapter.sort(2);
+                        mAdapter.sort(1);
                         return true;
                     //By default sort by points
                     default:
-                        mAdapter.sort(3);
+                        mAdapter.sort(1);
                         return true;
                 }
             }
@@ -163,9 +163,6 @@ public class ScoreFragment extends Fragment {
                             scoreNumber.setText(String.valueOf(userScore));
                             mAdapter.setBoards(userList);
 
-//                            Glide.with(default_profile_pic)
-//                                    .load("https://ui-avatars.com/api/?name=" + username)
-//                                    .into(default_profile_pic);
                         }
                     });
                 }

@@ -149,7 +149,6 @@ public class StudentHomeActivity extends AppCompatActivity {
         Intent intent = new Intent (this, StudentProfileActivity.class);
         startActivity(intent);
 
-        //TODO: TIFF PLS CHECK THIS CLICK ID
         clickID = 6;
         update();
 
@@ -159,8 +158,7 @@ public class StudentHomeActivity extends AppCompatActivity {
         Intent intent = new Intent (this, StudentAppointmentActivity.class);
         startActivity(intent);
 
-        //TODO: TIFF PLS CHECK THIS CLICK ID
-        clickID = 6;
+        clickID = 1;
         update();
 
     }

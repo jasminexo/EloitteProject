@@ -55,7 +55,7 @@ public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.BoardViewHol
 
     public class BoardViewHolder extends RecyclerView.ViewHolder {
         private TextView boardPoints, pName;
-        private ImageView profilePic;
+        //private ImageView profilePic;
         public BoardViewHolder(@NonNull View itemView) {
             super(itemView);
             //profilePic = itemView.findViewById(R.id.profilePic);
@@ -71,10 +71,10 @@ public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.BoardViewHol
                 @Override
                 public int compare(User u1, User u2) {
                     if(sortUserMethod == 1){
-                        //TODO: SORT BY NAME
+                        //Jank sort by name homg.
                         return u1.getFullName().compareTo(u2.getFullName());
                     }
-                    else  if(sortUserMethod == 3){
+                    else  if(sortUserMethod == 2){
                         return String.valueOf(u2.getScore()).compareTo(String.valueOf(u1.getScore()));
                     }
                     return String.valueOf(u2.getScore()).compareTo(String.valueOf(u1.getScore()));

@@ -158,18 +158,27 @@ public class RegisterActivity extends AppCompatActivity {
                             FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
                             String currentUID = firebaseUser.getUid();
 
-                            //Insert new user into the user database
-                            Executors.newSingleThreadExecutor().execute(new Runnable() {
-                                @Override
-                                public void run() {
-                                    uDB.userDao().insertOneUser(new User(currentUID, inputName, inputPassword, inputEmail, 0));
-                                }
-                            });
 
                             if(isTeacherBox.isChecked()) {
+                                //Insert new user into the user database
+                                Executors.newSingleThreadExecutor().execute(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        uDB.userDao().insertOneUser(new User(currentUID, inputName, inputPassword, inputEmail, 0));
+                                    }
+                                });
+
                                 startActivity(new Intent(getApplicationContext(), TeacherHomeActivity.class));
                             }
                             if(isStudentBox.isChecked()){
+                                //Insert new user into the user database
+                                Executors.newSingleThreadExecutor().execute(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        uDB.userDao().insertOneUser(new User(currentUID, inputName, inputPassword, inputEmail, 0));
+                                    }
+                                });
+
                                 startActivity(new Intent(getApplicationContext(), StudentHomeActivity.class));
 
                             }
