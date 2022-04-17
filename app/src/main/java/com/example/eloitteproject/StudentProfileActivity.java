@@ -43,6 +43,7 @@ public class StudentProfileActivity extends AppCompatActivity {
         //User database
         UserDatabase uDB = Room.databaseBuilder(getApplicationContext(), UserDatabase.class,
                 "user-database")
+                .fallbackToDestructiveMigration()
                 .build();
 
         String userID = FirebaseAuth.getInstance().getUid();
@@ -55,30 +56,36 @@ public class StudentProfileActivity extends AppCompatActivity {
                 public void run() {
                     String fullName = uDB.userDao().getName(userID);
                     String email = uDB.userDao().getEmail(userID);
-//                    String DOB = uDB.userDao().getDOB(userID);
-//                    String parentEmail = uDB.userDao().getParentEmail(userID);
-//                    int profilePic = uDB.userDao().getProfilePic(userID);
-//                    String profileBG = uDB.userDao().getProfileBG(userID);
-//                    String bgColour = "R.color."+profileBG;
+                    String DOB = uDB.userDao().getDOB(userID);
+                    String parentEmail = uDB.userDao().getParentEmail(userID);
+                    int profilePic = uDB.userDao().getProfilePic(userID);
+                    //String profileBG = uDB.userDao().getProfileBG(userID);
+                    //String bgColour = "R.color."+profileBG;
 
                     tvProfileName.setText(fullName);
                     etUserFullName.setText(fullName, TextView.BufferType.EDITABLE);
                     etUserEmail.setText(email, TextView.BufferType.EDITABLE);
 //                    add dob, parent email, profile pic, profile BG
-//                    etUserDOB.setText(DOB);
-//                    etUserParentContactEmail.setText(parentEmail);
-//                    ivProfilePic.setImageDrawable(profilePic);
+                    etUserDOB.setText(DOB, TextView.BufferType.EDITABLE );
+                    etUserParentContactEmail.setText(parentEmail, TextView.BufferType.EDITABLE);
 
-//                    Drawable unwrappedDrawable = tvProfilePicBackground.getBackground();
-//                    Drawable wrappedDrawable = DrawableCompat.wrap(unwrappedDrawable);
-//                    DrawableCompat.setTint(wrappedDrawable, (getResources().getColor(bgColour)));
+                    ivProfilePic.setImageResource(profilePic);
 
-                    //get text of all edittexts, get profile pic background
-                    //update this info onto respective uid
+                    //Drawable unwrappedDrawable = tvProfilePicBackground.getBackground();
+                    //Drawable wrappedDrawable = DrawableCompat.wrap(unwrappedDrawable);
+                    //DrawableCompat.setTint(wrappedDrawable, (getResources().getColor(Integer.parseInt(bgColour))));
+
                 }
             });
             }
         });
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            updateProfile();
+            }
+        });
+
     }
 
     public void goToStudentHomeActivity(View view){
@@ -89,5 +96,26 @@ public class StudentProfileActivity extends AppCompatActivity {
     public void goToProfilePicSelection(View view){
         Intent intent = new Intent (this, ProfilePicSelectionActivity.class);
         startActivity(intent);
+    }
+
+    public void updateProfile() {
+
+        //Update user database
+        UserDatabase uDB = Room.databaseBuilder(getApplicationContext(), UserDatabase.class ,
+                "user-database")
+                .fallbackToDestructiveMigration()
+                .build();
+
+        String userID = FirebaseAuth.getInstance().getUid();
+
+        Executors.newSingleThreadExecutor().execute(new Runnable() {
+            @Override
+            public void run() {
+                uDB.userDao().updateName(etUserFullName.getText().toString(), userID);
+                uDB.userDao().updateEmail(etUserEmail.getText().toString(), userID);
+                uDB.userDao().updateDOB(etUserDOB.getText().toString(), userID);
+                uDB.userDao().updateParentEmail(etUserParentContactEmail.getText().toString(), userID);
+            }
+        });
     }
 }

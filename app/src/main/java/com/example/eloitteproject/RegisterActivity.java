@@ -153,7 +153,9 @@ public class RegisterActivity extends AppCompatActivity {
                             Toast.makeText(RegisterActivity.this, "Login Success!", Toast.LENGTH_SHORT);
 
                             //User database
-                            UserDatabase uDB = Room.databaseBuilder(getApplicationContext(), UserDatabase.class, "user-database").build();
+                            UserDatabase uDB = Room.databaseBuilder(getApplicationContext(), UserDatabase.class, "user-database")
+                                    .fallbackToDestructiveMigration()
+                                    .build();
                             //Get the new users uID from Firebase authentication
                             FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
                             String currentUID = firebaseUser.getUid();
@@ -164,7 +166,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 Executors.newSingleThreadExecutor().execute(new Runnable() {
                                     @Override
                                     public void run() {
-                                        uDB.userDao().insertOneUser(new User(currentUID, inputName, inputPassword, inputEmail, 0));
+                                        uDB.userDao().insertOneUser(new User(currentUID, inputName, inputPassword, inputEmail, 0,null, null, R.drawable.fox, "circle_purple"));
                                     }
                                 });
 
@@ -175,7 +177,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 Executors.newSingleThreadExecutor().execute(new Runnable() {
                                     @Override
                                     public void run() {
-                                        uDB.userDao().insertOneUser(new User(currentUID, inputName, inputPassword, inputEmail, 0));
+                                        uDB.userDao().insertOneUser(new User(currentUID, inputName, inputPassword, inputEmail, 0,null, null, R.drawable.fox, "circle_purple"));
                                     }
                                 });
 

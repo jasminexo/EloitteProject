@@ -117,7 +117,7 @@ public class StudentHomeActivity extends AppCompatActivity {
         Intent intent = new Intent (this, StudentPersonalityQuizHomeActivity.class);
         startActivity(intent);
 
-        clickID = 2;
+        clickID = 1;
         update();
     }
 
@@ -125,7 +125,7 @@ public class StudentHomeActivity extends AppCompatActivity {
         Intent intent = new Intent (this, StudentGoalsActivity.class);
         startActivity(intent);
 
-        clickID = 3;
+        clickID = 1;
         update();
     }
 
@@ -133,7 +133,7 @@ public class StudentHomeActivity extends AppCompatActivity {
         Intent intent = new Intent (this, LeaderboardActivity.class);
         startActivity(intent);
 
-        clickID=4;
+        clickID=1;
         update();
     }
 
@@ -141,7 +141,7 @@ public class StudentHomeActivity extends AppCompatActivity {
         Intent intent = new Intent (this, StudentMeditationHomeActivity.class);
         startActivity(intent);
 
-        clickID = 5;
+        clickID = 1;
         update();
     }
 
@@ -149,7 +149,7 @@ public class StudentHomeActivity extends AppCompatActivity {
         Intent intent = new Intent (this, StudentProfileActivity.class);
         startActivity(intent);
 
-        clickID = 6;
+        clickID = 1;
         update();
 
     }
@@ -170,6 +170,7 @@ public class StudentHomeActivity extends AppCompatActivity {
         //Update user database
         UserDatabase uDB = Room.databaseBuilder(getApplicationContext(), UserDatabase.class ,
                 "user-database")
+                .fallbackToDestructiveMigration()
                 .build();
 
         String userID = FirebaseAuth.getInstance().getUid();

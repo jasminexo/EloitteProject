@@ -144,6 +144,7 @@ public class ScoreFragment extends Fragment {
         //User database
         UserDatabase uDB = Room.databaseBuilder(getActivity(), UserDatabase.class,
                 "user-database")
+                .fallbackToDestructiveMigration()
                 .build();
 
         String userID = FirebaseAuth.getInstance().getUid();

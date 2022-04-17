@@ -26,6 +26,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         //Create user database
         UserDatabase uDB = Room.databaseBuilder(getApplicationContext(), UserDatabase.class ,
                 "user-database")
+                .fallbackToDestructiveMigration()
                 .build();
 
         //Make an insert for new users

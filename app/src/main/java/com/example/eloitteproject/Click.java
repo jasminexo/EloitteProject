@@ -40,11 +40,11 @@ public class Click {
 
     public static ArrayList<Click> getClickList(){
         ArrayList <Click> clickList = new ArrayList<>();
-        clickList.add(new Click(1, "Daily Check-In", 50));
-        clickList.add(new Click(2, "Quiz", 20));
-        clickList.add(new Click(3, "Goals", 20));
-        clickList.add(new Click(4, "Leaderboard", 20));
-        clickList.add(new Click(5, "Appointment", 20));
+        clickList.add(new Click(1, "Daily Check-In", 1));
+        clickList.add(new Click(2, "Quiz", 1));
+        clickList.add(new Click(3, "Goals", 1));
+        clickList.add(new Click(4, "Leaderboard", 1));
+        clickList.add(new Click(5, "Appointment", 1));
 
         return clickList;
     }
