@@ -28,7 +28,7 @@ public interface UserDao {
     @Query("UPDATE User SET fullName = :addName WHERE uID = :uID")
     void updateName(String addName, String uID);
 
-    //Get Email
+    //Update Email
     @Query("UPDATE User SET email = :addEmail WHERE uID =:uID")
     void updateEmail(String addEmail, String uID);
 

@@ -31,6 +31,7 @@
         <entry key="app/src/main/res/drawable/seek_bar.xml" value="0.21822916666666667" />
         <entry key="app/src/main/res/drawable/seek_bar_thumb.xml" value="0.21822916666666667" />
         <entry key="app/src/main/res/layout/activity_leaderboard.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.2625" />
         <entry key="app/src/main/res/layout/activity_student_checkin.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_student_dashboard.xml" value="0.175" />
         <entry key="app/src/main/res/layout/activity_student_home.xml" value="0.1515625" />
@@ -41,8 +42,9 @@
         <entry key="app/src/main/res/layout/activity_student_personality_quiz_detail.xml" value="0.13072916666666667" />
         <entry key="app/src/main/res/layout/activity_student_personality_quiz_home.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/layout/activity_student_quiz.xml" value="0.175" />
-        <entry key="app/src/main/res/layout/boarditem.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_score.xml" value="0.18777292576419213" />
+        <entry key="app/src/main/res/layout/activity_teacher_home.xml" value="0.2625" />
+        <entry key="app/src/main/res/layout/boarditem.xml" value="1.4817537376904137" />
+        <entry key="app/src/main/res/layout/fragment_score.xml" value="0.4122173626716588" />
         <entry key="app/src/main/res/layout/goals_item_row.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/leaderboard_item_row.xml" value="0.577354119405383" />
         <entry key="app/src/main/res/layout/meditation_item_row.xml" value="0.45" />

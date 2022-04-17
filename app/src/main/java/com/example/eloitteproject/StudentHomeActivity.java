@@ -80,15 +80,6 @@ public class StudentHomeActivity extends AppCompatActivity {
             dayClicked = 0;
         }
 
-
-//        leaderboard.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(StudentHomeActivity.this, LeaderboardActivity.class);
-//                startActivity(intent);
-//
-//            }
-//        });
     }
 
     public void goToCheckInActivity(View view){
@@ -133,8 +124,8 @@ public class StudentHomeActivity extends AppCompatActivity {
         Intent intent = new Intent (this, LeaderboardActivity.class);
         startActivity(intent);
 
-        clickID=1;
-        update();
+//        clickID=1;
+//        update();
     }
 
     public void goToMeditationActivity(View view){
