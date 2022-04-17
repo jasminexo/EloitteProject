@@ -134,9 +134,9 @@ public class User {
 
     public static ArrayList <User> getUserList(){
         ArrayList <User> userList = new ArrayList<>();
-        userList.add(new User("V5fbEq1O65TJnoPVnd4VjnrOBtK2", "Rikki Dinh", "111111", "rikki@student.edu.au" , 0));
-        userList.add(new User("6xLDbp1JOFgsBXtuXnjJxo3U5WG3", "Mickle Pickles", "123456", "micklepickles@student.edu.au"  , 0));
-        userList.add(new User("yxsL0jMN4scp8ytEMQwOJdoGtxs2", "Milo Lim", "123456", "milo@student.edu.au"  , 0));
+        userList.add(new User("V5fbEq1O65TJnoPVnd4VjnrOBtK2", "Ken Hayes", "123456", "kenken@student.edu.au" , 16));
+        userList.add(new User("6xLDbp1JOFgsBXtuXnjJxo3U5WG3", "Mikaela Vo", "123456", "micklepickles@student.edu.au"  , 24));
+        userList.add(new User("yxsL0jMN4scp8ytEMQwOJdoGtxs2", "Milo Lim", "123456", "badussy@student.edu.au"  , 12));
 
 //        userList.add(new User("V5fbEq1O65TJnoPVnd4VjnrOBtK2", "Rikki Dinh", "111111", "rikki@student.edu.au" , 0, "19/11/19", "mailinh.dinhh@gmail.com", R.drawable.fox, "circle_purple"));
 //        userList.add(new User("6xLDbp1JOFgsBXtuXnjJxo3U5WG3", "Mickle Pickles", "123456", "micklepickles@student.edu.au"  , 0, "19/11/19", "votiffany6@gmail.com", R.drawable.fox, "circle_purple"));
