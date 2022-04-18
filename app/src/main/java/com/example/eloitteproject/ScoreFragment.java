@@ -1,5 +1,6 @@
 package com.example.eloitteproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -170,6 +171,4 @@ public class ScoreFragment extends Fragment {
             }
         });
     }
-
-
 }
