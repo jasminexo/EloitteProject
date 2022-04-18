@@ -18,7 +18,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class StudentGoalsEditActivity extends AppCompatActivity {
+public class TeacherGoalsEditActivity extends AppCompatActivity {
 
     EditText editTitle, editDesc, editDeadline;
     Button btnSaveUpdate, btnDelete;
@@ -27,7 +27,7 @@ public class StudentGoalsEditActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student_goals_edit);
+        setContentView(R.layout.activity_teacher_goals_edit);
 
         editTitle = findViewById(R.id.etTitleEdit);
         editDesc = findViewById(R.id.etDescEdit);
@@ -53,7 +53,7 @@ public class StudentGoalsEditActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
-                            Intent intent = new Intent(StudentGoalsEditActivity.this, StudentGoalsActivity.class);
+                            Intent intent = new Intent(TeacherGoalsEditActivity.this, TeacherGoalsActivity.class);
                             startActivity(intent);
                         } else {
                             Toast.makeText(getApplicationContext(), "Failed to delete!", Toast.LENGTH_SHORT).show();
@@ -76,7 +76,7 @@ public class StudentGoalsEditActivity extends AppCompatActivity {
                         dataSnapshot.getRef().child("descgoals").setValue(editDesc.getText().toString());
                         dataSnapshot.getRef().child("dategoals").setValue(editDeadline.getText().toString());
                         dataSnapshot.getRef().child("keygoals").setValue(kGoals);
-                        Intent intent = new Intent(StudentGoalsEditActivity.this, StudentGoalsActivity.class);
+                        Intent intent = new Intent(TeacherGoalsEditActivity.this, TeacherGoalsActivity.class);
                         startActivity(intent);
 
                     }

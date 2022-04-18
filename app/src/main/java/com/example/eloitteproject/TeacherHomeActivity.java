@@ -64,5 +64,10 @@ public class TeacherHomeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void goToStudentGoalsActivity(View view) {
+        Intent intent = new Intent(this, TeacherGoalsActivity.class);
+        startActivity(intent);
+    }
+
 
 }

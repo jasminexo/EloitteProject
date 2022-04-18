@@ -16,7 +16,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Random;
 
-public class StudentGoalsAddActivity extends AppCompatActivity {
+public class TeacherGoalsAddActivity extends AppCompatActivity {
 
     EditText etTitle, etDesc, etDeadline;
     Button btnCreateGoal, btnCancelGoal;
@@ -27,7 +27,7 @@ public class StudentGoalsAddActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student_goals_add);
+        setContentView(R.layout.activity_teacher_goals_add);
 
         etTitle = findViewById(R.id.etTitle);
         etDesc = findViewById(R.id.etDesc);
@@ -39,7 +39,7 @@ public class StudentGoalsAddActivity extends AppCompatActivity {
         btnCancelGoal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(StudentGoalsAddActivity.this, StudentGoalsActivity.class);
+                Intent intent = new Intent(TeacherGoalsAddActivity.this, TeacherGoalsActivity.class);
                 startActivity(intent);
             }
         });
@@ -59,7 +59,7 @@ public class StudentGoalsAddActivity extends AppCompatActivity {
                         dataSnapshot.getRef().child("dategoals").setValue(etDeadline.getText().toString());
                         dataSnapshot.getRef().child("keygoals").setValue(keygoals);
 
-                        Intent intent = new Intent(StudentGoalsAddActivity.this, StudentGoalsActivity.class);
+                        Intent intent = new Intent(TeacherGoalsAddActivity.this, TeacherGoalsActivity.class);
                         startActivity(intent);
 
                     }

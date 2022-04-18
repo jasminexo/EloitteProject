@@ -31,6 +31,7 @@ public class TeacherEmailActivity extends AppCompatActivity {
         });
     }
 
+    //Source: Coding in Flow - https://www.youtube.com/watch?v=tZ2YEw6SoBU
     private void sendMail() {
         //separates emails when emailing multiple people
         String recipientList = textToUser.getText().toString();

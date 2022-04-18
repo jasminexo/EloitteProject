@@ -13,19 +13,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EloitteProject">
         <activity
+            android:name=".StudentGoalsActivity"
+            android:exported="true" />
+        <activity
             android:name=".TeacherEmailActivity"
             android:exported="true" />
         <activity
             android:name=".ProfilePicSelectionActivity"
             android:exported="true" />
         <activity
-            android:name=".StudentGoalsEditActivity"
+            android:name=".TeacherGoalsEditActivity"
             android:exported="true" />
         <activity
-            android:name=".StudentGoalsAddActivity"
+            android:name=".TeacherGoalsAddActivity"
             android:exported="true" />
         <activity
-            android:name=".StudentGoalsActivity"
+            android:name=".TeacherGoalsActivity"
             android:exported="true" />
         <activity
             android:name=".StudentMeditationDetailActivity"

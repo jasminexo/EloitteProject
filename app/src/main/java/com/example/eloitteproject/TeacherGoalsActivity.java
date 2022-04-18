@@ -1,24 +1,26 @@
 package com.example.eloitteproject;
 
-        import androidx.appcompat.app.AppCompatActivity;
-        import androidx.recyclerview.widget.LinearLayoutManager;
-        import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-        import android.content.Intent;
-        import android.os.Bundle;
-        import android.view.View;
-        import android.widget.Button;
-        import android.widget.Toast;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
-        import com.google.firebase.database.DataSnapshot;
-        import com.google.firebase.database.DatabaseError;
-        import com.google.firebase.database.DatabaseReference;
-        import com.google.firebase.database.FirebaseDatabase;
-        import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-        import java.util.ArrayList;
+import java.util.ArrayList;
 
-public class StudentGoalsActivity extends AppCompatActivity {
+public class TeacherGoalsActivity extends AppCompatActivity {
+
+    Button btnAddGoals;
 
     DatabaseReference reference;
     RecyclerView rvGoals;
@@ -28,7 +30,18 @@ public class StudentGoalsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student_goals);
+        setContentView(R.layout.activity_teacher_goals);
+
+        //Source: Angga Risky - https://www.youtube.com/watch?v=jTL6EDvrjn8&t=1287s
+        btnAddGoals = findViewById(R.id.btnAddGoals);
+
+        btnAddGoals.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TeacherGoalsActivity.this, TeacherGoalsAddActivity.class);
+                startActivity(intent);
+            }
+        });
 
         //working with data
         rvGoals = findViewById(R.id.rvGoals);
@@ -45,7 +58,7 @@ public class StudentGoalsActivity extends AppCompatActivity {
                     Goals p = dataSnapshot1.getValue(Goals.class);
                     list.add(p);
                 }
-                goalsAdapter = new GoalsAdapter(StudentGoalsActivity.this, list);
+                goalsAdapter = new GoalsAdapter(TeacherGoalsActivity.this, list);
                 rvGoals.setAdapter(goalsAdapter);
                 goalsAdapter.notifyDataSetChanged();
 

@@ -4,46 +4,136 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/circle_yellow"
     android:orientation="vertical"
     android:padding="30dp"
     tools:context=".TeacherEmailActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="351dp"
+        android:layout_height="154dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="Email"
+                android:textColor="@color/brown_text"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.521" />
+
+            <ImageView
+                android:id="@+id/ivProfile"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="170sp"
+                android:elevation="10dp"
+                android:onClick="goToStudentProfileActivity"
+                android:src="@drawable/fox"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvProfilePicBackground"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="170sp"
+                android:layout_marginRight="3dp"
+                android:background="@drawable/btn_circle"
+                android:backgroundTint="#B5DEC2D7"
+                android:onClick="goToStudentProfileActivity"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/ivProfile4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:elevation="10dp"
+            android:onClick="goToStudentProfileActivity"
+            android:src="@drawable/fox"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvProfilePicBackground5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="3dp"
+            android:background="@drawable/btn_circle"
+            android:backgroundTint="#B5DEC2D7"
+            android:onClick="goToStudentProfileActivity"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="348dp"
+            android:layout_height="86dp"
+            android:text="Send emails to report concerning student behaviours!"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="To:"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-    
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/brown_text"
+        android:textSize="18sp" />
+
     <EditText
         android:id="@+id/et_to_user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:textColor="@color/brown_text" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Subject:"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/brown_text"
+        android:textSize="18sp" />
 
     <EditText
         android:id="@+id/et_subject"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textEmailSubject" />
+        android:inputType="textEmailSubject"
+        android:textColor="@color/brown_text" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Message:"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/brown_text"
+        android:textSize="18sp" />
 
     <EditText
         android:id="@+id/et_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="start|top"
         android:lines="10"
-        android:gravity="start|top"/>
+        android:textColor="#2D2F31" />
 
     <Button
         android:id="@+id/btn_send_email"

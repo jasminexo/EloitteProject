@@ -2,7 +2,6 @@ package com.example.eloitteproject;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +9,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -46,7 +43,7 @@ public class GoalsAdapter extends RecyclerView.Adapter<GoalsAdapter.MyViewHolder
         myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, StudentGoalsEditActivity.class);
+                Intent intent = new Intent(context, TeacherGoalsEditActivity.class);
                 intent.putExtra("titlegoals", getTitleGoals);
                 intent.putExtra("descgoals", getDescGoals);
                 intent.putExtra("dategoals", getDateGoals);

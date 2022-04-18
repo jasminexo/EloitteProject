@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FBF6F4"
-    tools:context=".StudentGoalsActivity">
+    tools:context=".TeacherGoalsActivity">
 
     <LinearLayout
         android:orientation="vertical"
@@ -42,6 +42,19 @@
                     android:text="Set Lifestyle and Health Goals" />
 
             </LinearLayout>
+
+            <Button
+                android:id="@+id/btnAddGoals"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="35dp"
+                android:background="@drawable/btn_circle"
+                android:backgroundTint="#FFFFFF"
+                android:text="+"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                app:iconTint="@color/transparent" />
 
         </LinearLayout>
 
