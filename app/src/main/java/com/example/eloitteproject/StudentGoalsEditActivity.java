@@ -52,10 +52,10 @@ public class StudentGoalsEditActivity extends AppCompatActivity {
                 reference.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        if(task.isSuccessful()) {
+                        if (task.isSuccessful()) {
                             Intent intent = new Intent(StudentGoalsEditActivity.this, StudentGoalsActivity.class);
                             startActivity(intent);
-                        }else {
+                        } else {
                             Toast.makeText(getApplicationContext(), "Failed to delete!", Toast.LENGTH_SHORT).show();
                         }
 

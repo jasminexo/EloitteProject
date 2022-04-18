@@ -39,7 +39,7 @@ public class StudentGoalsAddActivity extends AppCompatActivity {
         btnCancelGoal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent (StudentGoalsAddActivity.this, StudentGoalsActivity.class);
+                Intent intent = new Intent(StudentGoalsAddActivity.this, StudentGoalsActivity.class);
                 startActivity(intent);
             }
         });

@@ -56,13 +56,13 @@ public class StudentMeditationHomeActivity extends AppCompatActivity implements 
     }
 
 
-    public void goToStudentHomeActivity(View view){
-        Intent intent = new Intent (this, StudentHomeActivity.class);
+    public void goToStudentHomeActivity(View view) {
+        Intent intent = new Intent(this, StudentHomeActivity.class);
         startActivity(intent);
     }
 
-    public void goToStudentProfileActivity(View view){
-        Intent intent = new Intent (this, StudentProfileActivity.class);
+    public void goToStudentProfileActivity(View view) {
+        Intent intent = new Intent(this, StudentProfileActivity.class);
         startActivity(intent);
     }
 

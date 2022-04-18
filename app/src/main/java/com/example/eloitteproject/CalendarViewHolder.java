@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class CalendarViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+public class CalendarViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     private final ArrayList<LocalDate> days;
     public final View parentView;
     public final TextView dayOfMonth;

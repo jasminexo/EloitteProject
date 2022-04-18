@@ -65,7 +65,7 @@
             android:layout_marginTop="25dp">
 
             <Button
-                android:id="@+id/btnCheckIn"
+                android:id="@+id/btnEmail"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginRight="40dp"

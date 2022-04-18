@@ -8,7 +8,7 @@ import androidx.room.Query;
 @Dao
 public interface PersonalityQuizQuestionDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insert (PersonalityQuizQuestion...personalityQuizQuestion);
+    void insert(PersonalityQuizQuestion... personalityQuizQuestion);
 
     @Query("SELECT * FROM personalityQuizQuestion WHERE qID =:qID")
     PersonalityQuizQuestion getPersonalityQuizQuestion(String qID);
@@ -18,5 +18,5 @@ public interface PersonalityQuizQuestionDao {
     int getPersonalityQuizQuestionCount();
 
     @Query("SELECT * FROM personalityquizquestion")
-    PersonalityQuizQuestion  getAllQuestions();
+    PersonalityQuizQuestion getAllQuestions();
 }

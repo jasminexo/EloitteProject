@@ -14,7 +14,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 @RequiresApi(api = Build.VERSION_CODES.O)
-public class CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder>{
+public class CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder> {
 
     private final OnItemListener onItemListener;
     private final ArrayList<LocalDate> days;
@@ -54,7 +54,7 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder>{
         return days.size();
     }
 
-    public interface OnItemListener{
+    public interface OnItemListener {
         void onItemClick(int position, LocalDate date);
     }
 }

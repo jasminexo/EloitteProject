@@ -47,8 +47,8 @@ public class LoginActivity extends AppCompatActivity {
                 checkField(password);
                 Log.d("TAG", "onClick " + email.getText().toString());
 
-                if(valid){
-                    mAuth.signInWithEmailAndPassword(email.getText().toString(),password.getText()
+                if (valid) {
+                    mAuth.signInWithEmailAndPassword(email.getText().toString(), password.getText()
                             .toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                         @Override
                         public void onSuccess(AuthResult authResult) {
@@ -83,14 +83,14 @@ public class LoginActivity extends AppCompatActivity {
                 Log.d("TAG", "onSuccess: " + documentSnapshot.getData());
                 //identify the user access level
 
-                if(documentSnapshot.getString("isTeacher") != null) {
+                if (documentSnapshot.getString("isTeacher") != null) {
                     //user is admin
 
                     startActivity(new Intent(getApplicationContext(), TeacherHomeActivity.class));
                     finish();
                 }
 
-                if(documentSnapshot.getString("isStudent") != null) {
+                if (documentSnapshot.getString("isStudent") != null) {
                     startActivity(new Intent(getApplicationContext(), StudentHomeActivity.class));
                     finish();
                 }
@@ -108,22 +108,23 @@ public class LoginActivity extends AppCompatActivity {
         }
         return valid;
     }
+
     //check to see if any user has already logged in or not
     @Override
     protected void onStart() {
         super.onStart();
-        if(FirebaseAuth.getInstance().getCurrentUser() != null) {
+        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
             DocumentReference df = FirebaseFirestore.getInstance().collection("Users")
                     .document(FirebaseAuth.getInstance().getCurrentUser().getUid());
             df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                 @Override
                 public void onSuccess(DocumentSnapshot documentSnapshot) {
-                    if(documentSnapshot.getString("isTeacher") != null) {
+                    if (documentSnapshot.getString("isTeacher") != null) {
                         startActivity((new Intent(getApplicationContext(), TeacherHomeActivity.class)));
                         finish();
                     }
 
-                    if(documentSnapshot.getString("isStudent") != null) {
+                    if (documentSnapshot.getString("isStudent") != null) {
                         startActivity((new Intent(getApplicationContext(), StudentHomeActivity.class)));
                         finish();
                     }

@@ -49,15 +49,14 @@ public class StudentGoalsActivity extends AppCompatActivity {
 
         //get data from Firebase Realtime Database
         reference = FirebaseDatabase.getInstance().getReference().child("GoalsAdd");
-        reference.addValueEventListener(new ValueEventListener() {
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 //set code to retrieve data and replace layout
-                for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren())
-                    {
-                        Goals p = dataSnapshot1.getValue(Goals.class);
-                        list.add(p);
-                    }
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                    Goals p = dataSnapshot1.getValue(Goals.class);
+                    list.add(p);
+                }
                 goalsAdapter = new GoalsAdapter(StudentGoalsActivity.this, list);
                 rvGoals.setAdapter(goalsAdapter);
                 goalsAdapter.notifyDataSetChanged();

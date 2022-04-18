@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.MyViewHolder>{
+public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.MyViewHolder> {
     public ArrayList<Video> mVideo;
     public ClickListener listener;
 

@@ -31,7 +31,7 @@ public class StudentCheckInActivity extends AppCompatActivity {
     private TextView tvQuestionNumber, tvQuestion, tvTime, tvLabels1, tvLabels2, tvLabels3;
     private ImageView ivImage;
     private Button btnNext, btnReturnHome;
-     SeekBar seekBar;
+    SeekBar seekBar;
     private String qID, countDownTime;
     CheckInQuestionDatabase checkinDB;
     int currentScore = 0, currentQuestionPosition, seekBarProgress = 3;
@@ -58,16 +58,15 @@ public class StudentCheckInActivity extends AppCompatActivity {
         seekBar = findViewById(R.id.seekBar);
 
         Intent intent = getIntent();
-        int qPosition = intent.getIntExtra("receiveCurrentQPosition",0);
+        int qPosition = intent.getIntExtra("receiveCurrentQPosition", 0);
         try {
             currentQuestionPosition = qPosition;
-        }
-        catch (NumberFormatException e) {
+        } catch (NumberFormatException e) {
             currentQuestionPosition = 1;
         }
 
         //Database
-        checkinDB = Room.databaseBuilder(getApplicationContext(), CheckInQuestionDatabase.class ,
+        checkinDB = Room.databaseBuilder(getApplicationContext(), CheckInQuestionDatabase.class,
                 "check-in-question-database")
                 .build();
 
@@ -78,16 +77,18 @@ public class StudentCheckInActivity extends AppCompatActivity {
 
     //when user changes the seekbar
     //Source: https://www.homeandlearn.co.uk/android/android_seekbar.html
-    private void seekBarChanged (){
+    private void seekBarChanged() {
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 //set int value as corresponding progress
                 seekBarProgress = progress;
             }
+
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
             }
+
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
             }
@@ -110,17 +111,17 @@ public class StudentCheckInActivity extends AppCompatActivity {
             Executors.newSingleThreadExecutor().execute(new Runnable() {
                 @Override
                 public void run() {
-                    for(CheckInQuestion q : CheckInQuestion.getCheckInQuestionList()){
+                    for (CheckInQuestion q : CheckInQuestion.getCheckInQuestionList()) {
                         checkinDB.checkInQuestionDao().insert(q);
                     }
-                    qID = "q"+ currentQuestionPosition;
+                    qID = "q" + currentQuestionPosition;
                     CheckInQuestion desiredQuestion = checkinDB.checkInQuestionDao().getCheckInQuestion(qID);
                     String checkInQuestion = desiredQuestion.getQuestion();
                     Integer checkInImage = desiredQuestion.getImage();
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            tvQuestionNumber.setText(currentQuestionPosition+"/5");
+                            tvQuestionNumber.setText(currentQuestionPosition + "/5");
                             tvQuestion.setText(checkInQuestion);
                             ivImage.setImageResource(checkInImage);
                             nextButtonClicked();
@@ -128,22 +129,22 @@ public class StudentCheckInActivity extends AppCompatActivity {
                     });
                 }
             });
-        } else if (currentQuestionPosition == 6){
+        } else if (currentQuestionPosition == 6) {
             finishedQuiz();
         }
     }
 
     private void nextButtonClicked() {
         //saving the score for each question - need to find a way to upload into database with date and time
-        if (qID == "q1"){
+        if (qID == "q1") {
             q1Score = seekBarProgress;
-        } else if (qID == "q2"){
+        } else if (qID == "q2") {
             q2Score = seekBarProgress;
-        } else if (qID == "q3"){
+        } else if (qID == "q3") {
             q3Score = seekBarProgress;
-        } else if (qID == "q4"){
+        } else if (qID == "q4") {
             q4Score = seekBarProgress;
-        } else if (qID == "q5"){
+        } else if (qID == "q5") {
             q5Score = seekBarProgress;
         }
 
@@ -173,14 +174,14 @@ public class StudentCheckInActivity extends AppCompatActivity {
         timeNow = ZonedDateTime.now(zoneID);
         tomorrow = timeNow.toLocalDate().plusDays(1);
         ZonedDateTime tomorrowStart = tomorrow.atStartOfDay(zoneID);
-        duration = Duration.between(timeNow,tomorrowStart).toMillis();
+        duration = Duration.between(timeNow, tomorrowStart).toMillis();
 
         //countdown timer
         new CountDownTimer(duration, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 //when tick, convert millisecond to hours, min, sec
-                countDownTime = String.format(Locale.ENGLISH,"%02d:%02d:%02d"
+                countDownTime = String.format(Locale.ENGLISH, "%02d:%02d:%02d"
                         , TimeUnit.MILLISECONDS.toHours(millisUntilFinished),
                         TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished) -
                                 TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millisUntilFinished)),
@@ -192,7 +193,9 @@ public class StudentCheckInActivity extends AppCompatActivity {
                 tvQuestionNumber.setText("5/5");
                 tvQuestion.setText("\n\nCheck-In Complete!\nCome back tomorrow:");
                 ivImage.setImageResource(R.drawable.clock);
-            };
+            }
+
+            ;
 
             @Override
             public void onFinish() {
@@ -204,11 +207,11 @@ public class StudentCheckInActivity extends AppCompatActivity {
         }.start();
     }
 
-    public void goToStudentHomeActivity(View view){
+    public void goToStudentHomeActivity(View view) {
         Calendar calendar = Calendar.getInstance();
         dayClicked = calendar.get(Calendar.DAY_OF_YEAR);
 
-        Intent intent = new Intent (this, StudentHomeActivity.class);
+        Intent intent = new Intent(this, StudentHomeActivity.class);
         Bundle extras = new Bundle();
         extras.putInt("receiveLastClickDay", dayClicked);
         extras.putString("from_activity", "studentCheckInActivity");
@@ -216,8 +219,8 @@ public class StudentCheckInActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void goToStudentProfileActivity(View view){
-        Intent intent = new Intent (this, StudentProfileActivity.class);
+    public void goToStudentProfileActivity(View view) {
+        Intent intent = new Intent(this, StudentProfileActivity.class);
         startActivity(intent);
     }
 }

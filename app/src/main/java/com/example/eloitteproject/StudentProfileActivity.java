@@ -51,56 +51,56 @@ public class StudentProfileActivity extends AppCompatActivity {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-            Executors.newSingleThreadExecutor().execute(new Runnable() {
-                @Override
-                public void run() {
-                    String fullName = uDB.userDao().getName(userID);
-                    String email = uDB.userDao().getEmail(userID);
-                    String DOB = uDB.userDao().getDOB(userID);
-                    String parentEmail = uDB.userDao().getParentEmail(userID);
-                    int profilePic = uDB.userDao().getProfilePic(userID);
-                    //String profileBG = uDB.userDao().getProfileBG(userID);
-                    //String bgColour = "R.color."+profileBG;
+                Executors.newSingleThreadExecutor().execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        String fullName = uDB.userDao().getName(userID);
+                        String email = uDB.userDao().getEmail(userID);
+                        String DOB = uDB.userDao().getDOB(userID);
+                        String parentEmail = uDB.userDao().getParentEmail(userID);
+                        int profilePic = uDB.userDao().getProfilePic(userID);
+                        //String profileBG = uDB.userDao().getProfileBG(userID);
+                        //String bgColour = "R.color."+profileBG;
 
-                    tvProfileName.setText(fullName);
-                    etUserFullName.setText(fullName, TextView.BufferType.EDITABLE);
-                    etUserEmail.setText(email, TextView.BufferType.EDITABLE);
-                    etUserDOB.setText(DOB, TextView.BufferType.EDITABLE );
-                    etUserParentContactEmail.setText(parentEmail, TextView.BufferType.EDITABLE);
+                        tvProfileName.setText(fullName);
+                        etUserFullName.setText(fullName, TextView.BufferType.EDITABLE);
+                        etUserEmail.setText(email, TextView.BufferType.EDITABLE);
+                        etUserDOB.setText(DOB, TextView.BufferType.EDITABLE);
+                        etUserParentContactEmail.setText(parentEmail, TextView.BufferType.EDITABLE);
 
-                    ivProfilePic.setImageResource(profilePic);
+                        ivProfilePic.setImageResource(profilePic);
 
-                    //Drawable unwrappedDrawable = tvProfilePicBackground.getBackground();
-                    //Drawable wrappedDrawable = DrawableCompat.wrap(unwrappedDrawable);
-                    //DrawableCompat.setTint(wrappedDrawable, (getResources().getColor(Integer.parseInt(bgColour))));
+                        //Drawable unwrappedDrawable = tvProfilePicBackground.getBackground();
+                        //Drawable wrappedDrawable = DrawableCompat.wrap(unwrappedDrawable);
+                        //DrawableCompat.setTint(wrappedDrawable, (getResources().getColor(Integer.parseInt(bgColour))));
 
-                }
-            });
+                    }
+                });
             }
         });
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            updateProfile();
+                updateProfile();
             }
         });
 
     }
 
-    public void goToStudentHomeActivity(View view){
-        Intent intent = new Intent (this, StudentHomeActivity.class);
+    public void goToStudentHomeActivity(View view) {
+        Intent intent = new Intent(this, StudentHomeActivity.class);
         startActivity(intent);
     }
 
-    public void goToProfilePicSelection(View view){
-        Intent intent = new Intent (this, ProfilePicSelectionActivity.class);
+    public void goToProfilePicSelection(View view) {
+        Intent intent = new Intent(this, ProfilePicSelectionActivity.class);
         startActivity(intent);
     }
 
     public void updateProfile() {
 
         //Update user database
-        UserDatabase uDB = Room.databaseBuilder(getApplicationContext(), UserDatabase.class ,
+        UserDatabase uDB = Room.databaseBuilder(getApplicationContext(), UserDatabase.class,
                 "user-database")
                 .fallbackToDestructiveMigration()
                 .build();

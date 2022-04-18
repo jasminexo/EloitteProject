@@ -131,12 +131,12 @@ public class User {
         this.profilePicBG = profilePicBG;
     }
 
-    public static ArrayList <User> getUserList(){
-        ArrayList <User> userList = new ArrayList<>();
+    public static ArrayList<User> getUserList() {
+        ArrayList<User> userList = new ArrayList<>();
 
-        userList.add(new User("vemLFL7Ec3S8kkccuXc2uEfgDTp1", "Ken Hayes", "123456", "kenken@student.edu.au" , 16, "01/04/22", "mailinh.dinhh@gmail.com", R.drawable.fox, "circle_purple"));
-        userList.add(new User("RQX1UeReoIQHiLk2zYO4eUZyYye2", "Mikaela Vo", "123456", "micklepickles@student.edu.au"  , 24, "01/11/21", "votiffany6@gmail.com", R.drawable.fox, "circle_purple"));
-        userList.add(new User("QuHZsscwHQVQVgukbZOjcrEDuj12", "Milo Lim", "123456", "badussy@student.edu.au"  , 0, "19/12/21", "jasmine.lim1177@gmail.com", R.drawable.fox, "circle_purple"));
+        userList.add(new User("vemLFL7Ec3S8kkccuXc2uEfgDTp1", "Ken Hayes", "123456", "kenken@student.edu.au", 16, "01/04/22", "mailinh.dinhh@gmail.com", R.drawable.fox, "circle_purple"));
+        userList.add(new User("RQX1UeReoIQHiLk2zYO4eUZyYye2", "Mikaela Vo", "123456", "micklepickles@student.edu.au", 24, "01/11/21", "votiffany6@gmail.com", R.drawable.fox, "circle_purple"));
+        userList.add(new User("QuHZsscwHQVQVgukbZOjcrEDuj12", "Milo Lim", "123456", "badussy@student.edu.au", 0, "19/12/21", "jasmine.lim1177@gmail.com", R.drawable.fox, "circle_purple"));
 
         return userList;
     }

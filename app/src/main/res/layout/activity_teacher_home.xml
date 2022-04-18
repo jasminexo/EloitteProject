@@ -1,30 +1,188 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TeacherHomeActivity">
+    tools:context=".TeacherHomeActivity"
+    android:background="@color/yellow_bg">
 
-    <Button
-        android:id="@+id/btn_logout_admin"
-        android:layout_width="364dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="580dp"
-        android:backgroundTint="@color/light_brown"
-        android:text="Log Out"
-        android:onClick="logoutAdmin"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/yellow_bg"
+        android:layout_marginTop="50sp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TEACHER PAGE"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp">
+
+            <TextView
+                android:id="@+id/tvStudentName"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="Hello Student!"
+                android:textColor="@color/brown_text"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivProfile"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="170sp"
+                android:onClick="goToStudentProfileActivity"
+                android:src="@drawable/fox"
+                android:elevation="10dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/tvProfilePicBackground"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginLeft="170sp"
+                android:onClick="goToStudentProfileActivity"
+                android:backgroundTint="#B5DEC2D7"
+                android:background="@drawable/btn_circle"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="25dp">
+
+            <Button
+                android:id="@+id/btnEmail"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginRight="40dp"
+                android:background="@drawable/btn_round_corner"
+                android:drawableTop="@drawable/checkin"
+                android:gravity="center|center_vertical"
+                android:onClick="goToEmailActivity"
+                android:paddingTop="15dp"
+                android:text="Email"
+                android:textAllCaps="false"
+                android:textColor="@color/brown_text"
+                android:textSize="13sp"
+                app:backgroundTint="#E7FBFF" />
+
+            <Button
+                android:id="@+id/btnQuiz"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@drawable/btn_round_corner"
+                android:drawableTop="@drawable/quiz"
+                android:gravity="center|center_vertical"
+                android:onClick="goToQuizActivity"
+                android:paddingTop="15dp"
+                android:text="Quiz"
+                android:textAllCaps="false"
+                android:textColor="@color/brown_text"
+                android:textSize="13sp"
+                app:backgroundTint="#FFCEA9" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <Button
+                android:id="@+id/btnGoals"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginRight="40dp"
+                android:background="@drawable/btn_round_corner"
+                android:drawableTop="@drawable/goal"
+                android:gravity="center|center_vertical"
+                android:onClick="goToStudentGoalsActivity"
+                android:paddingTop="15dp"
+                android:text="My Goals"
+                android:textAllCaps="false"
+                android:textColor="@color/brown_text"
+                android:textSize="13sp"
+                app:backgroundTint="#FEE3C1" />
+
+            <Button
+                android:id="@+id/btnLeaderboard"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@drawable/btn_round_corner"
+                android:drawableTop="@drawable/leaderboard"
+                android:gravity="center|center_vertical"
+                android:onClick="goToLeaderboardActivity"
+                android:paddingTop="15dp"
+                android:text="Leaderboard"
+                android:textAllCaps="false"
+                android:textColor="@color/brown_text"
+                android:textSize="13sp"
+                app:backgroundTint="#F3E9E2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <Button
+                android:id="@+id/btnMeditation"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginRight="40dp"
+                android:background="@drawable/btn_round_corner"
+                android:drawableTop="@drawable/meditation"
+                android:gravity="center|center_vertical"
+                android:onClick="goToMeditationActivity"
+                android:paddingTop="15dp"
+                android:text="Meditation"
+                android:textAllCaps="false"
+                android:textColor="@color/brown_text"
+                android:textSize="13sp"
+                app:backgroundTint="#FBF6F4" />
+
+            <Button
+                android:id="@+id/btnProfile"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@drawable/btn_round_corner"
+                android:drawableTop="@drawable/appointment"
+                android:gravity="center|center_vertical"
+                android:onClick="goToStudentAppointmentActivity"
+                android:paddingTop="15dp"
+                android:text="Appointments"
+                android:textAllCaps="false"
+                android:textColor="@color/brown_text"
+                android:textSize="13sp"
+                app:backgroundTint="#E7FBFF" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="300dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/light_brown"
+            android:text="Log Out"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -10,17 +10,17 @@ import java.util.List;
 @Dao
 public interface UserDao {
     @Insert
-    void insertOneUser (User user);
+    void insertOneUser(User user);
 
     @Insert
     void insertAll(List<User> users);
 
     @Query("SELECT * FROM User WHERE uID =:uID")
-    User getOneUserByUserName (String uID);
+    User getOneUserByUserName(String uID);
 
     //Update score
     @Query("UPDATE User SET score = score + :addNum WHERE uID = :uID")
-    void updateScore (int addNum, String uID);
+    void updateScore(int addNum, String uID);
 
     //Update profile details
 
@@ -47,7 +47,6 @@ public interface UserDao {
 //    //Update ProfileBG
 //    @Query("UPDATE User SET profilePicBG = ? WHERE uID =:uID")
 //    void updateProfileBG(String uID);
-
 
 
     //Get score
@@ -80,7 +79,7 @@ public interface UserDao {
 
     //Get all user data
     @Query("SELECT * FROM User")
-    List <User> getAllUsers();
+    List<User> getAllUsers();
 
     //Get count of user records
     @Query("SELECT COUNT(uID) from User")

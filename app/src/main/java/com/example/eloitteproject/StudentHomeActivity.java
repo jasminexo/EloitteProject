@@ -28,7 +28,7 @@ public class StudentHomeActivity extends AppCompatActivity {
     FirebaseFirestore fStore;
     String userId, previousActivity;
     int clickID;
-    int dayClicked=0;
+    int dayClicked = 0;
     int incompleteCurrentQPosition = 1;
     int completeCurrentQPosition = 6;
 
@@ -48,7 +48,7 @@ public class StudentHomeActivity extends AppCompatActivity {
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
-                studentName.setText("Hello " + (documentSnapshot.getString( "FullName") + "!"));
+                studentName.setText("Hello " + (documentSnapshot.getString("FullName") + "!"));
             }
         });
 
@@ -66,36 +66,37 @@ public class StudentHomeActivity extends AppCompatActivity {
 
         //getting the last day student completed check-in quiz
         Bundle extras = getIntent().getExtras();
-        if (extras != null){
+        if (extras != null) {
             dayClicked = extras.getInt("receiveLastClickDay", 0);
             previousActivity = extras.getString("from_activity");
         } else {
             previousActivity = "studentHOMEActivity";
         }
 
-        if (previousActivity.equals("studentCheckInActivity")){
+        if (previousActivity.equals("studentCheckInActivity")) {
             completeCurrentQPosition = 6;
-        } else if (previousActivity.equals("studentHOMEActivity")){
+        } else if (previousActivity.equals("studentHOMEActivity")) {
             incompleteCurrentQPosition = 1;
             dayClicked = 0;
         }
 
     }
 
-    public void goToCheckInActivity(View view){
+    public void goToCheckInActivity(View view) {
         Calendar calendar = Calendar.getInstance();
         int today = calendar.get(Calendar.DAY_OF_YEAR);
 
-        if (dayClicked != 0 && dayClicked != today){
-            Intent intent = new Intent (this, StudentCheckInActivity.class);
+        if (dayClicked != 0 && dayClicked != today) {
+            Intent intent = new Intent(this, StudentCheckInActivity.class);
             intent.putExtra("receiveCurrentQPosition", incompleteCurrentQPosition);
             startActivity(intent);
-        } else if (dayClicked != 0 && dayClicked == today){
-            Intent intent = new Intent (this, StudentCheckInActivity.class);
+        } else if (dayClicked != 0 && dayClicked == today) {
+            Intent intent = new Intent(this, StudentCheckInActivity.class);
             intent.putExtra("receiveCurrentQPosition", completeCurrentQPosition);
             startActivity(intent);
-        } if (dayClicked == 0){
-            Intent intent = new Intent (this, StudentCheckInActivity.class);
+        }
+        if (dayClicked == 0) {
+            Intent intent = new Intent(this, StudentCheckInActivity.class);
             intent.putExtra("receiveCurrentQPosition", incompleteCurrentQPosition);
             startActivity(intent);
         }
@@ -104,40 +105,40 @@ public class StudentHomeActivity extends AppCompatActivity {
         update();
     }
 
-    public void goToQuizActivity(View view){
-        Intent intent = new Intent (this, StudentPersonalityQuizHomeActivity.class);
+    public void goToQuizActivity(View view) {
+        Intent intent = new Intent(this, StudentPersonalityQuizHomeActivity.class);
         startActivity(intent);
 
         clickID = 1;
         update();
     }
 
-    public void goToStudentGoalsActivity(View view){
-        Intent intent = new Intent (this, StudentGoalsActivity.class);
+    public void goToStudentGoalsActivity(View view) {
+        Intent intent = new Intent(this, StudentGoalsActivity.class);
         startActivity(intent);
 
         clickID = 1;
         update();
     }
 
-    public void goToLeaderboardActivity(View view){
-        Intent intent = new Intent (this, LeaderboardActivity.class);
+    public void goToLeaderboardActivity(View view) {
+        Intent intent = new Intent(this, LeaderboardActivity.class);
         startActivity(intent);
 
 //        clickID=1;
 //        update();
     }
 
-    public void goToMeditationActivity(View view){
-        Intent intent = new Intent (this, StudentMeditationHomeActivity.class);
+    public void goToMeditationActivity(View view) {
+        Intent intent = new Intent(this, StudentMeditationHomeActivity.class);
         startActivity(intent);
 
         clickID = 1;
         update();
     }
 
-    public void goToStudentProfileActivity(View view){
-        Intent intent = new Intent (this, StudentProfileActivity.class);
+    public void goToStudentProfileActivity(View view) {
+        Intent intent = new Intent(this, StudentProfileActivity.class);
         startActivity(intent);
 
         clickID = 1;
@@ -145,8 +146,8 @@ public class StudentHomeActivity extends AppCompatActivity {
 
     }
 
-    public void goToStudentAppointmentActivity(View view){
-        Intent intent = new Intent (this, StudentAppointmentActivity.class);
+    public void goToStudentAppointmentActivity(View view) {
+        Intent intent = new Intent(this, StudentAppointmentActivity.class);
         startActivity(intent);
 
         clickID = 1;
@@ -159,7 +160,7 @@ public class StudentHomeActivity extends AppCompatActivity {
     public void update() {
 
         //Update user database
-        UserDatabase uDB = Room.databaseBuilder(getApplicationContext(), UserDatabase.class ,
+        UserDatabase uDB = Room.databaseBuilder(getApplicationContext(), UserDatabase.class,
                 "user-database")
                 .fallbackToDestructiveMigration()
                 .build();

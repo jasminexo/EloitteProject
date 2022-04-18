@@ -38,8 +38,8 @@ public class Click {
         this.points = points;
     }
 
-    public static ArrayList<Click> getClickList(){
-        ArrayList <Click> clickList = new ArrayList<>();
+    public static ArrayList<Click> getClickList() {
+        ArrayList<Click> clickList = new ArrayList<>();
         clickList.add(new Click(1, "Daily Check-In", 1));
         clickList.add(new Click(2, "Quiz", 1));
         clickList.add(new Click(3, "Goals", 1));
@@ -50,10 +50,10 @@ public class Click {
     }
 
     //Getting an individual click
-    public static int getClick(int clickId){
+    public static int getClick(int clickId) {
         int selectedClick = 0;
-        for(Click c : Click.getClickList()){
-            if (c.getId() == clickId){
+        for (Click c : Click.getClickList()) {
+            if (c.getId() == clickId) {
                 selectedClick = clickId;
             }
         }

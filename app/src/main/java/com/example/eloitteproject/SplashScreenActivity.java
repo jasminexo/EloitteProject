@@ -24,7 +24,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         btnSignUp = findViewById(R.id.btnSignUp);
 
         //Create user database
-        UserDatabase uDB = Room.databaseBuilder(getApplicationContext(), UserDatabase.class ,
+        UserDatabase uDB = Room.databaseBuilder(getApplicationContext(), UserDatabase.class,
                 "user-database")
                 .fallbackToDestructiveMigration()
                 .build();
@@ -34,10 +34,9 @@ public class SplashScreenActivity extends AppCompatActivity {
             @Override
             public void run() {
                 //Only insert users if they don't already exist in the databse
-                if(uDB.userDao().getUserCount() > 0) {
+                if (uDB.userDao().getUserCount() > 0) {
                     System.out.println("Users already inserted!");
-                }
-                else{
+                } else {
                     uDB.userDao().insertAll(User.getUserList());
                 }
 

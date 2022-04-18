@@ -26,73 +26,73 @@ public class ProfilePicSelectionActivity extends AppCompatActivity {
         ivProfilePic = findViewById(R.id.ivProfilePic);
         tvProfilePicBackground = findViewById(R.id.tvProfilePicBackground);
         btnSave = findViewById(R.id.btnSave);
-        
+
         //need to retrieve animal and colour from user database
 
     }
 
-    public void ivBearSelected(View view){
+    public void ivBearSelected(View view) {
         ivProfilePic.setImageDrawable(getResources().getDrawable(R.drawable.bear));
     }
 
-    public void ivPenguinSelected(View view){
+    public void ivPenguinSelected(View view) {
         ivProfilePic.setImageDrawable(getResources().getDrawable(R.drawable.penguin));
     }
 
-    public void ivFoxSelected(View view){
+    public void ivFoxSelected(View view) {
         ivProfilePic.setImageDrawable(getResources().getDrawable(R.drawable.fox));
     }
 
-    public void ivBunnySelected(View view){
+    public void ivBunnySelected(View view) {
         ivProfilePic.setImageDrawable(getResources().getDrawable(R.drawable.bunny));
     }
 
-    public void ivHedgehogSelected(View view){
+    public void ivHedgehogSelected(View view) {
         ivProfilePic.setImageDrawable(getResources().getDrawable(R.drawable.hedgehog));
     }
 
-    public void ivOwlSelected(View view){
+    public void ivOwlSelected(View view) {
         ivProfilePic.setImageDrawable(getResources().getDrawable(R.drawable.owl));
     }
 
-    public void tvBrownSelected(View view){
+    public void tvBrownSelected(View view) {
         Drawable unwrappedDrawable = tvProfilePicBackground.getBackground();
         Drawable wrappedDrawable = DrawableCompat.wrap(unwrappedDrawable);
         DrawableCompat.setTint(wrappedDrawable, (getResources().getColor(R.color.circle_brown)));
     }
 
-    public void tvBeigeSelected(View view){
+    public void tvBeigeSelected(View view) {
         Drawable unwrappedDrawable = tvProfilePicBackground.getBackground();
         Drawable wrappedDrawable = DrawableCompat.wrap(unwrappedDrawable);
         DrawableCompat.setTint(wrappedDrawable, (getResources().getColor(R.color.circle_beige)));
     }
 
-    public void tvYellowSelected(View view){
+    public void tvYellowSelected(View view) {
         Drawable unwrappedDrawable = tvProfilePicBackground.getBackground();
         Drawable wrappedDrawable = DrawableCompat.wrap(unwrappedDrawable);
         DrawableCompat.setTint(wrappedDrawable, (getResources().getColor(R.color.circle_yellow)));
     }
 
-    public void tvOrangeSelected(View view){
+    public void tvOrangeSelected(View view) {
         Drawable unwrappedDrawable = tvProfilePicBackground.getBackground();
         Drawable wrappedDrawable = DrawableCompat.wrap(unwrappedDrawable);
         DrawableCompat.setTint(wrappedDrawable, (getResources().getColor(R.color.circle_orange)));
     }
 
-    public void tvPurpleSelected(View view){
+    public void tvPurpleSelected(View view) {
         Drawable unwrappedDrawable = tvProfilePicBackground.getBackground();
         Drawable wrappedDrawable = DrawableCompat.wrap(unwrappedDrawable);
         DrawableCompat.setTint(wrappedDrawable, (getResources().getColor(R.color.circle_purple)));
     }
 
-    public void tvBlueSelected(View view){
+    public void tvBlueSelected(View view) {
         Drawable unwrappedDrawable = tvProfilePicBackground.getBackground();
         Drawable wrappedDrawable = DrawableCompat.wrap(unwrappedDrawable);
         DrawableCompat.setTint(wrappedDrawable, (getResources().getColor(R.color.circle_blue)));
     }
 
-    public void goToStudentHomeActivity(View view){
-        Intent intent = new Intent (this, StudentHomeActivity.class);
+    public void goToStudentHomeActivity(View view) {
+        Intent intent = new Intent(this, StudentHomeActivity.class);
         startActivity(intent);
     }
 }

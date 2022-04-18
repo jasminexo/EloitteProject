@@ -14,18 +14,18 @@ public class StudentPersonalityQuizHomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_student_personality_quiz_home);
     }
 
-    public void goToStudentHomeActivity(View view){
-        Intent intent = new Intent (this, StudentHomeActivity.class);
+    public void goToStudentHomeActivity(View view) {
+        Intent intent = new Intent(this, StudentHomeActivity.class);
         startActivity(intent);
     }
 
-    public void goToStudentProfileActivity(View view){
-        Intent intent = new Intent (this, StudentProfileActivity.class);
+    public void goToStudentProfileActivity(View view) {
+        Intent intent = new Intent(this, StudentProfileActivity.class);
         startActivity(intent);
     }
 
-    public void goToPersonalityQuizDetailActivity(View view){
-        Intent intent = new Intent (this, StudentPersonalityQuizDetailActivity.class);
+    public void goToPersonalityQuizDetailActivity(View view) {
+        Intent intent = new Intent(this, StudentPersonalityQuizDetailActivity.class);
         startActivity(intent);
     }
 }

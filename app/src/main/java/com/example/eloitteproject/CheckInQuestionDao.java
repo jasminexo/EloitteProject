@@ -8,7 +8,7 @@ import androidx.room.Query;
 @Dao
 public interface CheckInQuestionDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insert (CheckInQuestion...checkInQuestion);
+    void insert(CheckInQuestion... checkInQuestion);
 
     @Query("SELECT * FROM checkInQuestion WHERE qID =:qID")
     CheckInQuestion getCheckInQuestion(String qID);
@@ -18,5 +18,5 @@ public interface CheckInQuestionDao {
     int getCheckInQuestionCount();
 
     @Query("SELECT * FROM checkinquestion")
-    CheckInQuestion  getAllQuestions();
+    CheckInQuestion getAllQuestions();
 }
