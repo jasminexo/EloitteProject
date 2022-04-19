@@ -15,48 +15,62 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp">
+            android:foregroundGravity="center_horizontal"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:text="Daily Check-In"
-                android:textColor="@color/brown_text"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
+            <ImageButton
+                android:id="@+id/ibBack"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="12dp"
+                android:background="@color/transparent"
+                android:onClick="goToStudentHomeActivity"
+                android:src="@drawable/ic_left"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/ivProfile"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="170sp"
-                android:onClick="goToStudentProfileActivity"
-                android:src="@drawable/fox"
-                android:elevation="10dp"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
-
             <TextView
-                android:id="@+id/tvProfilePicBackground"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginRight="3dp"
-                android:layout_marginLeft="170sp"
-                android:onClick="goToStudentProfileActivity"
-                android:backgroundTint="#B5DEC2D7"
-                android:background="@drawable/btn_circle"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Daily Check-In"
+                android:textSize="20sp" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp">
 
+                <ImageView
+                    android:id="@+id/ivProfile"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="170sp"
+                    android:elevation="10dp"
+                    android:onClick="goToStudentProfileActivity"
+                    android:src="@drawable/fox"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvProfilePicBackground"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="170sp"
+                    android:layout_marginRight="3dp"
+                    android:background="@drawable/btn_circle"
+                    android:backgroundTint="#B5DEC2D7"
+                    android:onClick="goToStudentProfileActivity"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -219,17 +233,6 @@
                     android:onClick="goToStudentHomeActivity"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-            <Button
-                android:id="@+id/btnStudentHome"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:backgroundTint="@color/orange"
-                android:layout_marginTop="20dp"
-                android:onClick="goToStudentHomeActivity"
-                android:text="STUDENT HOME" />
-
         </LinearLayout>
     </LinearLayout>
 

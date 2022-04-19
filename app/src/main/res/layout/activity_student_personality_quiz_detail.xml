@@ -16,27 +16,59 @@
         android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginEnd="0dp">
+            android:foregroundGravity="center_horizontal"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/ibBack"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="12dp"
+                android:background="@color/transparent"
+                android:onClick="goToStudentHomeActivity"
+                android:src="@drawable/ic_left"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/PersonalityQuizTitle"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
+                android:layout_height="wrap_content"
                 android:text="Personality Quiz"
-                android:textColor="@color/brown_text"
                 android:textSize="20sp" />
 
-            <ImageView
-                android:id="@+id/ivProfile"
-                android:layout_width="40sp"
-                android:layout_height="40sp"
-                android:layout_marginLeft="170sp"
-                android:onClick="goToStudentProfileActivity"
-                android:src="@drawable/fox" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp">
+
+                <ImageView
+                    android:id="@+id/ivProfile"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="170sp"
+                    android:elevation="10dp"
+                    android:onClick="goToStudentProfileActivity"
+                    android:src="@drawable/fox"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvProfilePicBackground"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="170sp"
+                    android:layout_marginRight="3dp"
+                    android:background="@drawable/btn_circle"
+                    android:backgroundTint="#B5DEC2D7"
+                    android:onClick="goToStudentProfileActivity"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
 
@@ -166,17 +198,6 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-            <Button
-                android:id="@+id/btnStudentHome"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:backgroundTint="@color/orange"
-                android:layout_marginTop="20dp"
-                android:onClick="goToStudentHomeActivity"
-                android:text="STUDENT HOME" />
-
         </LinearLayout>
     </LinearLayout>
 

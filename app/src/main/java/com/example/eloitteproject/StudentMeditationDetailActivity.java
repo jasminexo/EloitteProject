@@ -42,8 +42,6 @@ public class StudentMeditationDetailActivity extends AppCompatActivity {
         ImageView picture = findViewById(R.id.ivPicture);
         picture.setImageResource(video.getPicture());
 
-        ibMenu = findViewById(R.id.ibMenu);
-
 //        ibMenuClicked();
 
         //youtube player API-reference:Pierfrancesco Soffritti, https://github.com/PierfrancescoSoffritti/android-youtube-player
@@ -61,5 +59,10 @@ public class StudentMeditationDetailActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void goToStudentHomeActivity(View view) {
+        Intent intent = new Intent(this, StudentHomeActivity.class);
+        startActivity(intent);
     }
 }

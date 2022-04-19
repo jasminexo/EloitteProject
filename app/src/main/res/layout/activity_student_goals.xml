@@ -15,6 +15,58 @@
         android:layout_height="198dp" >
 
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:foregroundGravity="center_horizontal"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/ibBack"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="12dp"
+                android:background="@color/transparent"
+                android:onClick="goToStudentHomeActivity"
+                android:src="@drawable/ic_left"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp">
+
+                <ImageView
+                    android:id="@+id/ivProfile"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="170sp"
+                    android:elevation="10dp"
+                    android:onClick="goToStudentProfileActivity"
+                    android:src="@drawable/fox"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvProfilePicBackground"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="170sp"
+                    android:layout_marginRight="3dp"
+                    android:background="@drawable/btn_circle"
+                    android:backgroundTint="#B5DEC2D7"
+                    android:onClick="goToStudentProfileActivity"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -28,7 +80,6 @@
                     android:id="@+id/titlePage"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
                     android:text="Goals"
                     android:textColor="#645D5D"
                     android:textSize="32sp" />
@@ -58,7 +109,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="-60dp"
+        android:layout_marginTop="-40dp"
         android:layout_marginRight="16dp">
 
     </androidx.recyclerview.widget.RecyclerView>

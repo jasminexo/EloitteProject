@@ -7,16 +7,18 @@ android:layout_height="match_parent"
 android:background="@color/yellow_bg"
 tools:context=".StudentMeditationDetailActivity">
 
-<Button
-    android:id="@+id/ibMenu"
-    android:layout_width="40dp"
-    android:layout_height="40dp"
-    android:layout_marginLeft="340dp"
-    android:layout_marginTop="20dp"
-    android:background="#00FF8837"
-    android:drawableTop="@drawable/bunny"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+    <ImageButton
+        android:id="@+id/ibBack"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/transparent"
+        android:onClick="goToStudentHomeActivity"
+        android:src="@drawable/ic_left"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 <TextView
     android:id="@+id/imageView"

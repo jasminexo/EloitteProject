@@ -17,6 +17,7 @@ package com.example.eloitteproject;
         import com.google.firebase.database.ValueEventListener;
 
         import java.util.ArrayList;
+        import java.util.Calendar;
 
 public class StudentGoalsActivity extends AppCompatActivity {
 
@@ -57,5 +58,15 @@ public class StudentGoalsActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "No Data", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    public void goToStudentHomeActivity(View view) {
+        Intent intent = new Intent(this, StudentHomeActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToStudentProfileActivity(View view) {
+        Intent intent = new Intent(this, StudentProfileActivity.class);
+        startActivity(intent);
     }
 }
