@@ -1,14 +1,18 @@
 package com.example.eloitteproject;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -49,6 +53,28 @@ public class TeacherHomeActivity extends AppCompatActivity {
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                 finish();
+            }
+        });
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setSelectedItemId(R.id.dashboard);
+        bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.dashboard:
+                        return true;
+                    case R.id.allStudents:
+                        startActivity(new Intent(getApplicationContext(), LeaderboardActivity.class));
+                        return true;
+                    case R.id.appointments:
+                        startActivity(new Intent(getApplicationContext(), TeacherAppointmentActivity.class));
+                        return true;
+                    case R.id.goals:
+                        startActivity(new Intent(getApplicationContext(), TeacherGoalsActivity.class));
+                        return true;
+                }
+                return false;
             }
         });
     }

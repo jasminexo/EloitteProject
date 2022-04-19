@@ -43,9 +43,6 @@
             android:name=".StudentMeditationHomeActivity"
             android:exported="true" />
         <activity
-            android:name=".StudentLeaderboardActivity"
-            android:exported="true" />
-        <activity
             android:name=".LeaderboardActivity"
             android:exported="true" />
         <activity
@@ -59,6 +56,12 @@
             android:exported="true" />
         <activity
             android:name=".TeacherHomeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".TeacherAppointmentActivity"
+            android:exported="true" />
+        <activity
+            android:name=".TeacherLeaderboardActivity"
             android:exported="true" />
         <activity
             android:name=".StudentHomeActivity"

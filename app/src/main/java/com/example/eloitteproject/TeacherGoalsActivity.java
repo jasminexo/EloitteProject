@@ -1,15 +1,19 @@
 package com.example.eloitteproject;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -68,6 +72,28 @@ public class TeacherGoalsActivity extends AppCompatActivity {
             public void onCancelled(DatabaseError error) {
                 //set code to solve error
                 Toast.makeText(getApplicationContext(), "No Data", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setSelectedItemId(R.id.goals);
+        bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.dashboard:
+                        startActivity(new Intent(getApplicationContext(), TeacherHomeActivity.class));
+                        return true;
+                    case R.id.allStudents:
+                        startActivity(new Intent(getApplicationContext(), LeaderboardActivity.class));
+                        return true;
+                    case R.id.appointments:
+                        startActivity(new Intent(getApplicationContext(), TeacherAppointmentActivity.class));
+                        return true;
+                    case R.id.goals:
+                        return true;
+                }
+                return false;
             }
         });
     }
