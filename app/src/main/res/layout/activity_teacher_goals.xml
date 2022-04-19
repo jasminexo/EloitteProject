@@ -8,27 +8,28 @@
     tools:context=".TeacherGoalsActivity">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FBF6F4">
+        android:background="#FBF6F4"
+        android:orientation="vertical">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
+            android:layout_height="198dp"
             android:background="@color/yellow_bg"
-            android:layout_height="198dp" >
+            android:orientation="vertical">
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_marginLeft="16dp"
-                    android:orientation="vertical"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:orientation="vertical">
+
                     <TextView
                         android:id="@+id/titlePage"
                         android:layout_width="match_parent"
@@ -42,9 +43,9 @@
                         android:id="@+id/subtitlePage"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="18sp"
                         android:layout_marginTop="8dp"
-                        android:text="Set Lifestyle and Health Goals" />
+                        android:text="Set Lifestyle and Health Goals"
+                        android:textSize="18sp" />
 
                 </LinearLayout>
 
@@ -64,10 +65,10 @@
             </LinearLayout>
 
             <View
-                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
-                android:background="@color/yellow_bg"
-                android:layout_height="1dp" />
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/yellow_bg" />
 
         </LinearLayout>
 
@@ -83,13 +84,13 @@
 
         <TextView
             android:id="@+id/endPage"
-            android:textSize="16sp"
-            android:textColor="#645D5D"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="No more goals"
             android:textAlignment="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:textColor="#645D5D"
+            android:textSize="16sp" />
 
     </LinearLayout>
 
