@@ -40,10 +40,10 @@
         <entry key="app/src/main/res/layout/activity_student_personality_quiz_home.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_student_profile.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_student_quiz.xml" value="0.175" />
-        <entry key="app/src/main/res/layout/activity_teacher_appointment.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_teacher_appointment.xml" value="0.16041666666666668" />
         <entry key="app/src/main/res/layout/activity_teacher_email.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_teacher_goals.xml" value="0.16041666666666668" />
-        <entry key="app/src/main/res/layout/activity_teacher_home.xml" value="0.23675385647216632" />
+        <entry key="app/src/main/res/layout/activity_teacher_home.xml" value="0.5946843853820598" />
         <entry key="app/src/main/res/layout/boarditem.xml" value="0.375" />
         <entry key="app/src/main/res/layout/book_appointment_bsd.xml" value="0.2297872340425532" />
         <entry key="app/src/main/res/layout/calendar_cell.xml" value="0.375" />
@@ -55,7 +55,6 @@
         <entry key="app/src/main/res/layout/personality_result.xml" value="0.2833333333333333" />
         <entry key="app/src/main/res/layout/rounded_top_shape.xml" value="0.15" />
         <entry key="app/src/main/res/layout/teacher_fragment_score.xml" value="0.16041666666666668" />
-        <entry key="app/src/main/res/layout/teacherboarditem.xml" value="0.5629383067317533" />
         <entry key="app/src/main/res/menu/menu_score.xml" value="0.2953125" />
       </map>
     </option>
