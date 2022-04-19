@@ -49,7 +49,7 @@ public class TeacherAppointmentActivity extends AppCompatActivity implements Cal
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.allStudents:
-                        startActivity(new Intent(getApplicationContext(), LeaderboardActivity.class));
+                        startActivity(new Intent(getApplicationContext(), TeacherLeaderboardActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.appointments:
