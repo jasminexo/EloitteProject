@@ -3,6 +3,7 @@ package com.example.eloitteproject;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -43,5 +44,10 @@ public class TeacherLeaderboardActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    public void goToEmail(View view){
+        Intent intent = new Intent(this, TeacherEmailActivity.class);
+        startActivity(intent);
     }
 }

@@ -164,9 +164,4 @@ public class TeacherScoreFragment extends Fragment {
         });
     }
 
-    public void goToEmail(){
-        Intent i = new Intent(getActivity(), TeacherEmailActivity.class);
-        startActivity(i);
-    }
-
 }
