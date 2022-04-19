@@ -35,10 +35,10 @@
         <entry key="app/src/main/res/layout/activity_student_meditation_home.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_student_personality_quiz_detail.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_student_personality_quiz_home.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/activity_student_profile.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_student_profile.xml" value="0.34814814814814815" />
         <entry key="app/src/main/res/layout/activity_student_quiz.xml" value="0.175" />
         <entry key="app/src/main/res/layout/activity_teacher_appointment.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_teacher_email.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_teacher_email.xml" value="0.625" />
         <entry key="app/src/main/res/layout/activity_teacher_goals.xml" value="0.16041666666666668" />
         <entry key="app/src/main/res/layout/activity_teacher_home.xml" value="0.23675385647216632" />
         <entry key="app/src/main/res/layout/boarditem.xml" value="0.375" />
@@ -66,7 +66,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.45" />
+        <option name="scale" value="0.5" />
       </ProjectState>
     </option>
   </component>
