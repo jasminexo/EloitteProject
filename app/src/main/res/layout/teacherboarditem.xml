@@ -37,6 +37,7 @@
                 android:id="@+id/pName"
                 android:layout_width="221dp"
                 android:layout_height="37dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="2dp"
                 android:elevation="10dp"
                 android:gravity="center_vertical"
@@ -45,10 +46,9 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/pResourcePic"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.047" />
 
             <TextView
                 android:id="@+id/boardPoints"
@@ -66,12 +66,10 @@
                 android:id="@+id/emailButton"
                 android:layout_width="24dp"
                 android:layout_height="20dp"
-                android:layout_marginStart="22dp"
-                android:layout_marginEnd="292dp"
+                android:layout_marginEnd="1dp"
                 android:onClick="goToEmail"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/pResourcePic"
+                app:layout_constraintEnd_toStartOf="@+id/textView6"
+                app:layout_constraintStart_toStartOf="@+id/pName"
                 app:layout_constraintTop_toBottomOf="@+id/pName"
                 app:srcCompat="@drawable/ic_email" />
 
@@ -79,11 +77,10 @@
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="195dp"
-                android:onClick="goToEmailActivity"
+                android:layout_marginStart="1dp"
+                android:onClick="goToEmail"
                 android:text="Contact Parent "
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/emailButton"
                 app:layout_constraintTop_toBottomOf="@+id/pName" />
 
