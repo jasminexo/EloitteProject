@@ -59,32 +59,32 @@ public class RegisterActivity extends AppCompatActivity {
         btnAsTeacher = findViewById(R.id.btnAsTeacher);
 
         //when student button clicked, set teacher button as grey, check student checkbox
-        btnAsStudent.setOnClickListener(new View.OnClickListener() {
+        btnAsStudent.setOnClickListener(new View.OnClickListener(){
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View v) {
-                btnAsStudent.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.student, 0, 0);
+                btnAsStudent.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.student, 0,0);
                 btnAsStudent.setTextColor(getColor(R.color.orange_text));
                 isStudentBox.setChecked(true);
                 isStudentBox.setClickable(false);
                 isStudentBox.setEnabled(false);
 
-                btnAsTeacher.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.teacherbnw, 0, 0);
+                btnAsTeacher.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.teacherbnw, 0,0);
                 btnAsTeacher.setTextColor(getColor(R.color.grey_text));
             }
         });
 
         //when teacher button clicked, set student button as grey, check teacher checkbox
-        btnAsTeacher.setOnClickListener(new View.OnClickListener() {
+        btnAsTeacher.setOnClickListener(new View.OnClickListener(){
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View v) {
-                btnAsTeacher.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.teacher, 0, 0);
+                btnAsTeacher.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.teacher, 0,0);
                 btnAsTeacher.setTextColor(getColor(R.color.orange_text));
                 isTeacherBox.setChecked(true);
                 isTeacherBox.setClickable(false);
                 isTeacherBox.setEnabled(false);
-                btnAsStudent.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.studentbnw, 0, 0);
+                btnAsStudent.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.studentbnw, 0,0);
                 btnAsStudent.setTextColor(getColor(R.color.grey_text));
             }
         });
@@ -93,7 +93,7 @@ public class RegisterActivity extends AppCompatActivity {
         isStudentBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (compoundButton.isChecked()) {
+                if(compoundButton.isChecked()){
                     isTeacherBox.setChecked(false);
 
                 }
@@ -102,7 +102,7 @@ public class RegisterActivity extends AppCompatActivity {
         isTeacherBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (compoundButton.isChecked()) {
+                if(compoundButton.isChecked()){
                     isStudentBox.setChecked(false);
                 }
             }
@@ -116,7 +116,7 @@ public class RegisterActivity extends AppCompatActivity {
                 checkField(password);
 
                 //checkbox validation
-                if (!(isTeacherBox.isChecked() || isStudentBox.isChecked())) {
+                if(!(isTeacherBox.isChecked() || isStudentBox.isChecked())) {
                     Toast.makeText(RegisterActivity.this, "Select The Account Type", Toast.LENGTH_SHORT).show();
                     return;
 
@@ -137,10 +137,10 @@ public class RegisterActivity extends AppCompatActivity {
                             userInfo.put("UserEmail", email.getText().toString());
 
                             //specify if the user is admin
-                            if (isTeacherBox.isChecked()) {
+                            if(isTeacherBox.isChecked()){
                                 userInfo.put("isTeacher", "1");
                             }
-                            if (isStudentBox.isChecked()) {
+                            if(isStudentBox.isChecked()){
                                 userInfo.put("isStudent", "1");
                             }
 
@@ -161,23 +161,15 @@ public class RegisterActivity extends AppCompatActivity {
                             String currentUID = firebaseUser.getUid();
 
 
-                            if (isTeacherBox.isChecked()) {
-                                //Insert new user into the user database
-                                Executors.newSingleThreadExecutor().execute(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        uDB.userDao().insertOneUser(new User(currentUID, inputName, inputPassword, inputEmail, 0, null, null, R.drawable.fox, "circle_purple"));
-                                    }
-                                });
-
+                            if(isTeacherBox.isChecked()) {
                                 startActivity(new Intent(getApplicationContext(), TeacherHomeActivity.class));
                             }
-                            if (isStudentBox.isChecked()) {
+                            if(isStudentBox.isChecked()){
                                 //Insert new user into the user database
                                 Executors.newSingleThreadExecutor().execute(new Runnable() {
                                     @Override
                                     public void run() {
-                                        uDB.userDao().insertOneUser(new User(currentUID, inputName, inputPassword, inputEmail, 0, null, null, R.drawable.fox, "circle_purple"));
+                                        uDB.userDao().insertOneUser(new User(currentUID, inputName, inputPassword, inputEmail, 0,null, null, R.drawable.fox, "circle_purple"));
                                     }
                                 });
 
@@ -211,8 +203,7 @@ public class RegisterActivity extends AppCompatActivity {
         } else {
             valid = true;
 
-        }
-        return valid;
+        }return valid;
     }
 }
 
