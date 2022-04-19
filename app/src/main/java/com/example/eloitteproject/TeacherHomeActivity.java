@@ -65,7 +65,7 @@ public class TeacherHomeActivity extends AppCompatActivity {
                     case R.id.dashboard:
                         return true;
                     case R.id.allStudents:
-                        startActivity(new Intent(getApplicationContext(), LeaderboardActivity.class));
+                        startActivity(new Intent(getApplicationContext(), TeacherLeaderboardActivity.class));
                         return true;
                     case R.id.appointments:
                         startActivity(new Intent(getApplicationContext(), TeacherAppointmentActivity.class));
@@ -93,6 +93,12 @@ public class TeacherHomeActivity extends AppCompatActivity {
     public void goToStudentGoalsActivity(View view) {
         Intent intent = new Intent(this, TeacherGoalsActivity.class);
         startActivity(intent);
+    }
+
+    public void goToTeacherLeaderboardActivity(View view) {
+        Intent intent = new Intent(this, TeacherLeaderboardActivity.class);
+        startActivity(intent);
+
     }
 
 

@@ -85,7 +85,7 @@ public class TeacherGoalsActivity extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), TeacherHomeActivity.class));
                         return true;
                     case R.id.allStudents:
-                        startActivity(new Intent(getApplicationContext(), LeaderboardActivity.class));
+                        startActivity(new Intent(getApplicationContext(), TeacherLeaderboardActivity.class));
                         return true;
                     case R.id.appointments:
                         startActivity(new Intent(getApplicationContext(), TeacherAppointmentActivity.class));

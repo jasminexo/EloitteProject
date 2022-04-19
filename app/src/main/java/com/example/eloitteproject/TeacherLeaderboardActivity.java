@@ -18,6 +18,10 @@ public class TeacherLeaderboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leaderboard);
 
+        FragmentManager fm = getSupportFragmentManager();
+        TeacherScoreFragment fragment = new TeacherScoreFragment();
+        fm.beginTransaction().add(R.id.container, fragment).commit();
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.allStudents);
         bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {

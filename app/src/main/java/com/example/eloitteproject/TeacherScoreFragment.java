@@ -125,13 +125,10 @@ public class TeacherScoreFragment extends Fragment {
             }
         });
 
-        emailButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getActivity(), TeacherEmailActivity.class);
-                startActivity(i);
-            }
-        });
+//        emailButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {goToEmail();}
+//        });
 
 
         //Create RecyclerView
@@ -150,9 +147,6 @@ public class TeacherScoreFragment extends Fragment {
                 .fallbackToDestructiveMigration()
                 .build();
 
-        String userID = FirebaseAuth.getInstance().getUid();
-
-
         Executors.newSingleThreadExecutor().execute(new Runnable() {
             @Override
             public void run() {
@@ -168,6 +162,11 @@ public class TeacherScoreFragment extends Fragment {
                 }
             }
         });
+    }
+
+    public void goToEmail(){
+        Intent i = new Intent(getActivity(), TeacherEmailActivity.class);
+        startActivity(i);
     }
 
 }
