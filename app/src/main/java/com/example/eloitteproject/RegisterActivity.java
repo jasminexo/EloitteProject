@@ -180,7 +180,7 @@ public class RegisterActivity extends AppCompatActivity {
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(RegisterActivity.this, "Failed to Create Account",
+                            Toast.makeText(RegisterActivity.this, "Failed to Create Account. Password must be over 6 characters!",
                                     Toast.LENGTH_SHORT).show();
                         }
                     });
@@ -198,7 +198,9 @@ public class RegisterActivity extends AppCompatActivity {
 
     public boolean checkField(EditText textField) {
         if (textField.getText().toString().isEmpty()) {
-            textField.setError("Error");
+            email.setError("Please input email");
+            fullName.setError("Please input your full name");
+            password.setError("Please input your password");
             valid = false;
         } else {
             valid = true;
