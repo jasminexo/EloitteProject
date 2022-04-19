@@ -250,7 +250,6 @@
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:elevation="10dp"
-                    android:onClick="goToStudentProfileActivity"
                     android:src="@drawable/teacher"
                     app:layout_constraintBottom_toBottomOf="@+id/textView"
                     app:layout_constraintEnd_toEndOf="@+id/textView"
@@ -266,7 +265,6 @@
                     android:layout_marginRight="30dp"
                     android:background="@drawable/btn_circle"
                     android:backgroundTint="@color/circle_brown"
-                    android:onClick="goToStudentProfileActivity"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
                 <TextView
