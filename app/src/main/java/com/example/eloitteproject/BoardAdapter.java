@@ -42,6 +42,7 @@ public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.BoardViewHol
         User mCurrentUser = mUserData.get(position);
         holder.boardPoints.setText("\uD83C\uDFC6 " + String.valueOf(mCurrentUser.getScore()));
         holder.pName.setText(mCurrentUser.getFullName());
+        holder.profilePic.setImageResource(mCurrentUser.getProfilePic());
 
 //        Glide.with(holder.profilePic)
 //                .load("https://ui-avatars.com/api/?name=" + mCurrentUser.getFullName())
@@ -55,11 +56,11 @@ public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.BoardViewHol
 
     public class BoardViewHolder extends RecyclerView.ViewHolder {
         private TextView boardPoints, pName;
+        private ImageView profilePic;
 
-        //private ImageView profilePic;
         public BoardViewHolder(@NonNull View itemView) {
             super(itemView);
-            //profilePic = itemView.findViewById(R.id.profilePic);
+            profilePic = itemView.findViewById(R.id.profilePic);
             pName = itemView.findViewById(R.id.pName);
             boardPoints = itemView.findViewById(R.id.boardPoints);
         }

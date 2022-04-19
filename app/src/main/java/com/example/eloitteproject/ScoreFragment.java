@@ -156,6 +156,8 @@ public class ScoreFragment extends Fragment {
 
                 String username = uDB.userDao().getName(userID);
                 int userScore = uDB.userDao().getScore(userID);
+                //int userPFP = uDB.userDao().getProfilePic(userID);
+
                 List<User> userList = uDB.userDao().getAllUsers();
                 if (getActivity() != null) {
                     getActivity().runOnUiThread(new Runnable() {
@@ -163,6 +165,7 @@ public class ScoreFragment extends Fragment {
                         public void run() {
                             scoreUsername.setText(username);
                             scoreNumber.setText(String.valueOf(userScore));
+                            //scorePFP.setImageResource(userPFP);
                             mAdapter.setBoards(userList);
 
                         }

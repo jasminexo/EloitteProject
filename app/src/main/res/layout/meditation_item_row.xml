@@ -22,7 +22,7 @@
             android:padding="10dp">
 
             <ImageView
-                android:id="@+id/pResourcePic"
+                android:id="@+id/profilePic"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="6dp"
