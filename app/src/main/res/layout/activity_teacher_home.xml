@@ -245,7 +245,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Average Class Health Score"/>
-                    <ImageView
+                    <com.ortiz.touchview.TouchImageView
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
                         android:layout_marginTop="15dp"
@@ -268,7 +268,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Class Mental Health Status"/>
-                    <ImageView
+                    <com.ortiz.touchview.TouchImageView
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
                         android:layout_marginTop="15dp"
@@ -291,7 +291,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Feedback Toward Classroom Initiatives"/>
-                    <ImageView
+                    <com.ortiz.touchview.TouchImageView
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
                         android:layout_marginTop="15dp"

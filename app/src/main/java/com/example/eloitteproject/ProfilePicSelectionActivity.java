@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ProfilePicSelectionActivity extends AppCompatActivity {
 
@@ -26,9 +27,15 @@ public class ProfilePicSelectionActivity extends AppCompatActivity {
         ivProfilePic = findViewById(R.id.ivProfilePic);
         tvProfilePicBackground = findViewById(R.id.tvProfilePicBackground);
         btnSave = findViewById(R.id.btnSave);
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "Saved!", Toast.LENGTH_SHORT).show();
+            }
 
-        //need to retrieve animal and colour from user database
+            //need to retrieve animal and colour from user database
 
+        });
     }
 
     public void ivBearSelected(View view) {
