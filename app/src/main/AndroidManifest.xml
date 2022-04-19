@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EloitteProject">
         <activity
+            android:name=".TeacherLeaderboardActivity"
+            android:exported="true" />
+        <activity
             android:name=".StudentGoalsActivity"
             android:exported="true" />
         <activity
@@ -41,9 +44,6 @@
             android:exported="true" />
         <activity
             android:name=".StudentMeditationHomeActivity"
-            android:exported="true" />
-        <activity
-            android:name=".StudentLeaderboardActivity"
             android:exported="true" />
         <activity
             android:name=".LeaderboardActivity"
