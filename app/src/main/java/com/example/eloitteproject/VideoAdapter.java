@@ -30,7 +30,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.MyViewHolder
         public MyViewHolder(@NonNull View itemView, VideoAdapter mAdapter, ClickListener listener) {
             super(itemView);
             name = itemView.findViewById(R.id.pName);
-            picture = itemView.findViewById(R.id.pResourcePic);
+            picture = itemView.findViewById(R.id.profilePic);
             this.mAdapter = mAdapter;
             this.listener = listener;
             itemView.setOnClickListener(this);

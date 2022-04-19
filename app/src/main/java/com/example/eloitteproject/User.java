@@ -134,10 +134,33 @@ public class User {
     public static ArrayList<User> getUserList() {
         ArrayList<User> userList = new ArrayList<>();
 
-        userList.add(new User("vemLFL7Ec3S8kkccuXc2uEfgDTp1", "Ken Hayes", "123456", "kenken@student.edu.au", 16, "01/04/22", "mailinh.dinhh@gmail.com", R.drawable.fox, "circle_purple"));
-        userList.add(new User("RQX1UeReoIQHiLk2zYO4eUZyYye2", "Mikaela Vo", "123456", "micklepickles@student.edu.au", 24, "01/11/21", "votiffany6@gmail.com", R.drawable.fox, "circle_purple"));
-        userList.add(new User("QuHZsscwHQVQVgukbZOjcrEDuj12", "Milo Lim", "123456", "badussy@student.edu.au", 0, "19/12/21", "jasmine.lim1177@gmail.com", R.drawable.fox, "circle_purple"));
-
+        userList.add(new User("vemLFL7Ec3S8kkccuXc2uEfgDTp1", "Ken Hayes",
+                "123456", "kenken@student.edu.au", 24, "01/04/22",
+                "mailinh.dinhh@gmail.com", R.drawable.hedgehog, "circle_beige"));
+        userList.add(new User("RQX1UeReoIQHiLk2zYO4eUZyYye2", "Mikaela Vo",
+                "123456", "micklepickles@student.edu.au", 12, "01/11/21",
+                "votiffany6@gmail.com", R.drawable.bear, "circle_purple"));
+        userList.add(new User("QuHZsscwHQVQVgukbZOjcrEDuj12", "Milo Lim",
+                "123456", "badussy@student.edu.au", 10, "19/12/21",
+                "jasmine.lim1177@gmail.com", R.drawable.fox_two, "circle_blue"));
+        userList.add(new User("vemsjfhdjsS8kkccuXc2uEfgDTp1", "Sammy Hayes",
+                "123456", "sammy@student.edu.au", 8, "01/04/22",
+                "mailinh.dinhh@gmail.com", R.drawable.bunny, "circle_brown"));
+        userList.add(new User("RQX1Uskjdgnshfk2zYO4eUZyYye2", "Scotty Vo",
+                "123456", "scotty@student.edu.au", 6, "01/11/21",
+                "votiffany6@gmail.com", R.drawable.bear, "circle_blue"));
+        userList.add(new User("sng7689hHGHDHHSAJDJHSJsjfjfn", "Rikki Dinh",
+                "123456", "rikki@student.edu.au", 5, "19/12/21",
+                "mailinh.dinhh@gmail.com", R.drawable.owl, "circle_yellow"));
+        userList.add(new User("QuHuhefahsdjbfiaasOjcrEDuj12", "Max Hayes",
+                "123456", "max@student.edu.au", 3, "19/12/21",
+                "mailinh.dinhh@gmail.com", R.drawable.penguin, "circle_purple"));
+        userList.add(new User("QuHZsscskdfgnjsnfaOjcrEDuj12", "Tiger Hayes",
+                "123456", "tiger@student.edu.au", 1, "19/12/21",
+                "mailinh.dinhh@gmail.com", R.drawable.penguin, "circle_orange"));
+        userList.add(new User("RQX1UeRjsdnfjszYO4eUZyffYye2", "Michael Vo",
+                "123456", "michaelthebudgie@student.edu.au", 0, "01/11/21",
+                "votiffany6@gmail.com", R.drawable.bunny, "circle_blue"));
         return userList;
     }
 

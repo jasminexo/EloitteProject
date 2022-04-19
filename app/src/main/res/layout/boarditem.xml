@@ -23,20 +23,22 @@
             android:elevation="10dp">
 
             <ImageView
-                android:id="@+id/pResourcePic"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginStart="13dp"
+                android:id="@+id/profilePic"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/pName"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.533"
                 app:srcCompat="@drawable/fox" />
 
             <TextView
                 android:id="@+id/pName"
                 android:layout_width="220dp"
                 android:layout_height="60dp"
-                android:layout_marginTop="2dp"
                 android:elevation="10dp"
                 android:gravity="center_vertical"
                 android:text="Student Name"
@@ -45,9 +47,10 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.52"
+                app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/boardPoints"
@@ -55,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:text="TextView"
                 android:textColor="#414141"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/pName"
