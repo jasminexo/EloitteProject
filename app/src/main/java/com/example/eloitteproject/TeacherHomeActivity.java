@@ -66,12 +66,15 @@ public class TeacherHomeActivity extends AppCompatActivity {
                         return true;
                     case R.id.allStudents:
                         startActivity(new Intent(getApplicationContext(), LeaderboardActivity.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.appointments:
                         startActivity(new Intent(getApplicationContext(), TeacherAppointmentActivity.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.goals:
                         startActivity(new Intent(getApplicationContext(), TeacherGoalsActivity.class));
+                        overridePendingTransition(0,0);
                         return true;
                 }
                 return false;

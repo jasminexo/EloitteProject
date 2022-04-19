@@ -46,14 +46,17 @@ public class TeacherAppointmentActivity extends AppCompatActivity implements Cal
                 switch (item.getItemId()) {
                     case R.id.dashboard:
                         startActivity(new Intent(getApplicationContext(), TeacherHomeActivity.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.allStudents:
                         startActivity(new Intent(getApplicationContext(), LeaderboardActivity.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.appointments:
                         return true;
                     case R.id.goals:
                         startActivity(new Intent(getApplicationContext(), TeacherGoalsActivity.class));
+                        overridePendingTransition(0,0);
                         return true;
                 }
                 return false;

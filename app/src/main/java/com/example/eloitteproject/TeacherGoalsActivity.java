@@ -83,12 +83,15 @@ public class TeacherGoalsActivity extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.dashboard:
                         startActivity(new Intent(getApplicationContext(), TeacherHomeActivity.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.allStudents:
                         startActivity(new Intent(getApplicationContext(), LeaderboardActivity.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.appointments:
                         startActivity(new Intent(getApplicationContext(), TeacherAppointmentActivity.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.goals:
                         return true;
