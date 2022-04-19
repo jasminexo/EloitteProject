@@ -10,13 +10,15 @@
     tools:context=".TeacherEmailActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="351dp"
+        android:layout_width="match_parent"
         android:layout_height="154dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -36,7 +38,6 @@
                 android:layout_height="50dp"
                 android:layout_marginLeft="170sp"
                 android:elevation="10dp"
-                android:onClick="goToStudentProfileActivity"
                 android:src="@drawable/fox"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -49,7 +50,6 @@
                 android:layout_marginRight="3dp"
                 android:background="@drawable/btn_circle"
                 android:backgroundTint="#B5DEC2D7"
-                android:onClick="goToStudentProfileActivity"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -60,7 +60,6 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:elevation="10dp"
-            android:onClick="goToStudentProfileActivity"
             android:src="@drawable/fox"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -72,16 +71,16 @@
             android:layout_marginRight="3dp"
             android:background="@drawable/btn_circle"
             android:backgroundTint="#B5DEC2D7"
-            android:onClick="goToStudentProfileActivity"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView10"
-            android:layout_width="348dp"
-            android:layout_height="86dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center_vertical"
             android:text="Send emails to report concerning student behaviours!"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -93,14 +92,20 @@
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/brown_text"
-        android:textSize="18sp" />
+        android:textSize="15sp" />
 
     <EditText
         android:id="@+id/et_to_user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
-        android:textColor="@color/brown_text" />
+        android:textColor="@color/brown_text"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/btn_semiround_corner"
+        android:backgroundTint="#2AE6B59D"
+        android:textSize="17sp"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -109,23 +114,31 @@
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/brown_text"
-        android:textSize="18sp" />
+        android:layout_marginTop="10dp"
+        android:textSize="15sp" />
 
     <EditText
         android:id="@+id/et_subject"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textEmailSubject"
-        android:textColor="@color/brown_text" />
+        android:textColor="@color/brown_text"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/btn_semiround_corner"
+        android:backgroundTint="#2AE6B59D"
+        android:textSize="17sp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Message:"
+        android:layout_marginTop="10dp"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/brown_text"
-        android:textSize="18sp" />
+        android:textSize="15sp" />
 
     <EditText
         android:id="@+id/et_message"
@@ -133,12 +146,19 @@
         android:layout_height="wrap_content"
         android:gravity="start|top"
         android:lines="10"
-        android:textColor="#2D2F31" />
+        android:textColor="#2D2F31"
+        android:padding="10dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/btn_semiround_corner"
+        android:backgroundTint="#2AE6B59D"
+        android:textSize="17sp"/>
 
     <Button
         android:id="@+id/btn_send_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:drawableRight="@drawable/ic_send"
         android:text="Send" />
 
 </LinearLayout>

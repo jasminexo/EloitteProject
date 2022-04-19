@@ -300,22 +300,6 @@
             </androidx.cardview.widget.CardView>
 
             <Button
-                android:id="@+id/btnEmail"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginRight="40dp"
-                android:background="@drawable/btn_round_corner"
-                android:drawableTop="@drawable/checkin"
-                android:gravity="center|center_vertical"
-                android:onClick="goToEmailActivity"
-                android:paddingTop="15dp"
-                android:text="Email"
-                android:textAllCaps="false"
-                android:textColor="@color/brown_text"
-                android:textSize="13sp"
-                app:backgroundTint="#E7FBFF" />
-
-            <Button
                 android:id="@+id/btn_logout"
                 android:layout_width="300dp"
                 android:layout_height="55dp"
