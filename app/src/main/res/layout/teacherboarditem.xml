@@ -24,7 +24,7 @@
             android:elevation="10dp">
 
             <ImageView
-                android:id="@+id/pResourcePic"
+                android:id="@+id/profilePic"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="13dp"
@@ -46,7 +46,7 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/pResourcePic"
+                app:layout_constraintStart_toEndOf="@+id/profilePic"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.047" />
 

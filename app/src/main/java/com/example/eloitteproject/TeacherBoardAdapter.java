@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -43,10 +44,7 @@ public class TeacherBoardAdapter extends RecyclerView.Adapter<TeacherBoardAdapte
         User mCurrentUser = mUserData.get(position);
         holder.boardPoints.setText("\uD83C\uDFC6 " + String.valueOf(mCurrentUser.getScore()));
         holder.pName.setText(mCurrentUser.getFullName());
-
-//        Glide.with(holder.profilePic)
-//                .load("https://ui-avatars.com/api/?name=" + mCurrentUser.getFullName())
-//                .into(holder.profilePic);
+        holder.profilePic.setImageResource(mCurrentUser.getProfilePic());
     }
 
     @Override
@@ -58,10 +56,10 @@ public class TeacherBoardAdapter extends RecyclerView.Adapter<TeacherBoardAdapte
         private TextView boardPoints, pName;
         public OnBoardItemClickListener listener;
 
-        //private ImageView profilePic;
+        private ImageView profilePic;
         public BoardViewHolder(@NonNull View itemView) {
             super(itemView);
-            //profilePic = itemView.findViewById(R.id.profilePic);
+            profilePic = itemView.findViewById(R.id.profilePic);
             pName = itemView.findViewById(R.id.pName);
             boardPoints = itemView.findViewById(R.id.boardPoints);
         }
