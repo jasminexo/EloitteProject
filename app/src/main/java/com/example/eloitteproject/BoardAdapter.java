@@ -77,7 +77,7 @@ public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.BoardViewHol
                         return u1.getFullName().compareTo(u2.getFullName());
                     } else if (sortUserMethod == 2) {
                         //Sort by points
-                        return String.valueOf(u2.getScore()).compareTo(String.valueOf(u1.getScore()));
+                        return u2.getScore().compareTo(u1.getScore());
                     }
                     return String.valueOf(u2.getScore()).compareTo(String.valueOf(u1.getScore()));
                 }

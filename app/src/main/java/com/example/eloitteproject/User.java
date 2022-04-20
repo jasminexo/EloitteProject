@@ -29,7 +29,7 @@ public class User {
     private String email;
     @SerializedName("Score")
     @Expose
-    private int score;
+    private Integer score;
     @SerializedName("Date of Birth")
     @Expose
     private String DOB;
@@ -44,7 +44,7 @@ public class User {
     private String profilePicBG;
 
     //Constructor
-    public User(@NonNull String uID, String fullName, String password, String email, int score, String DOB, String parentEmail, int profilePic, String profilePicBG) {
+    public User(@NonNull String uID, String fullName, String password, String email, Integer score, String DOB, String parentEmail, int profilePic, String profilePicBG) {
         this.uID = uID;
         this.fullName = fullName;
         this.password = password;
@@ -91,11 +91,11 @@ public class User {
         this.email = email;
     }
 
-    public int getScore() {
+    public Integer getScore() {
         return score;
     }
 
-    public void setScore(int score) {
+    public void setScore(Integer score) {
         this.score = score;
     }
 
