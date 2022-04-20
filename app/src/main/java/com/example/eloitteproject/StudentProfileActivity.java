@@ -63,7 +63,7 @@ public class StudentProfileActivity extends AppCompatActivity {
                         //String profileBG = uDB.userDao().getProfileBG(userID);
                         //String bgColour = "R.color."+profileBG;
 
-                        tvProfileName.setText(fullName, TextView.BufferType.EDITABLE);
+                        tvProfileName.setText(fullName);
                         etUserFullName.setText(fullName, TextView.BufferType.EDITABLE);
                         etUserEmail.setText(email, TextView.BufferType.EDITABLE);
                         etUserDOB.setText(DOB, TextView.BufferType.EDITABLE);
