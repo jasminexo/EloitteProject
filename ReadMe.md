@@ -37,7 +37,7 @@ Teachers are able to view the progression of individual students and the class a
 1. Select: sign up and select user type
 2. Enter full name
 3. Email format: name@student.edu.au or name@teacher.edu.au
-   e.g. yenni@teacher.edu.au
+   e.g. david@student.edu.au or yenni@teacher.edu.au
 4. Password must have more than 6 characters
 
 ## Logout
