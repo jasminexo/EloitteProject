@@ -17,7 +17,7 @@ public class TeacherLeaderboardActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_leaderboard);
+        setContentView(R.layout.activity_teacher_leaderboard);
 
         FragmentManager fm = getSupportFragmentManager();
         TeacherScoreFragment fragment = new TeacherScoreFragment();
