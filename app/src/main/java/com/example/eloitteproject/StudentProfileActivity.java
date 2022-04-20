@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -62,7 +63,7 @@ public class StudentProfileActivity extends AppCompatActivity {
                         //String profileBG = uDB.userDao().getProfileBG(userID);
                         //String bgColour = "R.color."+profileBG;
 
-                        tvProfileName.setText(fullName);
+                        tvProfileName.setText(fullName, TextView.BufferType.EDITABLE);
                         etUserFullName.setText(fullName, TextView.BufferType.EDITABLE);
                         etUserEmail.setText(email, TextView.BufferType.EDITABLE);
                         etUserDOB.setText(DOB, TextView.BufferType.EDITABLE);
@@ -82,6 +83,7 @@ public class StudentProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 updateProfile();
+                Toast.makeText(getApplicationContext(), "Saved!", Toast.LENGTH_SHORT).show();
             }
         });
 

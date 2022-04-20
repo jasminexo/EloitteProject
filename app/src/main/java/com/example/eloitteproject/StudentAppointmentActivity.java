@@ -37,6 +37,7 @@ public class StudentAppointmentActivity extends AppCompatActivity implements Cal
     private RecyclerView calendarRecyclerView, bsCalendarRecyclerView;
     public String time;
     private Button btn830, btn845, btn900, btn300, btn315, btn330, btnBookAppointment;
+    boolean bsClicked;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,23 +117,16 @@ public class StudentAppointmentActivity extends AppCompatActivity implements Cal
         if (date != null) {
             CalendarUtils.selectedDate = date;
             setWeekView();
-            setMonthView();
-            bsTVDate.setText(dayFromDate(CalendarUtils.selectedDate));
-
-            btn830.setEnabled(true);
-            btn830.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.button_light));
-            btn845.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.button_light));
-            btn900.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.button_light));
-            btn300.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.button_light));
-            btn315.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.button_light));
-            btn330.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.button_light));
-
+            if (bsClicked == true){
+                setMonthView();
+                bsTVDate.setText(dayFromDate(CalendarUtils.selectedDate));
+            }
         }
     }
 
     //shows the results in bottom screen
     public void showBookingBottomScreen() {
-
+        bsClicked = true;
         //Instantiate new bottom sheet dialog
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(StudentAppointmentActivity.this);
         //Inflate the view so that users are able to view it
